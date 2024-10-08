@@ -16,6 +16,7 @@ function App() {
   const closeLoginModal = () => setIsLoginModalOpen(false);
  
   return (
+    //예제 연습
     <div className="App">
       <header className="app-header">
         <div className="header-content">
