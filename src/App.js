@@ -7,7 +7,7 @@ import Mypage from './page/mypage';
 import MainBody from './page/mainBody';
 import Login from './page/Login';
 import './App.css';
-
+ 
 function App() {
   const navigate = useNavigate();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
