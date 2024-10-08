@@ -14,7 +14,7 @@ function App() {
 
   const openLoginModal = () => setIsLoginModalOpen(true);
   const closeLoginModal = () => setIsLoginModalOpen(false);
-
+ 
   return (
     <div className="App">
       <header className="app-header">
