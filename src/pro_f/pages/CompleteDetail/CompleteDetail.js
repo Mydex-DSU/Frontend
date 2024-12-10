@@ -21,7 +21,7 @@ const CompleteDetail = () => {
         setIsModalOpen(true);
     };
     const handleEvaluate = (student) => {
-        navigate(`/evaluationdetail/${programId}/${student.stu_id}`);
+        navigate(`/adm/evaluationdetail/${programId}/${student.stu_id}`);
     };
 
     useEffect(() => {
@@ -212,7 +212,7 @@ const CompleteDetail = () => {
         </div>
     </div>
 
-      <button onClick={() => navigate('/completeprogram')} className="back-button">뒤로가기</button>
+      <button onClick={() => navigate('/adm/completeprogram')} className="back-button">뒤로가기</button>
       <NoShowReasonModal 
             isOpen={isModalOpen}
             onClose={() => {

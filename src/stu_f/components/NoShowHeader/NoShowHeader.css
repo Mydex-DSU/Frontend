@@ -1,0 +1,16 @@
+.noshow-header-box {
+    max-width: 1200px; /* 가로 크기 제한 */
+    margin: 0 auto; /* 중앙 정렬 */
+    background-color: #1F3550;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px 15px; /* 적절한 크기 설정 */
+    margin-bottom: 10px; /* 리스트와 가까운 간격 */
+  }
+  
+  .noshow-header-box h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  

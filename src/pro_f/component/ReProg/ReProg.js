@@ -57,7 +57,7 @@ const ReProg = () => {
             ))}
           </tbody>
         </table>
-        <a href="/repage" className="more-link">구제프로그램 신청 목록 ＞</a>
+        <a href="/adm/reliefprogram" className="more-link">구제프로그램 신청 목록 ＞</a>
       </div>
     </div>
   );

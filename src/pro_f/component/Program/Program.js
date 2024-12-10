@@ -59,7 +59,7 @@ const Program = () => {
             </table>
 
             <div className="program-links">
-                <Link to="/completeprogram" className="more-link">프로그램 완료 목록 보러 가기 ＞</Link>
+                <Link to="/adm/completeprogram" className="more-link">프로그램 완료 목록 보러 가기 ＞</Link>
             </div>
 
             <CardList/>

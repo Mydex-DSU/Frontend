@@ -53,8 +53,8 @@ const CardList = () => {
         ))}
       </div>
       <div className="program-links">
-        <Link to="/programlist">프로그램 목록 보러 가기 ＞</Link>
-        <Link to="/programregistration">프로그램 등록하러 가기 ＞</Link>
+        <Link to="/adm/programlist">프로그램 목록 보러 가기 ＞</Link>
+        <Link to="/adm/programregistration">프로그램 등록하러 가기 ＞</Link>
       </div>
     </div>
   );

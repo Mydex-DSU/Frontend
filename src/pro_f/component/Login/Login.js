@@ -26,7 +26,7 @@ const Login = ({ isOpen, onClose, onLogin }) => {
         onLogin(managerId);
         setTimeout(() => {
           onClose();
-          navigate('/');
+          navigate('/adm/admmainpage');
         }, 500);
       }
     } catch (error) {
@@ -35,6 +35,8 @@ const Login = ({ isOpen, onClose, onLogin }) => {
       console.error('Login error:', error);
     }
   };
+
+
 
   return (
     <div className="modal-overlay">

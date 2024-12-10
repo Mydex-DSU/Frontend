@@ -1,100 +1,105 @@
-// import React from 'react';
-// import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
-// import MainPage from './pages/MainPage';
-// import RePage from './pro_f/pages/RePage/RePage';
-// import Nav from './pro_f/component/Nav/Nav';
-// import ProgramList from './pages/ProgramList';
-// import CompleteProgram from './pro_f/pages/CompleteProgram/CompleteProgram';
-// import CompleteDetail from './pro_f/pages/CompleteDetail/CompleteDetail';
-// import EvaluationDetail from './pages/EvaluationDetail';
-// import ProgramRegistration from './pages/ProgramRegistration';
-// import ApplicationProgram from './pages/ApplicationProgram';
+import React, { useEffect, useContext } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { UserDataContext } from "./context/userDataContext.js"; // UserDataContext 가져오기
+import axios from "axios";
 
-// const App = () => {
-//   return (
-//     <Router>
-//       <div>
-//         <Nav/>
-//         <Routes>
-//           <Route path="/" element={<MainPage />} />
-//           <Route 
-//             path="/main" 
-//             element={
-//               localStorage.getItem('user') ? <MainPage /> : <Navigate to="/login" replace />
-//             } 
-//           />
-//           <Route 
-//             path="/repage" 
-//             element={
-//               localStorage.getItem('user') ? <RePage /> : <Navigate to="/login" replace />
-//             }
-//           />
-//           <Route 
-//             path="/programlist" 
-//             element={
-//               localStorage.getItem('user') ? <ProgramList /> : <Navigate to="/login" replace />
-//             }
-//           />
-//           <Route 
-//             path="/applicationprogram/:programId" 
-//             element={
-//               localStorage.getItem('user') ? <ApplicationProgram /> : <Navigate to="/login" replace />
-//             }
-//           />
-//           <Route 
-//             path="/programregistration" 
-//             element={
-//               localStorage.getItem('user') ? <ProgramRegistration /> : <Navigate to="/login" replace />
-//             }
-//           />
-//           <Route 
-//             path="/completeprogram" 
-//             element={
-//               localStorage.getItem('user') ? <CompleteProgram /> : <Navigate to="/login" replace />
-//             }
-//           />
-//           <Route 
-//             path="/completedetail/:programId" 
-//             element={
-//               localStorage.getItem('user') ? <CompleteDetail /> : <Navigate to="/login" replace />
-//             }
-//           />
-//           <Route path="/" element={<Navigate to="/login" replace />} />
-//           <Route 
-//             path="/evaluationdetail/:programId/:studentId" 
-//             element={
-//               localStorage.getItem('user') ? <EvaluationDetail /> : <Navigate to="/login" replace />
-//             }
-//           />
-//         </Routes>
-//       </div>
-//     </Router>
-//   );
-// };
+//학생관련
 
-// export default App;
+import MainPage from "./stu_f/pages/MainPage/MainPage";
+import ProgramListPage from "./stu_f/pages/ProgramListPage/ProgramListPage";
+import ProgramDetailPage from "./stu_f/pages/ProgramDetailPage/ProgramDetailPage";
+import ReliefProgramPage from "./stu_f/pages/ReliefProgramPage/ReliefProgramPage";
+import LoanApplicationPage from "./stu_f/pages/LoanApplicationPage/LoanApplicationPage";
+import AdmNavBar from "./pro_f/component/admNav/admNav";
+import StudentNavBar from "./stu_f/components/NavBar/NavBar"
 
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import LoanApplication from './student/LoanApplication';
 
-function App() {
+//관리자
+
+import AdmMainPage from "./pro_f/pages/admMainPage";
+import CompleteDetail from "./pro_f/pages/CompleteDetail/CompleteDetail"
+import CompleteProgram from "./pro_f/pages/CompleteProgram/CompleteProgram";
+import ApplicationProgram from "./pro_f/pages/ApplicationProgram/ApplicationProgram";
+import EvaluationDetail from "./pro_f/pages/EvaluationDetail/EvaluationDetail";
+import ProgramList from "./pro_f/pages/ProgramList/ProgramList";
+import ProgramRegistration from "./pro_f/pages/ProgramRegistration/ProgramRegistration";
+import ReliefProgram from "./pro_f/pages/ReliefDetailPage/RePage";
+
+
+function AppContent() {
+  const location = useLocation();
+
+  // 특정 경로마다 보여지는 네비바가 다르게 해줍니다. 참고하세요.
+  const showNavBar = location.pathname !== "/";
+  const isAdminPage = location.pathname.startsWith("/adm");
+  const isStudentPage = location.pathname.startsWith("/stu");
+
   return (
+    <>
+      {showNavBar && (
+        <>
+          {isAdminPage && <AdmNavBar/>}
+          {isStudentPage && <StudentNavBar/>}
+        </>
+      )}
+      <Routes>
+          {/* 학생 라우트  */}
+        <Route path="/" element={<MainPage/>} />
+        <Route path="/stu/programlistpage" element={<ProgramListPage/>}/>
+        <Route path="/stu/programdetailpage" element={<ProgramDetailPage/>}/>
+        <Route path="/stu/loanapplicationpage" element={<LoanApplicationPage/>}/>
+        <Route path="/stu/reliefprogrampage" element={<ReliefProgramPage/>}/>
+
+
+        {/* 관리자 라우트 */}
+      <Route path="/adm/admmainpage" element={<AdmMainPage/>}/>
+      <Route path="/adm/completedetail" element={<CompleteDetail/>}/>
+      <Route path="/adm/completeprogram" element={<CompleteProgram/>}/>
+      <Route path="/adm/applicationprogram" element={<ApplicationProgram/>}/>
+      <Route path="/adm/evaluationdetail" element={<EvaluationDetail />}/>
+      <Route path="/adm/programregistration" element={<ProgramRegistration/>}/>
+      <Route path="/adm/reliefprogram" element={<ReliefProgram/>}/>
+      <Route path="/adm/programlist" element={<ProgramList/>}/>
+
+        {/* 교수 라우트 */}
+
+      </Routes>
+    </>
+  );
+}
+
+
+
+function App(){
+  const{setUserData} = useContext(UserDataContext);
+
+  useEffect(() => {
+    const stuId = sessionStorage.getItem("stu_id");
+    if (stuId) {
+      const fetchUserData = async () => {
+        try {
+          const response = await axios.post("http://100.94.142.127:3000/profile", { stu_id: stuId });
+          setUserData(response.data.student_profile);
+        } catch (error) {
+          console.error("사용자 데이터를 가져오는 데 실패했습니다:", error);
+        }
+      };
+
+      fetchUserData();
+    }
+  }, [setUserData]);
+
+
+  return(
     <Router>
-      <div>
-        <Routes>
-          <Route path="/" element={<LoanApplication />} />
-          {/* <Route 
-            path="/loan-application" 
-            element={
-              localStorage.getItem('user') ? <LoanApplication /> : <Navigate to="/login" replace />
-            } 
-          /> */}
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </div>
+      <AppContent/>
     </Router>
+
+
   );
 }
 
 export default App;
+
+
 
