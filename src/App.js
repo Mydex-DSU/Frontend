@@ -10,20 +10,20 @@ import ProgramListPage from "./stu_f/pages/ProgramListPage/ProgramListPage";
 import ProgramDetailPage from "./stu_f/pages/ProgramDetailPage/ProgramDetailPage";
 import ReliefProgramPage from "./stu_f/pages/ReliefProgramPage/ReliefProgramPage";
 import LoanApplicationPage from "./stu_f/pages/LoanApplicationPage/LoanApplicationPage";
-import AdmNavBar from "./pro_f/component/admNav/admNav";
+import AdmNavBar from "./adm_f/component/admNav/admNav.js";
 import StudentNavBar from "./stu_f/components/NavBar/NavBar"
 
 
 //관리자
 
-import AdmMainPage from "./pro_f/pages/admMainPage";
-import CompleteDetail from "./pro_f/pages/CompleteDetail/CompleteDetail"
-import CompleteProgram from "./pro_f/pages/CompleteProgram/CompleteProgram";
-import ApplicationProgram from "./pro_f/pages/ApplicationProgram/ApplicationProgram";
-import EvaluationDetail from "./pro_f/pages/EvaluationDetail/EvaluationDetail";
-import ProgramList from "./pro_f/pages/ProgramList/ProgramList";
-import ProgramRegistration from "./pro_f/pages/ProgramRegistration/ProgramRegistration";
-import ReliefProgram from "./pro_f/pages/ReliefDetailPage/RePage";
+import AdmMainPage from "./adm_f/pages/admMainPage.js";
+import CompleteDetail from "./adm_f/pages/CompleteDetail/CompleteDetail.js"
+import CompleteProgram from "./adm_f/pages/CompleteProgram/CompleteProgram.js";
+import ApplicationProgram from "./adm_f/pages/ApplicationProgram/ApplicationProgram.js";
+import EvaluationDetail from "./adm_f/pages/EvaluationDetail/EvaluationDetail.js";
+import ProgramList from "./adm_f/pages/ProgramList/ProgramList.js";
+import ProgramRegistration from "./adm_f/pages/ProgramRegistration/ProgramRegistration.js";
+import ReliefProgram from "./adm_f/pages/ReliefDetailPage/RePage.js";
 
 
 function AppContent() {
