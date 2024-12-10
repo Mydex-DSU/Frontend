@@ -1,0 +1,10 @@
+.adm-mydex-header {
+    width: 85%;
+    margin: 0 auto;
+    background-color: #DC143C;
+    color: white;
+    padding: 15px 20px;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 15px;
+}

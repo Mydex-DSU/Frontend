@@ -1,2 +1,23 @@
+
+----stu----
 npm install react-slick slick-carousal
 npm install react-router-dom
+
+import { Worker, Viewer } from '@react-pdf-viewer/core';
+
+
+
+
+
+-----adm-----
+npm install @react-pdf-viewer/core@3.12.0
+npm install @react-pdf-viewer/default-layout
+
+npm install @react-pdf-viewer/core@3.12.0
+
+
+
+------prof------
+
+
+

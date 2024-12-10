@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import "./LoanApplicationPage.css";
-import MydexPoints from "../../components/MydexPoints/MydexPoints";
-import { UserDataContext } from "../../context/userDataContext";
+import MydexPoints from "../../../components/MydexPoints/MydexPoints";
+import { UserDataContext } from "../../../context/userDataContext";
 import axios from "axios";
-import LoanPopup from "../../components/LoanPopup/LoanPopup";
+import LoanPopup from "../../../components/LoanPopup/LoanPopup";
 
 function LoanApplicationPage() {
   const { userData } = useContext(UserDataContext);

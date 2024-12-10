@@ -1,7 +1,7 @@
 import React,{useState, useEffect} from "react";
 import "./ReliefProgramPage.css";
 import axios from "axios";
-import RemedialProgramPopup from "../../components/RemedialProgramPopup/RemedialProgramPopup"; 
+import RemedialProgramPopup from "../../../components/RemedialProgramPopup/RemedialProgramPopup"; 
 
 function ReliefProgramPage() {
     

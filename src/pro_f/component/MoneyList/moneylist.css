@@ -1,0 +1,68 @@
+/* moneylist.css */
+.department-table-container {
+  padding: 20px;
+  max-width: 83%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.department-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 20px;
+}
+
+.department-table th,
+.department-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.department-table th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+  font-size: 14px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.department-table tr:last-child td {
+  border-bottom: none;
+}
+
+.department-table tr:hover {
+  background-color: #f5f5f5;
+  transition: background-color 0.3s ease;
+}
+
+.department-table td:nth-child(2),
+.department-table td:nth-child(3),
+.department-table td:nth-child(4) {
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .department-table-container {
+    padding: 10px;
+    max-width: 100%;
+  }
+
+  .department-table th,
+  .department-table td {
+    padding: 8px;
+    font-size: 14px;
+  }
+}

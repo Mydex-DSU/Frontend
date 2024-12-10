@@ -1,0 +1,95 @@
+.loan-application-page {
+    margin: 20px;
+  }
+  
+  .profile-section {
+    margin-bottom: 20px;
+  }
+  
+  .loan-info {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .loan-info h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .loan-info ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .loan-info ul li {
+    margin-bottom: 8px;
+    color: #e91e63;
+    font-weight: bold;
+  }
+  
+  .loan-apply {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .apply-button {
+    background-color: #e91e63;
+    color: #fff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .apply-button:hover {
+    background-color: #c2185b;
+  }
+  
+  .loan-history {
+    margin-top: 30px;
+  }
+  
+  .loan-history-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  
+  .loan-history-table th,
+  .loan-history-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .loan-history-table th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+  }
+  
+  .loan-history-table td {
+    vertical-align: middle;
+  }
+  
+  .loan-history-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* 고정 레이아웃 */
+  }
+  
+  .loan-history-table th,
+  .loan-history-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+    overflow: hidden; /* 넘치는 내용 숨기기 */
+    text-overflow: ellipsis; /* 말줄임표 처리 */
+    white-space: nowrap; /* 줄바꿈 방지 */
+  }
+  
+  .loan-history-table .loan-balance {
+    max-width: 150px; /* 열 최대 너비 제한 */
+  }
