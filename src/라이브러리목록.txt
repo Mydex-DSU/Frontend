@@ -1,0 +1,2 @@
+npm install react-slick slick-carousal
+npm install react-router-dom
