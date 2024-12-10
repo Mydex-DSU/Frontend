@@ -1,0 +1,55 @@
+.participating-programs {
+  padding: 20px 0; /* 좌우 padding 제거로 카드들이 왼쪽에 가까워짐 */
+    background-color: #f9f9f9;
+    max-width: 1200px;
+    margin: 0 auto; /* 가로 가운데 정렬 */
+    position: relative;
+    text-align: left; /* 내용물 왼쪽 정렬 */
+  }
+  
+  .programs-header {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1e88e5;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .programs-header span {
+    margin-right: 10px;
+  }
+  
+  .programs-container {
+    display: flex;
+    justify-content: space-between; /* 아이템 간 간격 균일화 */
+    gap: 20px; /* 카드 사이 간격 */
+    flex-wrap: wrap;
+  }
+  
+  .participating-programs .slick-slide {
+    flex: 0 0 auto; /* 슬라이드가 필요 이상으로 늘어나지 않도록 설정 */
+    width: calc(25% - 10px); /* 기본적으로 4개의 카드를 나열할 크기 */
+    max-width: calc(25% - 10px); /* 카드 최대 크기 설정 */
+    margin-right: 10px; /* 카드 간의 간격 */
+}
+
+.participating-programs .slick-slide.slick-active {
+    width: calc(50% - 10px); /* 두 개의 카드만 있을 때 적절히 크기 조정 */
+}
+
+.participating-programs .slick-list {
+    overflow: hidden; /* 슬라이더 바깥 내용 가리기 */
+}
+
+.participating-programs .slick-track {
+    display: flex;
+    justify-content: flex-start; /* 슬라이드가 왼쪽에서 시작되도록 설정 */
+    gap: 10px; /* 카드 간 간격 */
+}
+.program-card-row {
+  display: flex;
+  flex-wrap: wrap; /* 카드가 행을 넘어가면 새 줄로 이동 */
+  gap: 10px; /* 카드 간 간격 */
+  justify-content: flex-start; /* 왼쪽 정렬 */
+}

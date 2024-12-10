@@ -1,0 +1,54 @@
+.depart-re-temp-point {
+    margin: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+/* 학과 제목 박스 */
+.department-title-box {
+    background-color: #1F3550;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.department-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFFFFF; /* 텍스트 색상 흰색 */
+    margin: 0;
+}
+
+/* 포인트 박스와 링크 컨테이너 */
+.point-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* 박스 간의 간격 */
+}
+
+/* 포인트 박스 스타일 */
+.remain-point-box {
+    border: 2px solid #ddd;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #f9f9f9;
+    width: 150px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 링크 스타일 */
+.go-to-scholarship-application a {
+    font-size: 18px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.go-to-scholarship-application a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+}
