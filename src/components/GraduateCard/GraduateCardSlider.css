@@ -1,0 +1,36 @@
+.graduate-slider {
+    margin: 20px auto;
+    max-width: 1200px;
+    text-align: center;
+  }
+  
+  .graduate-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .graduate-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .graduate-header h3 {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .graduate-views {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .graduate-body p {
+    margin: 5px 0;
+    font-size: 16px;
+  }
+  

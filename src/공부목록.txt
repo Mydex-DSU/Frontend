@@ -1,0 +1,19 @@
+
+uselocation 활용
+
+<Link to="/program-list" state={{ userPrograms }}> -> 링크로 원하는 데이터를 해당 페이지로 보내줌
+
+const userPrograms = location.state?.userPrograms || []; -> 전달 받은 데이터 값 저장
+
+
+데이트 포멧 귀찮으니 여기에다가 복붙해둠
+
+const formatDate = (dateString) => {
+    if (!dateString) return "정보 없음";
+    const date = new Date(dateString);
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    return `${year}/${month}/${day}`;
+  };
+

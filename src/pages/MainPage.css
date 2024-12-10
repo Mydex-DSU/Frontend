@@ -1,0 +1,124 @@
+/* 전체 메인 페이지 스타일 */
+.main-container {
+  font-family: 'Arial', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* 로그인/로그아웃 버튼 */
+.auth-button-container {
+  text-align: right; /* 오른쪽 정렬 */
+  margin-bottom: 10px;
+}
+
+.auth-button {
+  padding: 10px 15px;
+  font-size: 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.auth-button:hover {
+  background-color: #0056b3;
+}
+
+/* 프로필 및 경고 컴포넌트 */
+.profile-component {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* 가로 정렬: LoanTemperaturePoint와 ReliefProgram */
+.horizontal-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* LoanTemperaturePoint와 ReliefProgram 컴포넌트 */
+.loan-temperature-point,
+.relief-program {
+  flex: 1;
+  max-width: 580px; /* 최대 너비 */
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* 참여 중인 프로그램 및 헤더 */
+.participating-programs-container {
+  margin-bottom: 10px;
+}
+
+.participating-programs {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* 노쇼 리스트 */
+.noshow-container {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+/* 테이블 스타일 */
+.noshow-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.noshow-table th,
+.noshow-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.noshow-table th {
+  background-color: #1F3550;
+  color: white;
+}
+
+/* 졸업생 카드 슬라이더 */
+.graduate-slider {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+/* 학부 남은 온도 포인트 */
+.depart-re-temp-point {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+}
+
+/* 헤더와 관련된 컴포넌트 간 간격 */
+.header-with-component {
+  margin-bottom: 10px;
+}
+
+/* 컴포넌트 간 기본 간격 */
+.general-component {
+  margin-bottom: 40px;
+}

@@ -1,0 +1,14 @@
+.status-badge {
+    background-color: #b3e5fc;
+    color: #0288d1;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 8px;
+    position: absolute;
+    top: -20px; /* 카드 위로 완전히 올라가도록 설정 */
+    left: 10px; /* 카드 왼쪽 끝에 맞춤 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 떠 있는 느낌 */
+    z-index: 10; /* 헤더 위에 표시되도록 설정 */
+  }
+  
