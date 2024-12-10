@@ -11,6 +11,8 @@ function StudentManagement() {
   const studentsPerPage = 5;
   const navigate = useNavigate();
 
+  
+
   useEffect(() => {
     const fetchStudents = async () => {
       try {
