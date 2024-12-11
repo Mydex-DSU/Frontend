@@ -1,154 +1,184 @@
-// SelectedDepartment.jsx
-import React, { useState } from 'react';
+// React Component (Updated SelectedDepartment.jsx)
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './selectedDepartment.css';
 
 const SelectedDepartment = () => {
+  const [facultyList, setFacultyList] = useState([]);
   const [selectedDepartment, setSelectedDepartment] = useState('소프트웨어융합대학');
-  const [year, setYear] = useState('2024');
+  const [selectedFacultyId, setSelectedFacultyId] = useState(4);
+
+  const [years, setYears] = useState([]);
   const [semester, setSemester] = useState('');
   const [programCode, setProgramCode] = useState('');
   const [programName, setProgramName] = useState('');
   const [selectedOption, setSelectedOption] = useState('비교과 프로그램 개설');
-  const [showOptions, setShowOptions] = useState();
+  const [budgetData, setBudgetData] = useState([]);
+  const [allUseBudgetData, setAllUseBudgetData] = useState(null);
+  const [allRemainBudgetData, setallRemainBudgetData] = useState(null);
+  const [filteredData, setFilteredData] = useState([]);
 
-  const budgetData = [
-    {
-      department: '소프트웨어학과',
-      code: '193567',
-      name: 'MD - 컴퓨터알고리즘을 위한 아동사례 특강',
-      amount: -100000,
-      points: 20,
-      date: '2024-12-16',
-      semester:"1학기"
-    },
-    {
-      department: '소프트웨어학과',
-      code: '185673',
-      name: 'SW개발역량강소기업 취업 플러스 포럼 특강',
-      amount: 200000,
-      points: 40,
-      date: '2024-11-04',
-      semester:"2학기"
-    },
-    {
-      department: '소프트웨어학과',
-      code: '185673',
-      name: 'SW개발역량강소기업 취업 플러스 포럼 특강',
-      amount: -1000000,
-      points: 160,
-      date: '2024-06-20',
-      semester:"1학기"
-    },
-    {
-      department: '소프트웨어학과',
-      code: '125223',
-      name: '융합전공과정 프로그램 - 비지니스 캔버스 워크숍',
-      amount: -500000,
-      points: 100,
-      date: '2024-02-11',
-      semester:"1학기"
-    },
-    {
-      department: '소프트웨어학과',
-      code: '133238',
-      name: '문제해결능력향상을 위한 취업 스토리 워크숍',
-      amount: -400000,
-      points: 80,
-      date: '2024-01-16',
-      semester:"1학기"
-    }
-  ];
+  useEffect(() => {
+    const fetchFacultyList = async () => {
+      try {
+        const response = await axios.get('http://100.94.142.127:3000/faculty');
+        setFacultyList(response.data.faculty || []);
+      } catch (error) {
+        console.error('Faculty list fetch error:', error);
+      }
+    };
 
+    fetchFacultyList();
+  }, []);
+
+  useEffect(() => {
+    const fetchBudgetData = async () => {
+      try {
+        const url = selectedOption === 'Mydex 온도 포인트 장학금'
+          ? 'http://100.94.142.127:3000/faculty/transactions/mydexpoint/detail'
+          : 'http://100.94.142.127:3000/faculty/transactions/program/detail';
+
+
+        const response = await axios.post(url, {
+          faculty_id: selectedFacultyId
+        });
+
+        const transactionData = response.data.transaction || [];
+        const useProgramMoney = response.data.transaction_use_money[0] || { faculty_type_sum: 0 }; // 기본값 추가
+        const remainProgramMoney = response.data.transaction_remian_money[0] || { faculty_budget_amount: 0 }; // 기본값 추가
+
+        // Sort transaction data by date in descending order
+        const sortedTransactionData = transactionData.sort((a, b) => new Date(b.faculty_payment_date) - new Date(a.faculty_payment_date));
+
+        setBudgetData(sortedTransactionData);
+        setFilteredData(sortedTransactionData); // 초기에는 모든 데이터를 보여줌
+        setAllUseBudgetData(useProgramMoney);
+        setallRemainBudgetData(remainProgramMoney);
+
+        // Extract years from transactionData
+        const extractedYears = Array.from(new Set(sortedTransactionData.map(item => new Date(item.faculty_payment_date).getFullYear())));
+        setYears(extractedYears.sort((a, b) => b - a)); // Sort years in descending order
+      } catch (error) {
+        console.error('Budget data fetch error:', error);
+      }
+    };
+
+    fetchBudgetData();
+  }, [selectedFacultyId, selectedOption]);
+
+  const handleSearch = () => {
+    const filtered = budgetData.filter(item =>
+      item.department_name && item.department_name.includes(programName)
+    );
+    setFilteredData(filtered);
+  };
+
+  const handleFacultyChange = (event) => {
+    const selectedFaculty = facultyList.find(faculty => faculty.faculty_name === event.target.value);
+    setSelectedDepartment(event.target.value);
+    setSelectedFacultyId(selectedFaculty ? selectedFaculty.faculty_id : null);
+  };
 
   return (
     <div className="budget-container">
       <h2>학부별 예산 처리 거래 내역</h2>
-      
+
       <div className="controls-wrapper">
         <div className="select-wrapper">
           <select 
             value={selectedDepartment}
-            onChange={(e) => setSelectedDepartment(e.target.value)}
+            onChange={handleFacultyChange}
             className="department-select"
           >
-            <option value="소프트웨어융합대학">소프트웨어융합대학</option>
+            {facultyList.map((faculty) => (
+              <option key={faculty.faculty_id} value={faculty.faculty_name}>{faculty.faculty_name}</option>
+            ))}
           </select>
-          
-          <div>
-            <select value={selectedOption} onChange={(e) => setSelectedOption(e.target.value)}
-                className='department-select'>
-              <option>비교과 프로그램</option>
-              <option>Mydex 온도 포인트 장학금</option>
-            </select>
-          </div>
+
+          <select 
+            value={selectedOption} 
+            onChange={(e) => setSelectedOption(e.target.value)}
+            className='department-select'>
+            <option>비교과 프로그램</option>
+            <option>Mydex 온도 포인트 장학금</option>
+          </select>
         </div>
 
         <div className="budget-info">
           <div className="budget-amounts">
-            <span>총 남은 금액: {(6750000).toLocaleString()}</span>
-            <span>비교과 프로그램 사용 금액: {(-1800000).toLocaleString()}</span>
-          </div>
-          <div className="period-select">
-            <select value={year} onChange={(e) => setYear(e.target.value)}>
-              <option>2024년</option>
-            </select>
-            <select value={semester} onChange={(e) => setSemester(e.target.value)}>
-              <option>1학기</option>
-              <option>2학기</option>
-            </select>
+            <span>총 남은 금액: {parseInt(allRemainBudgetData?.faculty_budget_amount || 0).toLocaleString()}원</span>
+            <span>
+              {selectedOption === 'Mydex 온도 포인트 장학금' ? '장학금 사용 금액 합계: ' : '비교과 프로그램 사용 금액 합계: '}
+              {parseInt(allUseBudgetData?.faculty_type_sum || 0).toLocaleString()}원
+            </span>
           </div>
         </div>
-        <div className="table-container">
-             <table>
-                <thead>
-                    <tr>
-                    <th>학과</th>
-                    <th>비교과 프로그램 번호</th>
-                    <th>비교과 프로그램 이름</th>
-                    <th>거래 금액</th>
-                    <th>Mydex온도 포인트</th>
-                    <th>예산 결재 날짜</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {budgetData.map((item, index) => (
-                    <tr key={index}>
-                        <td>{item.department}</td>
-                        <td>{item.code}</td>
-                        <td>{item.name}</td>
-                        <td className={item.amount < 0 ? 'negative' : 'positive'}>
-                        {item.amount > 0 ? '+' : ''}{item.amount.toLocaleString()}
-                        </td>
-                        <td>{item.points}</td>
-                        <td>{item.date}</td>
-                    </tr>
-                    ))}
-                </tbody>
-                </table>
+        <div className="period-select">
+          <input 
+            type="text"
+            value={programName}
+            onChange={(e) => setProgramName(e.target.value)}
+            placeholder={selectedOption === 'Mydex 온도 포인트 장학금' ? '이름으로 검색' : '학과 이름으로 검색'}
+            className="department-select-search"
+          />
+          <button className="department-search-btn" onClick={handleSearch}>검색</button>
+      </div>
 
+      <div className="table-container">
+          <table>
+            <thead>
+              <tr>
+                {selectedOption === 'Mydex 온도 포인트 장학금' ? (
+                  <>
+                  <th>학과</th>
+                  <th>학번</th>
+                  <th>이름</th>
+                  <th>받은 Mydex 온도 포인트 장학금</th>
+                  <th>예산 결제 날짜</th>
+                </>
+                ) : (
+                  <>
+                  <th>학과</th>
+                  <th>비교과 프로그램 번호</th>
+                  <th>비교과 프로그램 이름</th>
+                  <th>거래 금액</th>
+                  <th>Mydex 온도 포인트</th>
+                  <th>예산 결제 날짜</th>
+                  </>
+                )}
+              </tr>
+            </thead>
+            <tbody>
+              {filteredData.map((item, index) => (
+                <tr key={index}>
+                  {selectedOption === 'Mydex 온도 포인트 장학금' ? (
+                      <>
+                      <td>{item.department_name}</td>
+                      <td>{item.stu_id}</td>
+                      <td>{item.stu_name}</td>
+                      <td>{item.requested_scholarship_points}</td>
+                      <td>{item.faculty_payment_date.split('T')[0]}</td>
+                    </>
+                  ) : (
+                    <>
+                    <td>{item.department_name}</td>
+                    <td>{item.program_id}</td>
+                    <td>{item.program_name}</td>
+                    <td className={item.faculty_used_budget < 0 ? 'negative' : 'positive'}>
+                      {item.faculty_used_budget > 0 ? '+' : ''}{item.faculty_used_budget.toLocaleString()}원
+                    </td>
+                    <td>{item.program_mydex_points}</td>
+                    <td>{item.faculty_payment_date.split('T')[0]}</td>
+                    </>
+                  )}
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
         <div className="search-wrapper">
           <p className="point-notice">Mydex 온도 포인트는 1점 당 5000원 입니다.</p>
-          <div className="search-box">
-            <div className="input-group">
-              <label>프로그램번호:</label>
-              <input
-                type="text"
-                value={programCode}
-                onChange={(e) => setProgramCode(e.target.value)}
-              />
-            </div>
-            <div className="input-group">
-              <label>프로그램이름:</label>
-              <input
-                type="text"
-                value={programName}
-                onChange={(e) => setProgramName(e.target.value)}
-              />
-            </div>
-            <button className="search-btn">검색</button>
-          </div>
         </div>
       </div>
     </div>

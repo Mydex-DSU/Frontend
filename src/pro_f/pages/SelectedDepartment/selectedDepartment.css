@@ -55,8 +55,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 0;
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* 아래 여백 추가 */
   }
   
   .budget-amounts {
@@ -73,10 +72,13 @@
     padding: 5px 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    justify-content: center; /* 중앙 정렬 */
   }
+  
   
   .table-container {
     position: relative;
+    margin-top: 10px; /* 위쪽 여백 추가 */
   }
   
   .header-titles {
@@ -154,6 +156,26 @@
     align-items: center;
   }
   
+  .department-year-select {
+    margin-top: 10px;
+  }
+
+  .department-select-search{
+    margin-top: 10px;
+    height: 30px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+
+  .search-box {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  
   .input-group {
     display: flex;
     align-items: center;
@@ -167,11 +189,15 @@
     width: 150px;
   }
   
-  .search-btn {
+  .department-search-btn {
+    margin-top: 10px;
     padding: 5px 15px;
     border: 1px solid #ddd;
     border-radius: 4px;
     background-color: white;
     cursor: pointer;
   }
+  
+
+
   
