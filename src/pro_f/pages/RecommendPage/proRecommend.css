@@ -1,15 +1,5 @@
-.recommend-container {
-    width: 600px; /* 폭 조정 */
-    margin: 50px auto;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9f9;
-    overflow: hidden;
-  }
-  
-  .header {
-    
+
+  .header.pro1 {
     color: white;
     text-align: center;
     padding: 15px;
@@ -18,18 +8,46 @@
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
   }
+
   
-  .recommend-form {
+  .proheader-pro1 {
+    width: 100%;
+    padding: 12px 0;
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    margin: 0; /* 모든 마진 제거 */
+    border: none; /* 테두리 없음 */
+    border-radius: 5px; /* 모든 둥근 모서리 제거 */
+  }
+  
+  .recommend-container.pro1 {
+    width: 600px;
+    margin: 100px auto; /* 상단 여백 증가 */
+    padding: 20px;
+    background-color: #f9f9f9;
+   
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 선택적으로 그림자 추가 */
+    padding: 0; /* 패딩 제거 */
+  }
+  
+  /* 기타 스타일은 변경 없음 */
+  
+
+  .recommend-form.pro1 {
     padding: 20px;
   }
   
-  .form-group {
+  .form-group.pro1 {
     margin-bottom: 15px;  display: flex;
     flex-direction: column; /* 세로 정렬 */
     align-items: flex-start; /* 왼쪽 정렬 */
   }
   
-  .styled-label {
+  .styled-label.pro1 {
     font-size: 14px;
     font-weight: bold;
     color: #003366;
@@ -37,8 +55,8 @@
     text-align: left; /* 레이블 왼쪽 정렬 */
   }
   
-  .form-group input,
-  .form-group select {
+  .form-group.pro1 input,
+  .form-group.pro1 select {
     width: 100%; /* 입력 필드가 부모 요소에 맞춤 */
     max-width: 100px; /* 기본 입력 필드 최대 폭 제한 */
     padding: 8px;
@@ -49,49 +67,32 @@
   }
   
   /* 학과 텍스트박스만 폭을 넓히는 스타일 */
-  #department {
+  #department.pro1 {
     max-width: 150px; /* 학과 필드의 최대 폭 설정 */
     width: 100%;
   }
   
-  .phone-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* 왼쪽 정렬 */
+   /* 우수 졸업생 추천 목록 컨테이너 */
+   .recommend-list-title-pro1 {
+    padding: 20px;
+    background-color: #ffffff; /* 흰색 배경 */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 20px auto; /* Adjust margin to add spacing around the container */
+    width: 90%; /* Adjust width as needed */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: add shadow for better visibility */
   }
   
-  .phone-inputs {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-  
-  .phone-inputs input {
-    width: 60px;
-    text-align: center;
-  }
-  
-  .phone-inputs span {
-    font-size: 16px;
-    margin: 0 5px;
-  }
-  
-  .inline-group {
+  .inline-group.pro1 {
     display: flex;
     gap: 10px;
     align-items: center;
     justify-content: flex-start; /* 왼쪽 정렬 */
   }
   
-  .inline-group select,
-  .inline-group input {
+  .inline-group.pro1 select,
+  .inline-group.pro1 input {
     flex: 1;
     max-width: 150px; /* 입력 필드와 셀렉트박스 크기 제한 */
-  }
-  
-  @media (max-width: 768px) {
-    .recommend-container {
-      width: 90%;
-    }
   }
   

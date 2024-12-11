@@ -131,21 +131,17 @@ function ProMainPage() {
   }
 
   return (
-    // <div className="main-container">
-    //   <div className="auth-button-container">
-
-    //   </div>
-    <div className="student-management-container">
-        <button className="auth-button" onClick={handleLogout}>
+    <div className="student-management-container pro1">
+        <button className="auth-button pro1" onClick={handleLogout}>
         로그아웃
         </button>
-        <div className="proMainheader">
+        <div className="proMainheader pro1">
             <h2>★ 지도학생 관리</h2>
         </div>
 
         {hasWarningStudents && <WarningMessage />}
 
-        <div className="search-and-table">
+        <div className="search-and-table pro1">
             <SearchBar
             searchKeyword={searchKeyword}
             setSearchKeyword={setSearchKeyword}
@@ -158,39 +154,34 @@ function ProMainPage() {
 
         <Pagination totalPages={totalPages} currentPage={currentPage} handlePageChange={handlePageChange} />
 
-        {/* <RecommendSection onRecommendClick={handleRecommendClick} /> */}
         <RecommendSection checkRecommend={checkRecommend} checkRecommendStu={checkRecommendStu} onRecommendClick={handleRecommendClick} />
 
     </div>
-    //</div>
   );
 }
 
 
-// 경고 메시지 컴포넌트
 const WarningMessage = () => (
-    <div className="warning-message">
+    <div className="warning-message pro1">
       <h2>학생 권한이 제한된<br /> 지도학생이 있습니다.</h2>
     </div>
   );
-  
-  // 검색 바 컴포넌트
-  const SearchBar = ({ searchKeyword, setSearchKeyword, selectedDepartment, setSelectedDepartment, handleSearch }) => (
-    <div className="search-bar">
+
+const SearchBar = ({ searchKeyword, setSearchKeyword, selectedDepartment, setSelectedDepartment, handleSearch }) => (
+    <div className="search-bar pro1">
       <input
         type="text"
-        className="search-input"
+        className="search-input pro1"
         placeholder="학번 또는 이름 검색"
         value={searchKeyword}
         onChange={(e) => setSearchKeyword(e.target.value)}
       />
-      <button className="search-button" onClick={handleSearch}>검색</button>
+      <button className="search-button pro1" onClick={handleSearch}>검색</button>
     </div>
   );
-  
-  // 학생 테이블 컴포넌트
-  const StudentTable = ({ students, handleReset }) => (
-    <table className="student-table">
+
+const StudentTable = ({ students, handleReset }) => (
+    <table className="student-table pro1">
       <thead>
         <tr>
           <th>학과</th>
@@ -209,8 +200,7 @@ const WarningMessage = () => (
             <td>{student.stu_id}</td>
             <td>{student.stu_name}</td>
             <td>{student.stu_current_warning_count}</td>
-                {/* 노쇼 횟수: 값이 없으면 0으로 표시 */}
-                <td>{student.stu_no_show_count || 0}</td>
+            <td>{student.stu_no_show_count || 0}</td>
             <td>
               {student.stu_reset_available_count !== undefined
                 ? student.stu_reset_available_count
@@ -219,7 +209,7 @@ const WarningMessage = () => (
             <td>
               {(student.stu_current_warning_count === 2 || student.stu_current_warning_count === 3) && (student.stu_reset_available_count === 1) &&
               (
-                <button className="reset-button" onClick={() => handleReset(student.stu_id)}>
+                <button className="reset-button pro1" onClick={() => handleReset(student.stu_id)}>
                   초기화
                 </button>
               )}
@@ -229,30 +219,29 @@ const WarningMessage = () => (
       </tbody>
     </table>
   );
-  // 페이지네이션 컴포넌트
-  const Pagination = ({ totalPages, currentPage, handlePageChange }) => (
-    <div className="pagination">
+
+const Pagination = ({ totalPages, currentPage, handlePageChange }) => (
+    <div className="pagination pro1">
       {Array.from({ length: totalPages }, (_, index) => (
         <button
           key={index + 1}
           onClick={() => handlePageChange(index + 1)}
-          className={currentPage === index + 1 ? 'active' : ''}
+          className={currentPage === index + 1 ? 'active pro1' : ''}
         >
           {index + 1}
         </button>
       ))}
     </div>
   );
-  
-  // 우수 졸업생 추천 컴포넌트
-  const RecommendSection = ({ checkRecommend, onRecommendClick, checkRecommendStu }) => (
-    <div className="recommend-section">
-      <div className="recommend-header">
+
+const RecommendSection = ({ checkRecommend, onRecommendClick, checkRecommendStu }) => (
+    <div className="recommend-section pro1">
+      <div className="recommend-header pro1">
         <h2>★ 우수 졸업생 추천하러 가기</h2>
       </div>
-      <div className="recommend-box">
-        <div className="recommend-content">
-          <span className="icon">🎓</span>
+      <div className="recommend-box pro1">
+        <div className="recommend-content pro1">
+          <span className="icon pro1">🎓</span>
           <p>
           {checkRecommend ? (
             <>
@@ -265,14 +254,12 @@ const WarningMessage = () => (
           </p>
         </div>
         {!checkRecommend && (
-          <button className="recommend-button" onClick={onRecommendClick}>
+          <button className="recommend-button pro1" onClick={onRecommendClick}>
             추천 하러 가기 &gt;
           </button>
         )}
       </div>
     </div>
   );
-  
-  
 
 export default ProMainPage;
