@@ -14,10 +14,9 @@ const MainPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const userInfo = sessionStorage.getItem('admin');
-    if (userInfo) {
-      const user = JSON.parse(userInfo);
-      setLoggedInUser(user.adm_id);
+    const adm_id = sessionStorage.getItem('admin');
+    if (adm_id) {
+      setLoggedInUser(adm_id);
     } else {
       setLoggedInUser(null);
     }
@@ -38,18 +37,19 @@ const MainPage = () => {
 
   return (
     <div>
-      <div className="login-container">
+      <div className="adm_login-container">
         {loggedInUser && (
-          <div className="user-info">
-            <button className="logout-button" onClick={handleLogout}>로그아웃</button>
+          <div className="adm_user-info">
+            <button className="adm_logout-button" onClick={handleLogout}>로그아웃</button>
           </div>
         )}
       </div>
+
       <ReProg/>
       <Program/>
       <MoneyBt onBudgetCalculated={handleBudgetCalculated} />
-      <Mydex/>
       <MoneyList budgetUpdated={budgetUpdated} />
+      <Mydex/>
       <ChartList/>
       <SelectedDepartment/>
     </div>

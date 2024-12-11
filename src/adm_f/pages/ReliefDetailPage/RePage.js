@@ -153,7 +153,7 @@ const RePage = () => {
   ];
 
   return (
-    <div className="relief-program">
+    <div className="adm_relief-program">
       <h2>구제 프로그램 신청 목록</h2>
       <table>
         <thead>
@@ -182,7 +182,7 @@ const RePage = () => {
       <button onClick={handleBack}>뒤로가기</button>
       <div>
         <h2>신청학생 목록</h2>
-        <table className="re-table">
+        <table className="adm_re-table">
           <thead>
             <tr>
               <th>구제프로그램 이름</th>

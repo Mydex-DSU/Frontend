@@ -78,13 +78,13 @@ const EvaluationDetail = () => {
     if (!student) return <div className="no-data">학생 정보가 없습니다.</div>;
 
     return (
-        <div className="evaluation-container">
-            <h1 className="evaluation-title">학생 평가하기 상세</h1>
+        <div className="adm_evaluation-container">
+            <h1 className="adm_evaluation-title">학생 평가하기 상세</h1>
             
-            <div className="notification-box">
-                <div className="icon-text">
-                    <span className="bell-icon">🔔</span>
-                    <div className="notification-text">
+            <div className="adm_notification-box">
+                <div className="adm_icon-text">
+                    <span className="adm_bell-icon">🔔</span>
+                    <div className="adm_notification-text">
                         <p>이 비교과 프로그램의 종류는 {program.programtype_name}입니다.</p>
                         <p>학생의 출석률({student.attendance_rate || '0'}%)로 비교과 참여여부를 판단하세요.</p>
                         <p>이 비교과프로그램에서 학생에게 부여할 포인트는 {program.program_mydex_points}점입니다.</p>
@@ -93,11 +93,11 @@ const EvaluationDetail = () => {
                 </div>
             </div>
 
-            <div className="points-info">
+            <div className="adm_points-info">
                 <p>학생에게 부여할 수 있는 포인트는 -{program.program_mydex_points},~{program.program_mydex_points}점 입니다.</p>
             </div>
 
-            <div className="student-info">
+            <div className="adm_student-info">
                 <table>
                     <thead>
                         <tr>
@@ -122,7 +122,7 @@ const EvaluationDetail = () => {
                 </table>
             </div>
 
-            <div className="points-input">
+            <div className="adm_points-input">
                 <h3>학생이 받을 Mydex 온도 포인트 부여</h3>
                 <input 
                     type="text" 
@@ -133,7 +133,7 @@ const EvaluationDetail = () => {
                 />
             </div>
 
-            <div className="modal-content">
+            <div className="adm_modal-content">
                 <button 
                     className="confirm-button"
                     onClick={handleConfirm}

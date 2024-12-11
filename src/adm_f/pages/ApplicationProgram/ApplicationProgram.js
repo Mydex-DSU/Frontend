@@ -62,21 +62,21 @@ const ApplicationProgram = () => {
 
   return (
     <>
-      <div className="header">
+      <div className="adm_header">
         <h2>비교과 프로그램 상세</h2>
         <button onClick={handleBack}>목록</button>
       </div>
   
-      <div className="program-detail">
-        <div className="program-wrapper">
-          <img src={programData.image} alt={programData.title} className="program-poster" />
-          <div className="program-description">
+      <div className="adm_program-detail">
+        <div className="adm_program-wrapper">
+          <img src={programData.image} alt={programData.title} className="adm_program-poster" />
+          <div className="adm_program-description">
             <h3>{programData.title}</h3>
-            <div className="program-info-list">
+            <div className="adm_program-info-list">
               {Object.entries(programData.details).map(([key, value]) => (
-                <div className="info-item" key={key}>
-                  <span className="info-label">{key}</span>
-                  <span className="info-value">{value}</span>
+                <div className="adm_info-item" key={key}>
+                  <span className="adm_info-label">{key}</span>
+                  <span className="adm_info-value">{value}</span>
                 </div>
               ))}
             </div>
@@ -84,7 +84,7 @@ const ApplicationProgram = () => {
         </div>
       </div>
   
-      <div className="student-section">
+      <div className="adm_student-section">
         <h3>신청학생 목록</h3>
         <table>
           <thead>

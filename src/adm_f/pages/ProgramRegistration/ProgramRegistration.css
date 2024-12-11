@@ -1,4 +1,4 @@
-.registration-wrapper {
+.adm_registration-wrapper {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
@@ -6,21 +6,21 @@
   gap: 20px;
 }
 
-.program-info-section {
+.adm_program-info-section {
   flex: 0.6;
   border: 1px solid #ddd;
   border-radius: 4px;
   overflow: hidden;
 }
 
-.mydex-points-section {
+.adm_mydex-points-section {
   flex: 0.4;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.section-title {
+.adm_section-title {
   background-color: #1e3a5f;
   color: white;
   padding: 10px 20px;
@@ -28,14 +28,14 @@
   font-size: 16px;
 }
 
-.points-table {
+.adm_points-table {
   background-color: white;
   border: 1px solid #ddd;
   border-radius: 4px;
   overflow: hidden;
 }
 
-.point-row {
+.adm_point-row {
   display: flex;
   justify-content: space-between;
   padding: 8px 20px;
@@ -43,21 +43,21 @@
   font-size: 14px;
 }
 
-.point-row:last-child {
+.adm_point-row:last-child {
   border-bottom: none;
 }
 
-.mydex-points-input {
+.adm_mydex-points-input {
   border: 1px solid #ddd;
   border-radius: 4px;
   overflow: hidden;
 }
 
-.points-input-container {
+.adm_points-input-container {
   padding: 15px;
 }
 
-.points-input-container input {
+.adm_points-input-container input {
   width: 100%;
   padding: 8px;
   border: 1px solid #ddd;
@@ -65,7 +65,7 @@
   margin-bottom: 15px;
 }
 
-.button-group {
+.adm_button-group {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -73,8 +73,8 @@
   background-color: #f5f5f5;
 }
 
-.cancel-btn,
-.submit-btn {
+.adm_cancel-btn,
+.adm_submit-btn {
   padding: 8px 25px;
   border: none;
   border-radius: 4px;
@@ -82,49 +82,37 @@
   font-size: 14px;
 }
 
-.cancel-btn {
+.adm_cancel-btn {
   background-color: #f0f0f0;
 }
 
-.submit-btn {
+.adm_submit-btn {
   background-color: #dc1e35;
   color: white;
 }
 
-.form-container {
+.adm_form-container {
   padding: 15px;
   background-color: white;
 }
 
-.input-group {
+.adm_input-group {
   margin-bottom: 12px;
 }
 
-.input-group label {
+.adm_input-group label {
   display: block;
   margin-bottom: 5px;
   font-size: 14px;
   font-weight: bold;
 }
 
-input[type="text"],
-input[type="number"],
-input[type="datetime-local"],
-select,
-textarea {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-.image-upload-container {
+.adm_image-upload-container {
   background-color: #f5f5f5;
   padding: 15px;
 }
 
-.image-upload-box {
+.adm_image-upload-box {
   border: 2px dashed #ccc;
   height: 250px;
   display: flex;
@@ -136,7 +124,7 @@ textarea {
   font-size: 14px;
 }
 
-.image-input {
+.adm_image-input {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -144,65 +132,60 @@ textarea {
   cursor: pointer;
 }
 
-.date-range {
+.adm_date-range {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.date-range input {
+.adm_date-range input {
   flex: 1;
 }
 
-.input-with-unit {
+.adm_input-with-unit {
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
-.input-with-unit input {
+.adm_input-with-unit input {
   flex: 1;
 }
 
-.input-with-unit span {
+.adm_input-with-unit span {
   white-space: nowrap;
 }
 
-.semester-select {
+.adm_semester-select {
   display: flex;
   gap: 10px;
 }
 
-.semester-select select {
+.adm_semester-select select {
   flex: 1;
 }
 
-textarea {
-  min-height: 100px;
-  resize: vertical;
-}
-
-.submit-btn:hover {
+.adm_submit-btn:hover {
   background-color: #b01829;
 }
 
-.cancel-btn:hover {
+.adm_cancel-btn:hover {
   background-color: #e0e0e0;
 }
 
-.image-upload-box img {
+.adm_image-upload-box img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
 }
 
 @media (max-width: 768px) {
-  .registration-wrapper {
+  .adm_registration-wrapper {
     flex-direction: column;
   }
   
-  .program-info-section,
-  .mydex-points-section {
+  .adm_program-info-section,
+  .adm_mydex-points-section {
     flex: 1;
     width: 100%;
   }

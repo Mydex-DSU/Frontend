@@ -29,11 +29,11 @@ const MoneyBt = ({ onBudgetCalculated }) => {
   };
 
   return (
-    <div className="budget-form-container">
-      <h1 className="form-title">학부별 예산 선정</h1>
+    <div className="adm_budget-form-container">
+      <h1 className="adm_form-title">학부별 예산 선정</h1>
       
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
+        <div className="adm_form-group">
           <label htmlFor="budget">총 예산 금액</label>
           <input
             type="number"
@@ -44,7 +44,7 @@ const MoneyBt = ({ onBudgetCalculated }) => {
           />
         </div>
 
-        <div className="form-group">
+        <div className="adm_form-group">
           <label htmlFor="startDate">개강일</label>
           <input
             type="date"
@@ -54,7 +54,7 @@ const MoneyBt = ({ onBudgetCalculated }) => {
           />
         </div>
 
-        <div className="form-group">
+        <div className="adm_form-group">
           <label htmlFor="endDate">종강일</label>
           <input
             type="date"
@@ -64,12 +64,12 @@ const MoneyBt = ({ onBudgetCalculated }) => {
           />
         </div>
 
-        <div className="button-container">
-          <button type="submit" className="submit-button">산정하기</button>
+        <div className="adm_button-container">
+          <button type="submit" className="adm_submit-button">산정하기</button>
         </div>
       </form>
 
-      {message && <p className="message">{message}</p>}
+      {message && <p className="adm_message">{message}</p>}
     </div>
   );
 };

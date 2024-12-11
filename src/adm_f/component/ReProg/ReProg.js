@@ -14,10 +14,12 @@ const ReProg = () => {
       const adminString = sessionStorage.getItem('admin');
       const admin = JSON.parse(adminString);
 
-      if (!admin || !admin.adm_id) {
-        console.error('사용자 정보가 없습니다.');
-        return;
-      }
+      console.log(adminString)
+      console.log(admin)
+      // if (!admin || !admin.adm_id) {
+      //   console.error('사용자 정보가 없습니다.');
+      //   return;
+      // }
 
       const response = await axios.get(`http://100.94.142.127:3000/remedialprogram`, {
         params: { adm_id: admin.adm_id },
@@ -34,10 +36,10 @@ const ReProg = () => {
   };
 
   return (
-    <div className="mydex-container">
-      <div className="program-container">
-        <div className="program-header">구제프로그램 신청 목록</div>
-        <table className="mydex-table">
+    <div className="adm_mydex-container">
+      <div className="adm_program-container">
+        <div className="adm_program-header">구제프로그램 신청 목록</div>
+        <table className="adm_mydex-table">
           <thead>
             <tr>
               <th>구제프로그램 이름</th>
@@ -47,7 +49,7 @@ const ReProg = () => {
             </tr>
           </thead>
           <tbody>
-            {applications.slice(0, 5).map((app, index) => (
+            {applications.slice(0, 4).map((app, index) => (
               <tr key={index}>
                 <td>{app.remedialprogram_name}</td>
                 <td>{app.stu_id}</td>
@@ -57,7 +59,7 @@ const ReProg = () => {
             ))}
           </tbody>
         </table>
-        <a href="/adm/reliefprogram" className="more-link">구제프로그램 신청 목록 ＞</a>
+        <a href="/adm/reliefprogram" className="adm_more-link">구제프로그램 신청 목록 ＞</a>
       </div>
     </div>
   );

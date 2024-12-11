@@ -23,7 +23,7 @@ import EvaluationDetail from "./adm_f/pages/EvaluationDetail/EvaluationDetail.js
 import ProgramList from "./adm_f/pages/ProgramList/ProgramList.js";
 import ProgramRegistration from "./adm_f/pages/ProgramRegistration/ProgramRegistration.js";
 import ReliefProgram from "./adm_f/pages/ReliefDetailPage/RePage.js";
-
+import FacultyTransaction from "./adm_f/pages/FacultyTransaction/FacultyTransactionPage.js";
 
 function AppContent() {
   const location = useLocation();
@@ -59,6 +59,7 @@ function AppContent() {
       <Route path="/adm/programregistration" element={<ProgramRegistration/>}/>
       <Route path="/adm/reliefprogram" element={<ReliefProgram/>}/>
       <Route path="/adm/programlist" element={<ProgramList/>}/>
+      <Route path="/adm/facultytransaction" element={<FacultyTransaction/>}/>
 
         {/* 교수 라우트 */}
 

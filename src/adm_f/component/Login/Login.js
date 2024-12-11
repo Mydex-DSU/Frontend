@@ -1,5 +1,5 @@
 // Login.jsx
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './login.css';
@@ -12,37 +12,37 @@ const Login = ({ isOpen, onClose, onLogin }) => {
 
   if (!isOpen) return null;
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-    const response = await axios.post('http://100.94.142.127:3000/login/admin', {
-      adm_name: managerId
-    });
-
-    if (response.status === 200) {
-      const adminData = {
-        adm_id: response.data.adm_id,
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://100.94.142.127:3000/login/admin', {
         adm_name: managerId
-      };
-      // 세션 스토리지에 데이터 저장
-      sessionStorage.setItem('admin', JSON.stringify(adminData));
-      setSuccessMessage('로그인 성공!');
+      });
       console.log(response.data)
-      setErrorMessage('');
-      onLogin(managerId);
-      setTimeout(() => {
-        onClose();
-        navigate('/adm/admmainpage');
-      }, 500);
+      console.log(response.data.adm_id)
+      if (response.status === 200) {
+        // 세션 스토리지에 ID 저장
+        sessionStorage.setItem('admin', response.data.adm_id);
+        setSuccessMessage('로그인 성공!');
+        console.log(response.data);
+        setErrorMessage('');
+        onLogin(managerId);
+        setTimeout(() => {
+          onClose();
+          navigate('/adm/admmainpage');
+        }, 1000);
+      }
+      
+    } catch (error) {
+      setSuccessMessage('');
+      setErrorMessage(
+        error.response?.status === 401 
+          ? '잘못된 아이디입니다.' 
+          : `서버 에러가 발생했습니다: ${error.message}`
+      );
+      console.error('Login error:', error);
     }
-  } catch (error) {
-    setSuccessMessage('');
-    setErrorMessage(error.response?.status === 401 ? '잘못된 아이디입니다.' : `서버 에러가 발생했습니다: ${error.message}`);
-    console.error('Login error:', error);
-  }
-};
-
-
+  };
 
   return (
     <div className="adm-modal-overlay">
@@ -59,8 +59,8 @@ const handleSubmit = async (e) => {
             />
           </div>
           <div className="adm-button-group">
-            <button type="adm-submit">로그인</button>
-            <button type="adm-button" onClick={onClose}>취소</button>
+            <button type="submit">로그인</button>
+            <button type="button" onClick={onClose}>취소</button>
           </div>
         </form>
         {errorMessage && <p className="adm-error-message">{errorMessage}</p>}

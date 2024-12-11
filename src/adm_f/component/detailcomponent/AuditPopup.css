@@ -1,5 +1,5 @@
 /* src/detailcomponent/DetailPopup.css */
-.popup {
+.adm_popup {
     position: fixed;
     top: 0;
     left: 0;
@@ -12,7 +12,7 @@
     z-index: 1000;
   }
   
-  .popup-content {
+  .adm_popup-content {
     background-color: white;
     padding: 20px;
     border-radius: 5px;
@@ -21,20 +21,20 @@
     text-align: center;
   }
   
-  .popup-content h2 {
+  .adm_popup-content h2 {
     color: #c41e3a;
     margin-bottom: 20px;
   }
   
-  .popup-content h3 {
+  .adm_popup-content h3 {
     margin: 10px 0;
   }
   
-  .popup-content p {
+  .adm_popup-content p {
     margin: 10px 0;
   }
   
-  .popup-content button {
+  .adm_popup-content button {
     background-color: #c41e3a;
     color: white;
     border: none;
@@ -44,6 +44,6 @@
     margin-top: 20px;
   }
   
-  .popup-content button:hover {
+  .adm_popup-content button:hover {
     background-color: #a01830;
   }

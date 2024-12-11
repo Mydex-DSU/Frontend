@@ -1,59 +1,59 @@
-.relief-program {
+.adm_relief-program {
     width: 90%;
     margin: 0 auto;
     padding: 20px;
   }
   
-  .relief-program h2 {
+  .adm_relief-program h2 {
     font-size: 24px;
     color: #333;
     margin-bottom: 20px;
     text-align: left;
   }
   
-  .relief-program table {
+  .adm_relief-program table {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
   }
   
-  .relief-program th,
-  .relief-program td {
+  .adm_relief-program th,
+  .adm_relief-program td {
     border: 1px solid #ddd;
     padding: 12px 15px;
     text-align: left;
     vertical-align: top;
   }
   
-  .relief-program th {
+  .adm_relief-program th {
     background-color: #f8f9fa;
     font-weight: bold;
     color: #333;
   }
   
-  .relief-program tr:nth-child(odd) td:first-child {
+  .adm_relief-program tr:nth-child(odd) td:first-child {
     background-color: #f1f1f1;
   }
   
-  .relief-program tr:hover {
+  .adm_relief-program tr:hover {
     background-color: #f5f5f5;
   }
   
-  .relief-program td div {
+  .adm_relief-program td div {
     margin-bottom: 5px;
   }
   
-  .relief-program td div:last-child {
+  .adm_relief-program td div:last-child {
     margin-bottom: 0;
   }
   
   @media (max-width: 768px) {
-    .relief-program {
+    .adm_relief-program {
       padding: 10px;
     }
     
-    .relief-program th,
-    .relief-program td {
+    .adm_relief-program th,
+    .adm_relief-program td {
       padding: 8px;
       font-size: 14px;
     }

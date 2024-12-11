@@ -103,12 +103,12 @@ const ProgramRegistration = () => {
   };
 
   return (
-    <div className="registration-wrapper">
-      <div className="program-info-section">
-        <h3 className="section-title">비교과 프로그램 기본 정보</h3>
+    <div className="adm_egistration-wrapper">
+      <div className="adm_program-info-section">
+        <h3 className="adm_section-title">비교과 프로그램 기본 정보</h3>
         <form onSubmit={handleSubmit}>
-          <div className="image-upload-container">
-            <div className="image-upload-box">
+          <div className="adm_image-upload-container">
+            <div className="adm_image-upload-box">
               {previewImage ? (
                 <img 
                   src={previewImage} 
@@ -122,14 +122,14 @@ const ProgramRegistration = () => {
                 type="file"
                 accept="image/*"
                 onChange={handleImageChange}
-                className="image-input"
+                className="adm_image-input"
                 name="program_poster_image"
               />
             </div>
           </div>
 
-          <div className="form-container">
-            <div className="input-group">
+          <div className="adm_form-container">
+            <div className="adm_input-group">
               <label>프로그램 이름</label>
               <input 
                 type="text"
@@ -139,7 +139,7 @@ const ProgramRegistration = () => {
               />
             </div>
 
-            <div className="input-group">
+            <div className="adm_input-group">
               <label>프로그램 내용</label>
               <textarea
                 name="program_description"
@@ -148,9 +148,9 @@ const ProgramRegistration = () => {
               />
             </div>
 
-            <div className="input-group">
+            <div className="adm_input-group">
               <label>프로그램 신청기간</label>
-              <div className="date-range">
+              <div className="adm_date-range">
                 <input
                   type="datetime-local"
                   name="program_application_start_time"
@@ -167,9 +167,9 @@ const ProgramRegistration = () => {
               </div>
             </div>
 
-            <div className="input-group">
+            <div className="adm_input-group">
               <label>프로그램 운영기간</label>
-              <div className="date-range">
+              <div className="adm_date-range">
                 <input
                   type="datetime-local"
                   name="program_operation_start_time"
@@ -186,7 +186,7 @@ const ProgramRegistration = () => {
               </div>
             </div>
 
-            <div className="input-group">
+            <div className="adm_input-group">
               <label>프로그램 설문 조사 기간</label>
               <div className="date-range">
                 <input
@@ -205,9 +205,9 @@ const ProgramRegistration = () => {
               </div>
             </div>
 
-            <div className="input-group">
+            <div className="adm_input-group">
               <label>프로그램 수용 인원</label>
-              <div className="input-with-unit">
+              <div className="adm_input-with-unit">
                 <input
                   type="number"
                   name="program_max_participants"
@@ -218,9 +218,9 @@ const ProgramRegistration = () => {
               </div>
             </div>
 
-            <div className="input-group">
+            <div className="adm_input-group">
               <label>계산되는 예산 금액</label>
-              <div className="input-with-unit">
+              <div className="adm_input-with-unit">
                 <input
                   type="number"
                   name="program_money"
@@ -231,9 +231,9 @@ const ProgramRegistration = () => {
               </div>
             </div>
 
-            <div className="input-group">
+            <div className="adm_input-group">
               <label>시행 연도 / 학기</label>
-              <div className="semester-select">
+              <div className="adm_semester-select">
                 <select name="program_year" value={formData.program_year} onChange={handleInputChange}>
                   <option value="2024">2024</option>
                 </select>
@@ -244,7 +244,7 @@ const ProgramRegistration = () => {
               </div>
             </div>
 
-            <div className="input-group">
+            <div className="adm_input-group">
               <label>프로그램 종류</label>
               <select name="programtype_name" value={formData.programtype_name} onChange={handleInputChange}>
                 <option value="">선택하세요</option>
@@ -258,7 +258,7 @@ const ProgramRegistration = () => {
               </select>
             </div>
 
-            <div className="input-group">
+            <div className="adm_input-group">
               <label>학과</label>
               <input
                 type="text"
@@ -271,42 +271,42 @@ const ProgramRegistration = () => {
         </form>
       </div>
 
-      <div className="mydex-points-section">
-        <div className="points-table">
-          <h3 className="section-title">Mydex 온도 포인트 기준</h3>
-          <div className="point-row">
+      <div className="adm_mydex-points-section">
+        <div className="adm_points-table">
+          <h3 className="adm_section-title">Mydex 온도 포인트 기준</h3>
+          <div className="adm_point-row">
             <span>특강</span>
             <span>2시간당 1점</span>
           </div>
-          <div className="point-row">
+          <div className="adm_point-row">
             <span>견학</span>
             <span>1회당 1점</span>
           </div>
-          <div className="point-row">
+          <div className="adm_point-row">
             <span>캠프 및 워크숍</span>
             <span>5점</span>
           </div>
-          <div className="point-row">
+          <div className="adm_point-row">
             <span>설문 참여</span>
             <span>외부 기간 건당 2점<br />교내 건당 1점</span>
           </div>
-          <div className="point-row">
+          <div className="adm_point-row">
             <span>클리닉 참여</span>
             <span>회당 1점</span>
           </div>
-          <div className="point-row">
+          <div className="adm_point-row">
             <span>학술공모제 활동</span>
             <span>1점</span>
           </div>
-          <div className="point-row">
+          <div className="adm_point-row">
             <span>경진대회/공모전</span>
             <span>2점</span>
           </div>
         </div>
 
-        <div className="mydex-points-input">
-          <h3 className="section-title">Mydex 온도 포인트 설정란</h3>
-          <div className="points-input-container">
+        <div className="adm_mydex-points-input">
+          <h3 className="adm_section-title">Mydex 온도 포인트 설정란</h3>
+          <div className="adm_points-input-container">
             <input
               type="text"
               name="program_mydex_points"
@@ -315,7 +315,7 @@ const ProgramRegistration = () => {
               onChange={handleInputChange}
             />
           </div>
-          <div className="button-group">
+          <div className="adm_button-group">
             <button type="button" className="cancel-btn" onClick={() => window.history.back()}>취소</button>
             <button type="submit" className="submit-btn" onClick={handleSubmit}>등록</button>
           </div>

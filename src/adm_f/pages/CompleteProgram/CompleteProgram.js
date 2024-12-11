@@ -61,10 +61,10 @@ const CompleteProgram = () => {
   if (error) return <div>{error}</div>;
 
   return (
-    <div className="complete-list-container">
-      <h2 className="list-title">비교과 프로그램 완료 목록</h2>
+    <div className="adm_complete-list-container">
+      <h2 className="adm_list-title">비교과 프로그램 완료 목록</h2>
       
-      <div className="search-container">
+      <div className="adm_search-container">
         <input
           type="text"
           placeholder="비교과프로그램 검색하기"
@@ -74,7 +74,7 @@ const CompleteProgram = () => {
         />
       </div>
 
-      <div className="program-grid">
+      <div className="adm_program-grid">
         {currentItems.map((program) => (
           <Card
             key={program.program_id}
@@ -89,7 +89,7 @@ const CompleteProgram = () => {
         ))}
       </div>
 
-      <div className="pagination">
+      <div className="adm_pagination">
         {Array.from({ length: totalPages }, (_, i) => i + 1).map(number => (
           <button
             key={number}
@@ -101,7 +101,7 @@ const CompleteProgram = () => {
         ))}
       </div>
 
-      <button onClick={() => navigate(-1)} className="back-button">뒤로가기</button>
+      <button onClick={() => navigate(-1)} className="adm_back-button">뒤로가기</button>
     </div>
   );
 };

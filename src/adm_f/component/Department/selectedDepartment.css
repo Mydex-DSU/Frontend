@@ -1,176 +1,44 @@
-/* selectedDepartment.css */
-.budget-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .select-wrapper {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .department-select,
-  .budget-select {
-    width: 200px;
-    height: 35px;
-    padding: 0 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: white;
-  }
-  
-  .budget-dropdown {
-    position: relative;
-  }
-  
-  .budget-select {
-    text-align: left;
-    cursor: pointer;
-  }
-  
-  .budget-options {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 200px;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-top: 2px;
-    z-index: 1000;
-  }
-  
-  .option-item {
-    padding: 8px 10px;
-    cursor: pointer;
-  }
-  
-  .option-item:hover {
-    background-color: #f8f9fa;
-  }
-  
-  .budget-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-    margin-bottom: 20px;
-  }
-  
-  .budget-amounts {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .period-select {
-    display: flex;
-    gap: 5px;
-  }
-  
-  .period-select select {
-    padding: 5px 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  .table-container {
-    position: relative;
-  }
-  
-  .header-titles {
-    display: grid;
-    grid-template-columns: 1fr 1fr 2fr 1fr 1fr 1fr;
-    padding: 12px 8px;
-    font-size: 10;
-    font-weight: bold;
-    position: relative;
-    text-align: center;
-    border-bottom: 3px solid #dc3545;
+/* 프로그램별 노쇼 상세 테이블 선 */
+.adm_table-container {
+  max-width: 85%; /* 원하는 너비로 설정 */
+  margin: 0 auto; /* 가운데 정렬 */
+  overflow-x: auto; /* 내용이 넘칠 경우 스크롤 활성화 */
 }
-    .table-container thead{
-        border-top: 3px solid black;
-        border-bottom: 3px solid #dc3545;
-    }
-    .table-container thead th {
-        padding: 12px;
-    }
-  /* 검은 선 */
-  .header-titles::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: #000;
-  }
-  
-  /* 빨간 선 */
-  .header-titles::after {
-    content: '';
-    position: relative;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  td {
-    padding: 12px 8px;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
-  }
-  
-  tr:first-child td {
-    padding-top: 10px;
-  }
-  
-  .positive {
-    color: red;
-  }
-  
-  .negative {
-    color: blue;
-  }
-  
-  .search-wrapper {
-    margin-top: 20px;
-  }
-  
-  .point-notice {
-    color: #dc3545;
-    margin-bottom: 10px;
-  }
-  
-  .search-box {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-  }
-  
-  .input-group {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .input-group input {
-    padding: 5px 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: 150px;
-  }
-  
-  .search-btn {
-    padding: 5px 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: white;
-    cursor: pointer;
-  }
+
+.adm_table-container thead {
+  border-top: 3px solid black;
+  border-bottom: 3px solid #CF1212;
+
+}
+
+/* 테이블 제목: 프로그램별 노쇼 상세 */
+.adm_header_name{
+  color: #1F3550;
+  text-align: center; 
+}
+
+.adm_detail_btn {
+  background-color: #CF1212; /* 버튼 배경색: 빨간색 */
+  color: white; /* 텍스트 색상: 흰색 */
+  border: none; /* 테두리 제거 */
+  border-radius: 25px; /* 버튼 모서리를 둥글게 */
+  padding: 10px 20px; /* 버튼 내부 여백 */
+  font-size: 16px; /* 텍스트 크기 */
+  font-weight: bold; /* 텍스트 굵기 */
+  cursor: pointer; /* 마우스 커서: 손 모양 */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+.adm_detail_btn:hover {
+  background-color: #A00; /* 호버 시 더 어두운 빨간색 */
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3); /* 그림자 강화 */
+}
+
+.adm_detail_btn:active {
+  background-color: #900; /* 클릭 시 더 어두운 색 */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* 그림자 축소 */
+  transform: translateY(2px); /* 클릭 시 약간 아래로 이동 */
+}
+
+

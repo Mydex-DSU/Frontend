@@ -1,4 +1,4 @@
-.modal-overlay {
+.adm_modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -11,25 +11,25 @@
     z-index: 1000;
   }
   
-  .modal-content {
+  .adm_modal-content {
     background-color: white;
     padding: 30px;
     border-radius: 8px;
     width: 500px;
   }
   
-  .modal-content h2 {
+  .adm_modal-content h2 {
     color: #c41e3a;
     margin-bottom: 30px;
     text-align: center;
     font-size: 20px;
   }
   
-  .form-group {
+  .adm_form-group {
     margin-bottom: 20px;
   }
   
-  .form-group label {
+  .adm_form-group label {
     display: block;
     margin-bottom: 8px;
     color: #c41e3a;
@@ -37,9 +37,9 @@
     font-size: 16px;
   }
   
-  .year-select,
-  .date-input,
-  .time-input {
+  .adm_year-select,
+  .adm_date-input,
+  .adm_time-input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
@@ -47,28 +47,28 @@
     background-color: white;
   }
   
-  .date-time-inputs {
+  .adm_date-time-inputs {
     display: flex;
     gap: 10px;
   }
   
-  .date-input {
+  .adm_date-input {
     flex: 2;
   }
   
-  .time-input {
+  .adm_time-input {
     flex: 1;
   }
   
-  .modal-buttons {
+  .adm_modal-buttons {
     display: flex;
     justify-content: center;
     gap: 10px;
     margin-top: 30px;
   }
   
-  .submit-button,
-  .cancel-button {
+  .adm_submit-button,
+  .adm_cancel-button {
     padding: 10px 30px;
     border: none;
     border-radius: 4px;
@@ -76,17 +76,17 @@
     font-size: 16px;
   }
   
-  .submit-button {
+  .adm_submit-button {
     background-color: #c41e3a;
     color: white;
   }
   
-  .cancel-button {
+  .adm_cancel-button {
     background-color: #6c757d;
     color: white;
   }
   
-  .message {
+  .adm_message {
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 4px;

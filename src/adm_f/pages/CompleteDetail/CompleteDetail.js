@@ -55,9 +55,9 @@ const CompleteDetail = () => {
     });
   };
 
-  if (loading) return <div className="loading">로딩 중...</div>;
-  if (error) return <div className="error">{error}</div>;
-  if (!program) return <div className="no-data">프로그램 정보가 없습니다.</div>;
+  if (loading) return <div className="adm_loading">로딩 중...</div>;
+  if (error) return <div className="adm_error">{error}</div>;
+  if (!program) return <div className="adm_no-data">프로그램 정보가 없습니다.</div>;
 
   const formatDate = (dateString) => {
     const date = new Date(dateString);
@@ -70,55 +70,55 @@ const CompleteDetail = () => {
   };
 
   return (
-    <div className="program-detail-container">
-      <h1 className="detail-title">비교과 프로그램 완료 상세</h1>
-      <div className="notification-banner">
-        <span className="bell-icon">🔔</span>
+    <div className="adm_program-detail-container">
+      <h1 className="adm_detail-title">비교과 프로그램 완료 상세</h1>
+      <div className="adm_notification-banner">
+        <span className="adm_bell-icon">🔔</span>
         비교과 프로그램 운영이 종료되었습니다 학생들을 평가하세요.
       </div>
-      <div className="program-content">
-        <div className="program-image">
+      <div className="adm_program-content">
+        <div className="adm_program-image">
           <img src={program.program_poster_image} alt="프로그램 포스터" />
         </div>
-        <div className="program-info">
-          <div className="info-section">
+        <div className="adm_program-info">
+          <div className="adm_info-section">
             <h2>프로그램 이름</h2>
             <p>{program.program_name}</p>
           </div>
-          <div className="info-section">
+          <div className="adm_info-section">
             <h2>프로그램 내용</h2>
             <p>{program.program_description}</p>
           </div>
-          <div className="info-section">
+          <div className="adm_info-section">
             <h2>신청일시</h2>
             <p>{`${formatDate(program.program_application_start_time)} (${formatTime(program.program_application_start_time)}) ~ ${formatDate(program.program_application_end_time)} (${formatTime(program.program_application_end_time)})`}</p>
           </div>
-          <div className="info-section">
+          <div className="adm_info-section">
             <h2>운영일시</h2>
             <p>{`${formatDate(program.program_operation_start_time)} (${formatTime(program.program_operation_start_time)}) ~ ${formatDate(program.program_operation_end_time)} (${formatTime(program.program_operation_end_time)})`}</p>
           </div>
-          <div className="info-section">
+          <div className="adm_info-section">
             <h2>설문조사기간</h2>
             <p>{`${formatDate(program.program_survey_start_time)} (${formatTime(program.program_survey_start_time)}) ~ ${formatDate(program.program_survey_end_time)} (${formatTime(program.program_survey_end_time)})`}</p>
           </div>
-          <div className="info-section">
+          <div className="adm_info-section">
             <h2>Mydex 온도 포인트</h2>
             <p>{program.program_mydex_points}점</p>
           </div>
-          <div className="info-section">
+          <div className="adm_info-section">
             <h2>프로그램 신청 인원</h2>
             <p>{program.program_max_participants}명</p>
           </div>
-          <div className="info-section">
+          <div className="adm_info-section">
             <h2>프로그램 종류</h2>
             <p>{program.program_status}</p>
           </div>
         </div>
       </div>
-      <div className="student-list-section">
-        <h2 className="section-title">참여 학생 목록</h2>
-        <div className="student-table-container">
-          <table className="student-table">
+      <div className="adm_student-list-section">
+        <h2 className="adm_section-title">참여 학생 목록</h2>
+        <div className="adm_student-table-container">
+          <table className="adm_student-table">
             <thead>
               <tr>
                 <th>학번</th>
@@ -142,19 +142,19 @@ const CompleteDetail = () => {
                   <td>{student.stu_give_mydex_points || '-'}</td>
                   <td>
                     {student.survey_response_status === 1 ? (
-                      <span className="status-badge">응답완료</span>
+                      <span className="adm_status-badge">응답완료</span>
                     ) : null}
                   </td>
                   <td>
                     {student.no_show_reason_response_status === 1 ? (
-                      <span className="status-badge">응답완료</span>
+                      <span className="adm_status-badge">응답완료</span>
                     ) : null}
                   </td>
                   <td>
                     {(student.survey_response_status === 1 || 
                     student.no_show_reason_response_status === 1) && (
                       <button 
-                        className="view-button"
+                        className="adm_view-button"
                         onClick={() => handleViewResponse(student)}
                       >
                         보러가기
@@ -162,17 +162,17 @@ const CompleteDetail = () => {
                     )}
                   </td>
                   <td>
-                    <div className="action-buttons">
+                    <div className="adm_action-buttons">
                       {!student.stu_give_mydex_points && (
                         <button 
-                          className="evaluate-button"
+                          className="adm_evaluate-button"
                           onClick={() => handleEvaluate(student)}
                         >
                           평가하기
                         </button>
                       )}
                       {student.stu_give_mydex_points && (
-                        <button className="evaluate-complete">평가완료</button>
+                        <button className="adm_evaluate-complete">평가완료</button>
                       )}
                     </div>
                   </td>

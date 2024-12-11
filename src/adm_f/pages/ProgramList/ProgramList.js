@@ -41,9 +41,9 @@ const ProgramList = () => {
     };
 
     return (
-        <div className="program-list-container">
+        <div className="adm_program-list-container">
             <h2>프로그램 목록</h2>
-            <div className="program-list">
+            <div className="adm_program-list">
                 {programs.map(program => (
                     <Card
                         key={program.program_id}
