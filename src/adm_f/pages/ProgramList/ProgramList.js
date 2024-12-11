@@ -17,10 +17,10 @@ const ProgramList = () => {
             const adminString = sessionStorage.getItem('admin');
             const admin= JSON.parse(adminString);
 
-            if (!admin || !admin.adm_id) {
-                console.error('사용자 정보가 없습니다.');
-                return;
-            }
+            // if (!admin || !admin.adm_id) {
+            //     console.error('사용자 정보가 없습니다.');
+            //     return;
+            // }
 
             const response = await axios.get(`http://100.94.142.127:3000/programs`, {
                 params: { adm_id: admin.adm_id },

@@ -22,10 +22,10 @@ const CompleteProgram = () => {
       const userString = sessionStorage.getItem('admin');
       const user = JSON.parse(userString);
 
-      if (!user || !user.adm_id) {
-        console.error('관리자 정보가 없습니다.');
-        return;
-      }
+      // if (!user || !user.adm_id) {
+      //   console.error('관리자 정보가 없습니다.');
+      //   return;
+      // }
 
       const response = await axios.get('http://100.94.142.127:3000/programs/fin', {
         params: { adm_id: user.adm_id }
