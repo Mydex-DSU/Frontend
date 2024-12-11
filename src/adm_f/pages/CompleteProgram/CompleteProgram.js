@@ -101,7 +101,7 @@ const CompleteProgram = () => {
         ))}
       </div>
 
-      <button onClick={() => navigate('/')} className="back-button">뒤로가기</button>
+      <button onClick={() => navigate(-1)} className="back-button">뒤로가기</button>
     </div>
   );
 };

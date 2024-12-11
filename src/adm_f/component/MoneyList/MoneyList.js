@@ -2,29 +2,21 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './moneylist.css';
 
-const MoneyList = () => {
+const MoneyList = ({ budgetUpdated }) => {
   const [departments, setDepartments] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchDepartments = async () => {
       try {
         const response = await axios.get('http://100.94.142.127:3000/faculty');
         setDepartments(response.data.faculty);
-        setLoading(false);
       } catch (err) {
         console.error('데이터를 불러오는 데 실패했습니다:', err);
-        setError('데이터를 불러오는 데 실패했습니다.');
-        setLoading(false);
       }
     };
 
     fetchDepartments();
-  }, []);
-
-  if (loading) return <div>로딩 중...</div>;
-  if (error) return <div>{error}</div>;
+  }, [budgetUpdated]);  // budgetUpdated가 변경될 때마다 데이터를 다시 불러옵니다.
 
   return (
     <div className="department-table-container">

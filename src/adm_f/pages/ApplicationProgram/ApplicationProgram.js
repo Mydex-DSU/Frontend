@@ -1,19 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import './ApplicationProgram.css';
 
 const ApplicationProgram = () => {
   const [programData, setProgramData] = useState(null);
   const [students, setStudents] = useState([]);
-  const { programId } = useParams();
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const fetchProgramDetails = async () => {
       try {
+        const programId = location.state?.programId;
+        if (!programId) {
+          throw new Error('프로그램 ID가 전달되지 않았습니다.');
+        }
+
         const response = await axios.post('http://100.94.142.127:3000/programs/application/detail', {
-          program_id: parseInt(programId)
+          program_id: programId
         });
 
         const program = response.data.program[0];
@@ -34,23 +41,24 @@ const ApplicationProgram = () => {
         });
 
         setStudents(response.data.programdetail);
+        setLoading(false);
       } catch (error) {
         console.error('프로그램 상세 정보를 가져오는데 실패했습니다:', error);
+        setError(error.message || '데이터를 불러오는데 실패했습니다.');
+        setLoading(false);
       }
     };
 
-    if (programId) {
-      fetchProgramDetails();
-    }
-  }, [programId]);
+    fetchProgramDetails();
+  }, [location.state]);
 
   const handleBack = () => {
     navigate('/adm/programlist');
   };
 
-  if (!programData) {
-    return <div>로딩중...</div>;
-  }
+  if (loading) return <div>로딩중...</div>;
+  if (error) return <div>{error}</div>;
+  if (!programData) return <div>프로그램 데이터가 없습니다.</div>;
 
   return (
     <>
