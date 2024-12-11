@@ -14,16 +14,16 @@ const ProgramList = () => {
 
     const fetchPrograms = async () => {
         try {
-            const userString = sessionStorage.getItem('user');
-            const user = JSON.parse(userString);
+            const adminString = sessionStorage.getItem('admin');
+            const admin= JSON.parse(adminString);
 
-            if (!user || !user.adm_id) {
+            if (!admin || !admin.adm_id) {
                 console.error('사용자 정보가 없습니다.');
                 return;
             }
 
             const response = await axios.get(`http://100.94.142.127:3000/programs`, {
-                params: { adm_id: user.adm_id },
+                params: { adm_id: admin.adm_id },
             });
             setPrograms(response.data.programs);
         } catch (error) {
@@ -32,8 +32,9 @@ const ProgramList = () => {
     };
 
     const handleCardClick = (programId) => {
-        navigate(`/applicationprogram/${programId}`);
-    };
+        navigate('/adm/applicationprogram', { state: { programId } });
+      };
+      
 
     const handleBack = () => {
         navigate(-1);

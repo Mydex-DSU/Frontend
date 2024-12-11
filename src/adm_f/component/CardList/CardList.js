@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './cardlist.css';
 
+
 const CardList = () => {
   const [programs, setPrograms] = useState([]);
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ const CardList = () => {
   };
 
   const handleCardClick = (programId) => {
-    navigate(`/applicationprogram/${programId}`);
+    navigate('/adm/applicationprogram', { state: { programId} });
   };
 
   return (

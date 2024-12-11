@@ -45,11 +45,11 @@ const handleSubmit = async (e) => {
 
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
+    <div className="adm-modal-overlay">
+      <div className="adm-modal-content">
         <h2>관리자 로그인</h2>
         <form onSubmit={handleSubmit}>
-          <div className="form-group">
+          <div className="adm-form-group">
             <label>관리자 이름:</label>
             <input
               type="text"
@@ -58,13 +58,13 @@ const handleSubmit = async (e) => {
               required
             />
           </div>
-          <div className="button-group">
-            <button type="submit">로그인</button>
-            <button type="button" onClick={onClose}>취소</button>
+          <div className="adm-button-group">
+            <button type="adm-submit">로그인</button>
+            <button type="adm-button" onClick={onClose}>취소</button>
           </div>
         </form>
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
-        {successMessage && <p className="success-message">{successMessage}</p>}
+        {errorMessage && <p className="adm-error-message">{errorMessage}</p>}
+        {successMessage && <p className="adm-success-message">{successMessage}</p>}
       </div>
     </div>
   );

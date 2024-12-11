@@ -16,16 +16,16 @@ const EvaluationDetail = () => {
     useEffect(() => {
         const fetchStudentDetail = async () => {
             try {
-                const adminString = sessionStorage.getItem('admin');
-                const admin = JSON.parse(adminString);
+                const userString = sessionStorage.getItem('admin');
+                const user = JSON.parse(userString);
 
-                if (!admin || !admin.adm_id) {
+                if (!user || !user.adm_id) {
                     throw new Error('관리자 정보가 없습니다.');
                 }
 
                 const response = await axios.post('http://100.94.142.127:3000/programs/fin/detail', {
                     program_id: parseInt(programId),
-                    adm_id: admin.adm_id,
+                    adm_id: user.adm_id,
                     stu_id: parseInt(studentId)
                 });
 
@@ -58,8 +58,8 @@ const EvaluationDetail = () => {
                 return;
             }
 
-            const adminString = sessionStorage.getItem('admin');
-            const admin = JSON.parse(adminString);
+            const userString = sessionStorage.getItem('admin');
+            const user = JSON.parse(userString);
 
             await axios.post('http://100.94.142.127:3000/programs/fin/evaluation', {
                 program_id: parseInt(programId),
