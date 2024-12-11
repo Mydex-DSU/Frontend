@@ -31,6 +31,7 @@ import ReliefProgram from "./adm_f/pages/ReliefDetailPage/RePage.js";
 import ProMainPage from "./pro_f/pages/MainPage/proMainPage.js";
 import ProRecommendPage from "./pro_f/pages/RecommendPage/proRecommend.js"
 import ProRegPage from "./pro_f/pages/RegPage/proRegPage.js";
+import RecommendDetail from "./stu_f/pages/RecommendDetailPage/RecommendDetailPage.js";
 
 
 
@@ -75,6 +76,7 @@ function AppContent() {
       <Route path="/pro/promainpage" element={<ProMainPage/>}/>
       <Route path="/pro/prorecommendpage" element={<ProRecommendPage/>}/>
       <Route path="/pro/proregpage" element={<ProRegPage/>}/>
+      <Route path="/pro/prorecommenddetailpage" element={<RecommendDetail/>}/>
 
 
 
