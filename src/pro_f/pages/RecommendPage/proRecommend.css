@@ -1,0 +1,97 @@
+.recommend-container {
+    width: 600px; /* 폭 조정 */
+    margin: 50px auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    overflow: hidden;
+  }
+  
+  .header {
+    
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  
+  .recommend-form {
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;  display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: flex-start; /* 왼쪽 정렬 */
+  }
+  
+  .styled-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 5px;
+    text-align: left; /* 레이블 왼쪽 정렬 */
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%; /* 입력 필드가 부모 요소에 맞춤 */
+    max-width: 100px; /* 기본 입력 필드 최대 폭 제한 */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: left; /* 입력 텍스트 왼쪽 정렬 */
+  }
+  
+  /* 학과 텍스트박스만 폭을 넓히는 스타일 */
+  #department {
+    max-width: 150px; /* 학과 필드의 최대 폭 설정 */
+    width: 100%;
+  }
+  
+  .phone-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 왼쪽 정렬 */
+  }
+  
+  .phone-inputs {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .phone-inputs input {
+    width: 60px;
+    text-align: center;
+  }
+  
+  .phone-inputs span {
+    font-size: 16px;
+    margin: 0 5px;
+  }
+  
+  .inline-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start; /* 왼쪽 정렬 */
+  }
+  
+  .inline-group select,
+  .inline-group input {
+    flex: 1;
+    max-width: 150px; /* 입력 필드와 셀렉트박스 크기 제한 */
+  }
+  
+  @media (max-width: 768px) {
+    .recommend-container {
+      width: 90%;
+    }
+  }
+  

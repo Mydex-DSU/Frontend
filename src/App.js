@@ -26,6 +26,17 @@ import ProgramRegistration from "./adm_f/pages/ProgramRegistration/ProgramRegist
 import ReliefProgram from "./adm_f/pages/ReliefDetailPage/RePage.js";
 
 
+// 교수
+
+import ProMainPage from "./pro_f/pages/MainPage/proMainPage.js";
+import ProRecommendPage from "./pro_f/pages/RecommendPage/proRecommend.js"
+import ProRegPage from "./pro_f/pages/RegPage/proRegPage.js";
+import RecommendDetail from "./stu_f/pages/RecommendDetailPage/RecommendDetailPage.js";
+
+
+
+
+
 function AppContent() {
   const location = useLocation();
 
@@ -62,6 +73,12 @@ function AppContent() {
       <Route path="/adm/programlist" element={<ProgramList/>}/>
 
         {/* 교수 라우트 */}
+      <Route path="/pro/promainpage" element={<ProMainPage/>}/>
+      <Route path="/pro/prorecommendpage" element={<ProRecommendPage/>}/>
+      <Route path="/pro/proregpage" element={<ProRegPage/>}/>
+      <Route path="/pro/prorecommenddetailpage" element={<RecommendDetail/>}/>
+
+
 
       </Routes>
     </>

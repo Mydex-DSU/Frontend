@@ -1,0 +1,120 @@
+.recommendation-container {
+  background-color: #f5f7f9;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.recommendation-header h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #002f6c;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #002f6c;
+  padding-bottom: 10px;
+}
+
+.program-item {
+  background-color: white;
+  border: 1px solid #d1d5da;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left; /* Left alignment */
+}
+
+.stu-program-title h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #002f6c;
+  margin-bottom: 10px;
+}
+
+.stu-program-content {
+  margin-bottom: 20px; /* Increased spacing below content */
+}
+
+.program-label {
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #022c63;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.stu-program-content p {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.program-feedback {
+  display: flex;
+  align-items: flex-start;
+  background-color: #f9f9f9;
+  border-left: 4px solid #0056b3;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-right: 20px; /* Adjusted right margin */
+  margin-bottom: 10px; /* Added spacing below feedback */
+}
+
+.feedback-icon {
+  font-size: 20px;
+  margin-right: 10px;
+  color: #007bff;
+}
+
+.feedback-text {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+.graduates-filters {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.graduates-filters h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.filters-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.filters-row select,
+.filters-row input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.filters-row .search-button {
+  padding: 8px 16px;
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.graduates-header {
+  background-color: #002f6c;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 5px;
+}
