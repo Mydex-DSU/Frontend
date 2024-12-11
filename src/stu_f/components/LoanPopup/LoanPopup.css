@@ -1,0 +1,31 @@
+.loan-application-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    z-index: 1000;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .popup-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .error-text {
+    color: red;
+    font-weight: bold;
+  }
+  
+  button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
