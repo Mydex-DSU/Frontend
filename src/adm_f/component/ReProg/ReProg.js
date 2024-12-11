@@ -11,20 +11,20 @@ const ReProg = () => {
 
   const fetchApplicationList = async () => {
     try {
-      const userString = sessionStorage.getItem('user');
-      const user = JSON.parse(userString);
+      const adminString = sessionStorage.getItem('admin');
+      const admin = JSON.parse(adminString);
 
-      if (!user || !user.adm_id) {
+      if (!admin || !admin.adm_id) {
         console.error('사용자 정보가 없습니다.');
         return;
       }
 
       const response = await axios.get(`http://100.94.142.127:3000/remedialprogram`, {
-        params: { stu_id: user.stu_id },
+        params: { adm_id: admin.adm_id },
       });
       
       // 평가가 필요한 신청(processing_result가 null인 경우)만 필터링
-      const pendingApplications = response.data.remedialprogramapplicationlist.filter(
+      const pendingApplications = response.data.remedial_program_application_list.filter(
         app => app.processing_result === null
       );
       setApplications(pendingApplications);

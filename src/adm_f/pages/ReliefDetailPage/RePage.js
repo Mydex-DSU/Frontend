@@ -21,18 +21,18 @@ const RePage = () => {
 
   const fetchApplicationList = async () => {
     try {
-      const userString = sessionStorage.getItem('user');
-      const user = JSON.parse(userString);
+      const adminString = sessionStorage.getItem('admin');
+      const admin = JSON.parse(adminString);
 
-      if (!user || !user.adm_id) {
+      if (!admin || !admin.adm_id) {
         console.error('사용자 정보가 없습니다.');
         return;
       }
 
       const response = await axios.get(`http://100.94.142.127:3000/remedialprogram`, {
-        params: { stu_id: user.stu_id },
+        params: { adm_id: admin.adm_id },
       });
-      setApplication(response.data.remedialprogramapplicationlist);
+      setApplication(response.data.remedial_program_application_list);
     } catch (error) {
       console.error('구제 프로그램 신청 목록을 가져오는 데 실패했습니다:', error);
     }

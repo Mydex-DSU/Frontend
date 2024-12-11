@@ -15,7 +15,6 @@ import StudentNavBar from "./stu_f/components/NavBar/NavBar"
 
 
 //관리자
-
 import AdmMainPage from "./adm_f/pages/admMainPage.js";
 import CompleteDetail from "./adm_f/pages/CompleteDetail/CompleteDetail.js"
 import CompleteProgram from "./adm_f/pages/CompleteProgram/CompleteProgram.js";

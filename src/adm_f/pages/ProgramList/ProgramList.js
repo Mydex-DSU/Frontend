@@ -27,7 +27,7 @@ const ProgramList = () => {
             });
             setPrograms(response.data.programs);
         } catch (error) {
-            console.error('구제 프로그램 신청 목록을 가져오는 데 실패했습니다:', error);
+            console.error('프로그램 신청 목록을 가져오는 데 실패했습니다:', error);
         }
     };
 

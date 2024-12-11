@@ -11,7 +11,7 @@ const CompleteProgram = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const navigate = useNavigate();
-  const itemsPerPage = 8; // 한 페이지당 4x2 = 8개의 카드
+  const itemsPerPage = 8;
 
   useEffect(() => {
     fetchPrograms();
@@ -19,7 +19,7 @@ const CompleteProgram = () => {
 
   const fetchPrograms = async () => {
     try {
-      const userString = sessionStorage.getItem('user');
+      const userString = sessionStorage.getItem('admin');
       const user = JSON.parse(userString);
 
       if (!user || !user.adm_id) {
@@ -53,8 +53,8 @@ const CompleteProgram = () => {
   const currentItems = filteredPrograms.slice(indexOfFirstItem, indexOfLastItem);
   const totalPages = Math.ceil(filteredPrograms.length / itemsPerPage);
 
-  const handleBack = () => {
-    navigate('/');
+  const handleProgramClick = (programId) => {
+    navigate('/adm/completedetail', { state: { programId } });
   };
 
   if (loading) return <div>로딩 중...</div>;
@@ -75,18 +75,18 @@ const CompleteProgram = () => {
       </div>
 
       <div className="program-grid">
-      {currentItems.map((program) => (
-            <Card
-              key={program.program_id}
-              title={program.program_name}
-              image={program.program_poster_image}
-              operationPeriod={`${new Date(program.program_operation_start_time).toLocaleDateString()} ~ ${new Date(program.program_operation_end_time).toLocaleDateString()}`}
-              surveyPeriod={`${new Date(program.program_survey_start_time).toLocaleDateString()} ~ ${new Date(program.program_survey_end_time).toLocaleDateString()}`}
-              status={program.program_status}
-              likeCount={program.program_mydex_points}
-              onClick={() => navigate(`/completedetail/${program.program_id}`)}
-            />
-          ))}
+        {currentItems.map((program) => (
+          <Card
+            key={program.program_id}
+            title={program.program_name}
+            image={program.program_poster_image}
+            operationPeriod={`${new Date(program.program_operation_start_time).toLocaleDateString()} ~ ${new Date(program.program_operation_end_time).toLocaleDateString()}`}
+            surveyPeriod={`${new Date(program.program_survey_start_time).toLocaleDateString()} ~ ${new Date(program.program_survey_end_time).toLocaleDateString()}`}
+            status={program.program_status}
+            likeCount={program.program_mydex_points}
+            onClick={() => handleProgramClick(program.program_id)}
+          />
+        ))}
       </div>
 
       <div className="pagination">
@@ -101,7 +101,7 @@ const CompleteProgram = () => {
         ))}
       </div>
 
-      <button onClick={handleBack} className="back-button">뒤로가기</button>
+      <button onClick={() => navigate('/')} className="back-button">뒤로가기</button>
     </div>
   );
 };

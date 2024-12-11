@@ -44,25 +44,32 @@
     color: white;
 }
 
-.program-table button.운영중 {
-    background-color: #69db7c;
+/* 상태별 색상 정의 */
+.status-운영중 {
+    background-color: #69db7c; /* 초록색 */
+    color: white;
 }
 
-.program-table button.설문조사 {
-    background-color: #ffa94d;
+.status-설문조사 {
+    background-color: #ffa94d; /* 주황색 */
+    color: white;
 }
 
-.program-table button.모집중 {
-    background-color: #4dabf7;
+.status-모집중 {
+    background-color: #4dabf7; /* 파란색 */
+    color: white;
 }
 
-.program-table button.모집완료 {
-    background-color: #748ffc;
+.status-모집완료 {
+    background-color: #748ffc; /* 진파랑색 */
+    color: white;
 }
 
-.program-table button.종료 {
-    background-color: #868e96;
+.status-종료 {
+    background-color: #868e96; /* 회색 */
+    color: white;
 }
+
 
 .program-table tr:last-child td {
     border-bottom: none;

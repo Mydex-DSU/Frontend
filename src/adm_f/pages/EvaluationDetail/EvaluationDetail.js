@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './evaluationdetail.css';
 
@@ -9,22 +9,23 @@ const EvaluationDetail = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [pointsInput, setPointsInput] = useState('');
-    const { programId, studentId } = useParams();
+    const location = useLocation();
+    const { programId, studentId } = location.state || {};
     const navigate = useNavigate();
 
     useEffect(() => {
         const fetchStudentDetail = async () => {
             try {
-                const userString = sessionStorage.getItem('user');
-                const user = JSON.parse(userString);
+                const adminString = sessionStorage.getItem('admin');
+                const admin = JSON.parse(adminString);
 
-                if (!user || !user.adm_id) {
+                if (!admin || !admin.adm_id) {
                     throw new Error('관리자 정보가 없습니다.');
                 }
 
                 const response = await axios.post('http://100.94.142.127:3000/programs/fin/detail', {
                     program_id: parseInt(programId),
-                    adm_id: user.adm_id,
+                    adm_id: admin.adm_id,
                     stu_id: parseInt(studentId)
                 });
 
@@ -42,7 +43,12 @@ const EvaluationDetail = () => {
             }
         };
 
-        fetchStudentDetail();
+        if (programId && studentId) {
+            fetchStudentDetail();
+        } else {
+            setError('프로그램 ID 또는 학생 ID가 없습니다.');
+            setLoading(false);
+        }
     }, [programId, studentId]);
 
     const handleConfirm = async () => {
@@ -52,8 +58,8 @@ const EvaluationDetail = () => {
                 return;
             }
 
-            const userString = sessionStorage.getItem('user');
-            const user = JSON.parse(userString);
+            const adminString = sessionStorage.getItem('admin');
+            const admin = JSON.parse(adminString);
 
             await axios.post('http://100.94.142.127:3000/programs/fin/evaluation', {
                 program_id: parseInt(programId),
@@ -61,7 +67,7 @@ const EvaluationDetail = () => {
                 stu_give_mydex_points: parseInt(pointsInput)
             });
 
-            navigate(`/adm/completedetail/${programId}`);
+            navigate('/adm/completedetail', { state: { programId } });
         } catch (error) {
             alert('평가 저장에 실패했습니다.');
         }
@@ -79,12 +85,10 @@ const EvaluationDetail = () => {
                 <div className="icon-text">
                     <span className="bell-icon">🔔</span>
                     <div className="notification-text">
-                    <div className="notification-text">
-                            <p>이 비교과 프로그램의 종류는 {program.programtype_name}입니다.</p>
-                            <p>학생의 출석률({student.attendance_rate || '0'}%)로 비교과 참여여부를 판단하세요.</p>
-                            <p>이 비교과프로그램에서 학생에게 부여할 포인트는 {program.program_mydex_points}점입니다.</p>
-                            <p>그러므로 출석률 {program.attendance_criteria || '50'}%가 노쇼 기준 입니다.</p>
-                        </div>
+                        <p>이 비교과 프로그램의 종류는 {program.programtype_name}입니다.</p>
+                        <p>학생의 출석률({student.attendance_rate || '0'}%)로 비교과 참여여부를 판단하세요.</p>
+                        <p>이 비교과프로그램에서 학생에게 부여할 포인트는 {program.program_mydex_points}점입니다.</p>
+                        <p>그러므로 출석률 {program.attendance_criteria || '50'}%가 노쇼 기준 입니다.</p>
                     </div>
                 </div>
             </div>

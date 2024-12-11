@@ -1,5 +1,5 @@
 // Login.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './login.css';
@@ -12,29 +12,35 @@ const Login = ({ isOpen, onClose, onLogin }) => {
 
   if (!isOpen) return null;
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post('http://100.94.142.127:3000/login/admin', {
-        adm_name: managerId
-      });
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await axios.post('http://100.94.142.127:3000/login/admin', {
+      adm_name: managerId
+    });
 
-      if (response.status === 200) {
-        sessionStorage.setItem('user', JSON.stringify(response.data));
-        setSuccessMessage('로그인 성공!');
-        setErrorMessage('');
-        onLogin(managerId);
-        setTimeout(() => {
-          onClose();
-          navigate('/adm/admmainpage');
-        }, 500);
-      }
-    } catch (error) {
-      setSuccessMessage('');
-      setErrorMessage(error.response?.status === 401 ? '잘못된 아이디입니다.' : `서버 에러가 발생했습니다: ${error.message}`);
-      console.error('Login error:', error);
+    if (response.status === 200) {
+      const adminData = {
+        adm_id: response.data.adm_id,
+        adm_name: managerId
+      };
+      // 세션 스토리지에 데이터 저장
+      sessionStorage.setItem('admin', JSON.stringify(adminData));
+      setSuccessMessage('로그인 성공!');
+      console.log(response.data)
+      setErrorMessage('');
+      onLogin(managerId);
+      setTimeout(() => {
+        onClose();
+        navigate('/adm/admmainpage');
+      }, 500);
     }
-  };
+  } catch (error) {
+    setSuccessMessage('');
+    setErrorMessage(error.response?.status === 401 ? '잘못된 아이디입니다.' : `서버 에러가 발생했습니다: ${error.message}`);
+    console.error('Login error:', error);
+  }
+};
 
 
 
