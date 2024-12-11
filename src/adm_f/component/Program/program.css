@@ -1,11 +1,11 @@
 /* program.css */
-.program-container {
+/* .adm_program-container {
     width: 83%;
     margin: 0 auto;
     padding: 20px;
-}
+} */
 
-.program-title {
+.adm_program-title {
     width: 80%;
     margin: 0 auto;
     background-color: #1F2937;
@@ -17,25 +17,25 @@
     font-size: 16px;
 }
 
-.program-table {
+.adm_program-table {
     width: 80%;
     margin: 0 auto;
     border-collapse: collapse;
 }
 
-.program-table th,
-.program-table td {
+.adm_program-table th,
+.adm_program-table td {
     padding: 15px;
     text-align: center;
     border-bottom: 1px solid #E5E7EB;
 }
 
-.program-table th {
+.adm_program-table th {
     color: #374151;
     font-weight: normal;
 }
 
-.program-table button {
+.adm_program-table button {
     padding: 6px 12px;
     border-radius: 20px;
     border: none;
@@ -44,30 +44,37 @@
     color: white;
 }
 
-.program-table button.운영중 {
-    background-color: #69db7c;
+/* 상태별 색상 정의 */
+.adm_status-운영중 {
+    background-color: #69db7c; /* 초록색 */
+    color: white;
 }
 
-.program-table button.설문조사 {
-    background-color: #ffa94d;
+.adm_status-설문조사 {
+    background-color: #ffa94d; /* 주황색 */
+    color: white;
 }
 
-.program-table button.모집중 {
-    background-color: #4dabf7;
+.adm_status-모집중 {
+    background-color: #4dabf7; /* 파란색 */
+    color: white;
 }
 
-.program-table button.모집완료 {
-    background-color: #748ffc;
+.adm_status-모집완료 {
+    background-color: #748ffc; /* 진파랑색 */
+    color: white;
 }
 
-.program-table button.종료 {
-    background-color: #868e96;
+.adm_status-종료 {
+    background-color: #868e96; /* 회색 */
+    color: white;
 }
 
-.program-table tr:last-child td {
+
+.adm_program-table tr:last-child td {
     border-bottom: none;
 }
-.program-links {
+.adm_program-links {
     display: flex;
     justify-content: flex-end;
     margin-top: 20px;

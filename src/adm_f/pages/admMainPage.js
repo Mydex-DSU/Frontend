@@ -1,73 +1,58 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ReProg from '../component/ReProg/ReProg';
 import Program from '../component/Program/Program';
 import MoneyBt from '../component/MoneyBt/MoneyBt';
 import Mydex from '../component/Mydex/Mydex';
 import MoneyList from '../component/MoneyList/MoneyList';
 import ChartList from '../component/ChartList/ChartList';
-import Login from '../component/Login/Login';
- import { useNavigate } from 'react-router-dom';
- 
+import SelectedDepartment from '../component/Department/SelectedDepartment';
+
 
 const MainPage = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [loggedInUser, setLoggedInUser] = useState(null);
+  const [budgetUpdated, setBudgetUpdated] = useState(false);
   const navigate = useNavigate();
-  // 컴포넌트 마운트 시 세션 스토리지에서 로그인 정보 확인
+
   useEffect(() => {
-    const userInfo = sessionStorage.getItem('user');
-    if (userInfo) {
-      const user = JSON.parse(userInfo);
-      setLoggedInUser(user.adm_name);
+    const adm_id = sessionStorage.getItem('admin');
+    if (adm_id) {
+      setLoggedInUser(adm_id);
+    } else {
+      setLoggedInUser(null);
     }
   }, []);
 
-  const handleOpenModal = () => {
-    setIsModalOpen(true);
+  const handleLogout = async () => {
+    try {
+      sessionStorage.removeItem('admin');
+      navigate('/');
+    } catch (error) {
+      console.error('로그아웃 중 오류 발생:', error);
+    }
   };
 
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
+  const handleBudgetCalculated = () => {
+    setBudgetUpdated(prev => !prev);
   };
 
-  const handleLogin = (userId) => {
-    setLoggedInUser(userId);
-  };
-
-  const handleLogout = () => {
-    sessionStorage.removeItem('user');
-    setLoggedInUser(null);
-    navigate('/');
-    
-  };
-
-  const dded = sessionStorage.getItem("user");
-  console.log(dded);
   return (
     <div>
-      <div className="login-container">
-        {loggedInUser ? (
-          <div className="user-info">
-            <span className="welcome-message">{loggedInUser}님, 환영합니다!</span>
-            <button className="logout-button" onClick={handleLogout}>로그아웃</button>
+      <div className="adm_login-container">
+        {loggedInUser && (
+          <div className="adm_user-info">
+            <button className="adm_logout-button" onClick={handleLogout}>로그아웃</button>
           </div>
-        ) : (
-          <button className="login-button" onClick={handleOpenModal}>로그인</button>
         )}
       </div>
-      {isModalOpen && (
-        <Login
-          isOpen={isModalOpen}
-          onClose={handleCloseModal}
-          onLogin={handleLogin}
-        />
-      )}
+
       <ReProg/>
       <Program/>
-      <MoneyBt/>
+      <MoneyBt onBudgetCalculated={handleBudgetCalculated} />
+      <MoneyList budgetUpdated={budgetUpdated} />
       <Mydex/>
-      <MoneyList/>
       <ChartList/>
+      <SelectedDepartment/>
     </div>
   );
 };

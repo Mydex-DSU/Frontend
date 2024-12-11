@@ -1,19 +1,19 @@
 /* ReProg.css */
-.mydex-container {
+/* .adm_mydex-container {
     width: 95%;
     margin: 20px auto;
     font-family: 'Noto Sans KR', sans-serif;
     border-radius: 15px;
     overflow: hidden;
-}
+} */
 
-.program-container {
+.adm_program-container {
     margin-top: 40px;
     width: 100%;
 }
 
-.program-header {
-    width: 83%;
+.adm_program-header {
+    width: 80%;
     margin: 0 auto;
     background-color: #1F2937;
     color: white;
@@ -23,26 +23,26 @@
     border-radius: 15px;
 }
 
-.mydex-table {
+.adm_mydex-table {
     width: 80%;
     margin: 0 auto;
     border-collapse: collapse;
 }
 
-.mydex-table th,td
+.adm_mydex-table th,td
  {
     padding: 15px 20px;
     text-align: center;
     border-bottom: 1px solid #E5E7EB;
 }
 
-.mydex-table th {
+/* .adm_mydex-table th {
     color: #374151;
     font-weight: normal;
     background: none;
-}
+} */
 
-.status-badge {
+.adm_status-badge {
     background-color: #F3F4F6;
     padding: 6px 12px;
     border-radius: 20px;
@@ -51,7 +51,7 @@
     cursor: pointer;
 }
 
-.more-link {
+.adm_more-link {
     display: block;
     width: 80%;
     margin: 0 auto;
@@ -64,27 +64,30 @@
 }
 
 /* 테이블 열 너비 조정 */
-.mydex-table th:nth-child(1),
-.mydex-table td:nth-child(1) {
+.adm_mydex-table th:nth-child(1),
+.adm_mydex-table td:nth-child(1) {
     width: 25%;
 }
 
-.mydex-table th:nth-child(2),
-.mydex-table td:nth-child(2) {
+.adm_mydex-table th:nth-child(2),
+.adm_mydex-table td:nth-child(2) {
     width: 25%;
 }
 
-.mydex-table th:nth-child(3),
-.mydex-table td:nth-child(3) {
+.adm_mydex-table th:nth-child(3),
+.adm_mydex-table td:nth-child(3) {
     width: 25%;
 }
 
-.mydex-table th:nth-child(4),
-.mydex-table td:nth-child(4) {
+.adm_mydex-table th:nth-child(4),
+.adm_mydex-table td:nth-child(4) {
     width: 25%;
 }
 
 /* 마지막 행의 테두리 제거 */
-.mydex-table tr:last-child td {
+.adm_mydex-table tr:last-child td {
     border-bottom: none;
 }
+/* .adm_mydex-table tr:first-child td {
+    border-top: none;
+} */

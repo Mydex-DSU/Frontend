@@ -1,40 +1,84 @@
-.registration-container {
-    max-width: 83%;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .header {
-    background-color: #1e3250;
-    color: white;
-    padding: 15px;
-    text-align: center;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
-  
-  .content-box {
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 8px;
-  }
-  
-  .text {
-    margin: 10px 0;
-    font-size: 16px;
-  }
-  
-  .register-button {
-    background-color: #dc1436;
-    color: white;
-    border: none;
-    padding: 10px 30px;
-    border-radius: 4px;
-    cursor: pointer;
-    float: right;
-    margin-top: -20px;
-  }
-  
-  .register-button:hover {
-    background-color: #b81030;
-  }
+/* 전체 컨테이너에 대한 스타일 */
+.adm_MydexHead {
+  background-color: #1e3250;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.adm_content-box {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px; /* 버튼과의 간격 */
+}
+
+.adm_text {
+  margin: 10px 0;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* 버튼 스타일 수정 */
+.adm_register-button {
+  display: block; /* 블록 레벨 요소로 변경 */
+  margin: 0 auto; /* 좌우 마진을 auto로 설정하여 중앙 정렬 */
+  background-color: #dc1436;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.adm_register-button:hover {
+  background-color: #b81030;
+}
+
+
+.adm_MydexHead {
+  background-color: #1e3250;
+  width: 80%;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  margin: auto;
+  border-radius: 15px;
+  margin-bottom: 60px;
+}
+
+.adm_content-box {
+  width: 80%;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.adm_text {
+  margin: 10px 0;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.adm_register-button {  /* 여기를 수정했습니다 */
+  background-color: #dc1436;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;  /* 음수 값을 양수로 변경했습니다 */
+}
+
+
+
+.adm_register-button:hover {  /* 여기도 수정했습니다 */
+  background-color: #b81030;
+}

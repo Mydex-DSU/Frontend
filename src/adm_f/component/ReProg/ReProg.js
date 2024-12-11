@@ -11,20 +11,22 @@ const ReProg = () => {
 
   const fetchApplicationList = async () => {
     try {
-      const userString = sessionStorage.getItem('user');
-      const user = JSON.parse(userString);
+      const adminString = sessionStorage.getItem('admin');
+      const admin = JSON.parse(adminString);
 
-      if (!user || !user.adm_id) {
-        console.error('사용자 정보가 없습니다.');
-        return;
-      }
+      console.log(adminString)
+      console.log(admin)
+      // if (!admin || !admin.adm_id) {
+      //   console.error('사용자 정보가 없습니다.');
+      //   return;
+      // }
 
       const response = await axios.get(`http://100.94.142.127:3000/remedialprogram`, {
-        params: { stu_id: user.stu_id },
+        params: { adm_id: admin.adm_id },
       });
       
       // 평가가 필요한 신청(processing_result가 null인 경우)만 필터링
-      const pendingApplications = response.data.remedialprogramapplicationlist.filter(
+      const pendingApplications = response.data.remedial_program_application_list.filter(
         app => app.processing_result === null
       );
       setApplications(pendingApplications);
@@ -34,10 +36,10 @@ const ReProg = () => {
   };
 
   return (
-    <div className="mydex-container">
-      <div className="program-container">
-        <div className="program-header">구제프로그램 신청 목록</div>
-        <table className="mydex-table">
+    <div className="adm_mydex-container">
+      <div className="adm_program-container">
+        <div className="adm_program-header">구제프로그램 신청 목록</div>
+        <table className="adm_mydex-table">
           <thead>
             <tr>
               <th>구제프로그램 이름</th>
@@ -47,7 +49,7 @@ const ReProg = () => {
             </tr>
           </thead>
           <tbody>
-            {applications.slice(0, 5).map((app, index) => (
+            {applications.slice(0, 4).map((app, index) => (
               <tr key={index}>
                 <td>{app.remedialprogram_name}</td>
                 <td>{app.stu_id}</td>
@@ -57,7 +59,7 @@ const ReProg = () => {
             ))}
           </tbody>
         </table>
-        <a href="/adm/reliefprogram" className="more-link">구제프로그램 신청 목록 ＞</a>
+        <a href="/adm/reliefprogram" className="adm_more-link">구제프로그램 신청 목록 ＞</a>
       </div>
     </div>
   );
