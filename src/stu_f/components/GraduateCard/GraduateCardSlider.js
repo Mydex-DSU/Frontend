@@ -67,11 +67,19 @@ const GraduatesCarousel = ({
 }) => {
   const visibleGraduates = graduates.slice(startIndex, startIndex + 4);
 
+  const isLeftHidden = startIndex === 0;
+  const isRightHidden = startIndex + 4 >= graduates.length;
+
   return (
     <div className="carousel">
-      <button className="carousel-arrow left-arrow" onClick={handlePrev}>
-        &#8249;
-      </button>
+      {!isLeftHidden && (
+        <button
+          className="carousel-arrow left-arrow"
+          onClick={handlePrev}
+        >
+          &#8249;
+        </button>
+      )}
       <div className="graduates-cards">
         {visibleGraduates.map((graduate, index) => (
           <GraduateCard
@@ -82,12 +90,18 @@ const GraduatesCarousel = ({
           />
         ))}
       </div>
-      <button className="carousel-arrow right-arrow" onClick={handleNext}>
-        &#8250;
-      </button>
+      {!isRightHidden && (
+        <button
+          className="carousel-arrow right-arrow"
+          onClick={handleNext}
+        >
+          &#8250;
+        </button>
+      )}
     </div>
   );
 };
+
 
 // 슬라이더 컴포넌트
 const GraduateCardSlider = () => {
