@@ -41,6 +41,8 @@ const MainPage = () => {
     
   };
 
+  const dded = sessionStorage.getItem("user");
+  console.log(dded);
   return (
     <div>
       <div className="login-container">
