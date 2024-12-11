@@ -9,7 +9,6 @@ function ReliefProgramPage() {
 
     const stuId = sessionStorage.getItem("stu_id");
 
-    console.log(stuId);
 
     const fetchApplicationHistory = async () => {
         try {
@@ -19,13 +18,14 @@ function ReliefProgramPage() {
           );
 
           setApplicationHistory(response.data.remedial_program_application_list);
+
         } catch (error) {
           console.error("구제프로그램 불러오는데 에러 뜸:", error);
         }
       };
       
 
-      console.log(applicationHistory.remedial_program_application_list)
+  
 
 
   useEffect(() => {
@@ -163,7 +163,7 @@ function ReliefProgramPage() {
       <div className="relief-apply-button-containe">
       <button className="relief-apply-button" onClick={() => setIsPopupOpen(true)}>구제 프로그램 신청</button>
       {isPopupOpen && (
-        <RemedialProgramPopup onClose={() => setIsPopupOpen(false)} />
+        <RemedialProgramPopup onClose={() => {setIsPopupOpen(false); fetchApplicationHistory();}} />
       )}
       </div>
       {/* 신청 내역 */}
@@ -196,8 +196,8 @@ function ReliefProgramPage() {
                       서류 보기
                     </a>
                   </td>
-                  <td>{item.processing_result === 1 ? "승인" : "거절"}</td>
-                  <td>{item.rejection_reason || "없음"}</td>
+                  <td>{item.processing_result === 1 ? "승인" : item.processing_result === null ?  "대기중" : "거절" }</td>
+                  <td>{item.rejection_reason  || "-"}</td>
                 </tr>
               ))}
             </tbody>
