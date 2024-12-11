@@ -1,203 +1,129 @@
 /* selectedDepartment.css */
-.budget-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .select-wrapper {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .department-select,
-  .budget-select {
-    width: 200px;
-    height: 35px;
-    padding: 0 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: white;
-  }
-  
-  .budget-dropdown {
-    position: relative;
-  }
-  
-  .budget-select {
-    text-align: left;
-    cursor: pointer;
-  }
-  
-  .budget-options {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 200px;
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-top: 2px;
-    z-index: 1000;
-  }
-  
-  .option-item {
-    padding: 8px 10px;
-    cursor: pointer;
-  }
-  
-  .option-item:hover {
-    background-color: #f8f9fa;
-  }
-  
-  .budget-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px; /* 아래 여백 추가 */
-  }
-  
-  .budget-amounts {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .period-select {
-    display: flex;
-    gap: 5px;
-  }
-  
-  .period-select select {
-    padding: 5px 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    justify-content: center; /* 중앙 정렬 */
-  }
-  
-  
-  .table-container {
-    position: relative;
-    margin-top: 10px; /* 위쪽 여백 추가 */
-  }
-  
-  .header-titles {
-    display: grid;
-    grid-template-columns: 1fr 1fr 2fr 1fr 1fr 1fr;
-    padding: 12px 8px;
-    font-size: 10;
-    font-weight: bold;
-    position: relative;
-    text-align: center;
-    border-bottom: 3px solid #dc3545;
+.faculty-budget-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
-    .table-container thead{
-        border-top: 3px solid black;
-        border-bottom: 3px solid #dc3545;
-    }
-    .table-container thead th {
-        padding: 12px;
-    }
-  /* 검은 선 */
-  .header-titles::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background-color: #000;
-  }
-  
-  /* 빨간 선 */
-  .header-titles::after {
-    content: '';
-    position: relative;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  td {
-    padding: 12px 8px;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
-  }
-  
-  tr:first-child td {
-    padding-top: 10px;
-  }
-  
-  .positive {
-    color: red;
-  }
-  
-  .negative {
-    color: blue;
-  }
-  
-  .search-wrapper {
-    margin-top: 20px;
-  }
-  
-  .point-notice {
-    color: #dc3545;
-    margin-bottom: 10px;
-  }
-  
-  .search-box {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-  }
-  
-  .department-year-select {
-    margin-top: 10px;
-  }
 
-  .department-select-search{
-    margin-top: 10px;
-    height: 30px;
-    padding: 0 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-  }
+.faculty-select-wrapper {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
 
-  .search-box {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-  }
-  
-  
-  .input-group {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  
-  .input-group input {
-    padding: 5px 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: 150px;
-  }
-  
-  .department-search-btn {
-    margin-top: 10px;
-    padding: 5px 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: white;
-    cursor: pointer;
-  }
-  
+.faculty-department-select,
+.faculty-budget-select {
+  width: 200px;
+  height: 35px;
+  padding: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+}
 
+.faculty-budget-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
-  
+.faculty-budget-amounts {
+  display: flex;
+  gap: 20px;
+}
+
+.faculty-period-select {
+  display: flex;
+  gap: 5px;
+}
+
+.faculty-period-select select {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.faculty-table-container {
+  margin-top: 10px;
+}
+
+.faculty-table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.faculty-table-container thead {
+  border-top: 3px solid black;
+  border-bottom: 3px solid #dc3545;
+}
+
+.faculty-table-container thead th {
+  padding: 12px;
+  text-align: center;
+}
+
+.faculty-table-container td {
+  padding: 12px 8px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.faculty-positive {
+  color: red;
+}
+
+.faculty-negative {
+  color: blue;
+}
+
+.faculty-search-wrapper {
+  margin-top: 20px;
+}
+
+.faculty-point-notice {
+  color: #dc3545;
+  margin-bottom: 10px;
+}
+
+.faculty-search-box {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.faculty-department-year-select {
+  margin-top: 10px;
+}
+
+.faculty-department-select-search {
+  margin-top: 10px;
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.faculty-input-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.faculty-input-group input {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 150px;
+}
+
+.faculty-department-search-btn {
+  margin-top: 10px;
+  padding: 5px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+}
