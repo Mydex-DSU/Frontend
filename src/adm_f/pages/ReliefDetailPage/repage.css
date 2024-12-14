@@ -77,3 +77,50 @@
 .adm_re-table th {
   padding: 10px;
 }
+.adm_pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 5px;
+}
+
+.adm_page-button {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background-color: white;
+  cursor: pointer;
+  min-width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adm_page-button.adm_active {
+  background-color: #dc3545;
+  color: white;
+  border-color: #dc3545;
+}
+
+/* .adm_page-button:hover {
+  background-color: #f8f9fa;
+} */
+
+.adm_arrow-button {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background-color: white;
+  cursor: pointer;
+  min-width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adm_arrow-button:disabled {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+  color: #ccc;
+}
