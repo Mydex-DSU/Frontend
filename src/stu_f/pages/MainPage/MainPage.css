@@ -8,35 +8,8 @@
   }
   
   /* 로그인/로그아웃 버튼 */
-  .auth-button-container {
-    text-align: right;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px; /* 버튼 사이의 간격 */
-  }
-  
-  .auth-button {
-    padding: 10px 15px;
-    font-size: 14px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .auth-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .adm-login-btn {
-    background-color: #d03d02; /* 관리자 로그인 버튼 색상 변경 */
-  }
-  
-  .adm-login-btn:hover {
-    background-color: #801d04;
-  }
+
+
   /* 프로필 및 경고 컴포넌트 */
   .profile-component {
     display: flex;

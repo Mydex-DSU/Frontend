@@ -1,4 +1,4 @@
-.remedial-program-popup {
+.rmd-program-popup {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -10,25 +10,25 @@
   z-index: 1000;
 }
 
-.popup-content {
+.rmd-popup-content {
   padding: 20px;
 }
 
 
-.error-message {
+.rmd-error-message {
   color: red;
   margin-top: 10px;
   font-size: 14px;
 }
 
-.popup-buttons {
+.rmd-popup-buttons {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
 }
 
-.cancel-button,
-.submit-button {
+.rmd-cancel-button,
+.rmd-submit-button {
   padding: 10px 20px;
   font-size: 14px;
   border: none;
@@ -36,12 +36,12 @@
   cursor: pointer;
 }
 
-.cancel-button {
+.rmd-cancel-button {
   background-color: #f5f5f5;
   color: #333;
 }
 
-.submit-button {
+.rmd-submit-button {
   background-color: #007bff;
   color: #fff;
 }

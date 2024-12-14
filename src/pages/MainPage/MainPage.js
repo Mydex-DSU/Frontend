@@ -94,29 +94,7 @@ function MainPage() {
 
   return (
     <div className="main-container">
-      <div className="auth-button-container">
-        {!isLoggedIn ? (
-          <button className="auth-button" onClick={() => setIsPopupOpen(true)}>
-            로그인
-          </button>
-        ) : (
-          <button className="auth-button" onClick={handleLogout}>
-            로그아웃
-          </button>
-        )}
-      </div>
-      {isPopupOpen && (
-        <LoginPopup
-          onClose={() => setIsPopupOpen(false)}
-          onLoginSuccess={() => {
-            setIsLoggedIn(true);
-            const stuId = sessionStorage.getItem("stu_id");
-            fetchUserData(stuId);
-            fetchUserProgram(stuId);
-            fetchDepartReTemp(stuId);
-          }}
-        />
-      )}
+     
       <NavBar />
       {isLoggedIn && userData && (
         <>
