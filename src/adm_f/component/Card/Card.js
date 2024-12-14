@@ -3,22 +3,22 @@ import './card.css'
 
 const Card = ({ title, image, operationPeriod, surveyPeriod, status, likeCount, onClick }) => {
     return (
-      <div className="program-card" onClick={onClick} style={{cursor: 'pointer'}}>
-        <div className="card-image" style={{ backgroundImage: `url(${image})` }}>
-            <button className="like-button" onClick={(e) => e.stopPropagation()}>
-                <span className="like-icon-wrapper">
+      <div className="adm_program-card" onClick={onClick} style={{cursor: 'pointer'}}>
+        <div className="adm_card-image" style={{ backgroundImage: `url(${image})` }}>
+            <button className="adm_like-button" onClick={(e) => e.stopPropagation()}>
+                <span className="adm_like-icon-wrapper">
                 ♡
-                <span className="like-count">{likeCount}</span>
+                <span className="adm_like-count">{likeCount}</span>
                 </span>
             </button>
         </div>
-        <div className="card-content">
-          <h3 className="card-title">{title}</h3>
-          <div className="period-info">
+        <div className="adm_card-content">
+          <h3 className="adm_card-title">{title}</h3>
+          <div className="adm_period-info">
             <p>운영 - {operationPeriod}</p>
             <p>설문 - {surveyPeriod}</p>
           </div>
-          <button className={`status-button ${status}`} onClick={(e) => e.stopPropagation()}>
+          <button className={`adm_status-button ${status}`} onClick={(e) => e.stopPropagation()}>
             {status}
           </button>
         </div>

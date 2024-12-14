@@ -4,8 +4,8 @@ import './AuditPopup.css';
 
 const AuditPopup = ({ onClose, application }) => {
   return (
-    <div className="popup">
-      <div className="popup-content">
+    <div className="adm_popup">
+      <div className="adm_popup-content">
         <h2>심사내용</h2>
         {application.processing_result === 1 ? (
           <>

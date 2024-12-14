@@ -27,6 +27,8 @@ import EvaluationDetail from "./adm_f/pages/EvaluationDetail/EvaluationDetail.js
 import ProgramList from "./adm_f/pages/ProgramList/ProgramList.js";
 import ProgramRegistration from "./adm_f/pages/ProgramRegistration/ProgramRegistration.js";
 import ReliefProgram from "./adm_f/pages/ReliefDetailPage/RePage.js";
+import FacultyTransaction from "./adm_f/pages/FacultyTransactionPage/FacultyTransactionPage.js";
+import NoShowDetail from "./adm_f/pages/NoShowDetail/NoShowDetail.js";
 
 // 교수 관련
 import ProMainPage from "./pro_f/pages/MainPage/proMainPage.js";
@@ -67,6 +69,8 @@ function AppContent() {
         <Route path="/adm/programregistration" element={<ProgramRegistration />} />
         <Route path="/adm/reliefprogram" element={<ReliefProgram />} />
         <Route path="/adm/programlist" element={<ProgramList />} />
+        <Route path="/adm/facultytransaction" element={<FacultyTransaction/>}/>
+        <Route path="/adm/noshowdetail" element={<NoShowDetail/>}/>
 
         {/* 교수 라우트 */}
         <Route path="/pro/promainpage" element={<ProMainPage />} />

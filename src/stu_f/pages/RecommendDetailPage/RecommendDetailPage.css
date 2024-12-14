@@ -1,11 +1,78 @@
-.recommendation-container {
+/* RecommendDetailPage.css */
+.prorecommendation-container {
   background-color: #f5f7f9;
   padding: 20px;
   border-radius: 10px;
   font-family: Arial, sans-serif;
 }
 
-.recommendation-header h2 {
+.prograduate-detail {
+  border: 1px solid #d1d5da;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pro-graduate-header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #002f6c;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.prograduate-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.proinfo-section, .prospecialization-section{
+  flex: 1 1 calc(33.333% - 20px);
+  border: 1px solid #d1d5da;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: left;
+}
+.proden-info-title{
+  margin-bottom: 10px;
+}
+.proportfolio-section {
+
+  border: 1px solid #d1d5da;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: left;
+}
+
+.info-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0056b3;
+  margin-bottom: 10px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tags .tag {
+  background-color: #0056b3;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+
+
+.prorecommendation-header h2 {
   font-size: 20px;
   font-weight: bold;
   color: #002f6c;
@@ -14,28 +81,27 @@
   padding-bottom: 10px;
 }
 
-.program-item {
+.proprogram-item {
   background-color: white;
   border: 1px solid #d1d5da;
   border-radius: 10px;
   padding: 15px;
   margin-bottom: 20px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: left; /* Left alignment */
 }
 
-.stu-program-title h3 {
+.prostu-program-title h3 {
   font-size: 18px;
   font-weight: bold;
   color: #002f6c;
   margin-bottom: 10px;
 }
 
-.stu-program-content {
-  margin-bottom: 20px; /* Increased spacing below content */
+.prostu-program-content {
+  margin-bottom: 20px;
 }
 
-.program-label {
+.proprogram-label {
   font-size: 14px;
   font-weight: bold;
   background-color: #022c63;
@@ -46,14 +112,14 @@
   margin-bottom: 5px;
 }
 
-.stu-program-content p {
+.prostu-program-content p {
   font-size: 14px;
   color: #333;
   margin: 0;
   line-height: 1.5;
 }
 
-.program-feedback {
+.proprogram-feedback {
   display: flex;
   align-items: flex-start;
   background-color: #f9f9f9;
@@ -61,60 +127,16 @@
   padding: 10px;
   border-radius: 5px;
   margin-top: 15px;
-  margin-right: 20px; /* Adjusted right margin */
-  margin-bottom: 10px; /* Added spacing below feedback */
 }
 
-.feedback-icon {
+.profeedback-icon {
   font-size: 20px;
   margin-right: 10px;
   color: #007bff;
 }
 
-.feedback-text {
+.profeedback-text {
   font-size: 14px;
   color: #555;
   line-height: 1.5;
-}
-.graduates-filters {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.graduates-filters h1 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.filters-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.filters-row select,
-.filters-row input {
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-.filters-row .search-button {
-  padding: 8px 16px;
-  background-color: #d32f2f;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.graduates-header {
-  background-color: #002f6c;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  border-radius: 5px;
 }
