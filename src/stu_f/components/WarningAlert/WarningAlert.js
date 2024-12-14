@@ -1,11 +1,11 @@
 import React from 'react';
 import './WarningAlert.css';
 
-function WarningAlert({ message }) {
+function WarningAlert({ userData }) {
   return (
     <div className="warning-alert">
       <span className="warning-icon">⚠️</span>
-      <span className="warning-message">{message}</span>
+      <span className="warning-message">{}</span>
     </div>
   );
 }

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './repage.css';
-//import { Worker, Viewer } from '@react-pdf-viewer/core';
 import '@react-pdf-viewer/core/lib/styles/index.css';
 import EvaluationPopup from '../../component/detailcomponent/EvaluationPopup';
 import AuditPopup from '../../component/detailcomponent/AuditPopup';
@@ -14,6 +13,8 @@ const RePage = () => {
   const [showAuditPopup, setShowAuditPopup] = useState(false);
   const [currentApp, setCurrentApp] = useState(null);
   const [isEvaluating, setIsEvaluating] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [itemsPerPage] = useState(6);
 
   useEffect(() => {
     fetchApplicationList();
@@ -23,11 +24,6 @@ const RePage = () => {
     try {
       const adminString = sessionStorage.getItem('admin');
       const admin = JSON.parse(adminString);
-
-      // if (!admin || !admin.adm_id) {
-      //   console.error('사용자 정보가 없습니다.');
-      //   return;
-      // }
 
       const response = await axios.get(`http://100.94.142.127:3000/remedialprogram`, {
         params: { adm_id: admin.adm_id },
@@ -39,7 +35,7 @@ const RePage = () => {
   };
 
   const handleBack = () => {
-    navigate(-1);
+    navigate('/adm/admmainpage');
   };
 
   const formatDate = (dateString) => {
@@ -152,10 +148,17 @@ const RePage = () => {
     }
   ];
 
+  // 페이지네이션 로직
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentItems = application.slice(indexOfFirstItem, indexOfLastItem);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <div className="adm_relief-program">
       <h2>구제 프로그램 신청 목록</h2>
-      <table>
+      <table className="adm_program-table">
         <thead>
           <tr>
             <th>항목</th>
@@ -179,8 +182,8 @@ const RePage = () => {
           ))}
         </tbody>
       </table>
-      <button onClick={handleBack}>뒤로가기</button>
-      <div>
+      <button className="adm_back-button" onClick={handleBack}>뒤로가기</button>
+      <div className="adm_application-list">
         <h2>신청학생 목록</h2>
         <table className="adm_re-table">
           <thead>
@@ -197,8 +200,8 @@ const RePage = () => {
             </tr>
           </thead>
           <tbody>
-            {application && application.length > 0 ? (
-              application.map((app, index) => (
+            {currentItems && currentItems.length > 0 ? (
+              currentItems.map((app, index) => (
                 <tr key={index}>
                   <td>{app.remedialprogram_name}</td>
                   <td>{app.stu_id}</td>
@@ -223,14 +226,14 @@ const RePage = () => {
                   <td>{app.processing_datetime ? formatDate(app.processing_datetime) : ''}</td>
                   <td>
                     {app.processing_result !== null ? (
-                      <button onClick={() => handleViewDetails(app)}>상세보기</button>
+                      <button className="adm_view-details-button" onClick={() => handleViewDetails(app)}>상세보기</button>
                     ) : (
                       app.rejection_reason || ''
                     )}
                   </td>
                   <td>
                     {app.processing_result === null ? (
-                      <button onClick={() => handleEvaluate(app)}>평가하기</button>
+                      <button className="adm_evaluate-button" onClick={() => handleEvaluate(app)}>평가하기</button>
                     ) : (
                       '평가 완료'
                     )}
@@ -244,6 +247,13 @@ const RePage = () => {
             )}
           </tbody>
         </table>
+        <div className="adm_pagination">
+          {Array.from({ length: Math.ceil(application.length / itemsPerPage) }, (_, i) => (
+            <button key={i} onClick={() => paginate(i + 1)} className={`adm_page-button ${currentPage === i + 1 ? 'adm_active' : ''}`}>
+              {i + 1}
+            </button>
+          ))}
+        </div>
       </div>
       {showPopup && isEvaluating && (
         <EvaluationPopup

@@ -1,95 +1,205 @@
+/* LoanApplicationPage.css */
+
+/* 전체 컨테이너 */
 .loan-application-page {
-    margin: 20px;
-  }
-  
-  .profile-section {
-    margin-bottom: 20px;
-  }
-  
-  .loan-info {
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
-  
-  .loan-info h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .loan-info ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .loan-info ul li {
-    margin-bottom: 8px;
-    color: #e91e63;
-    font-weight: bold;
-  }
-  
-  .loan-apply {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .apply-button {
-    background-color: #e91e63;
-    color: #fff;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .apply-button:hover {
-    background-color: #c2185b;
-  }
-  
-  .loan-history {
-    margin-top: 30px;
-  }
-  
-  .loan-history-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
-  }
-  
-  .loan-history-table th,
-  .loan-history-table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: center;
-  }
-  
-  .loan-history-table th {
-    background-color: #f8f9fa;
-    font-weight: bold;
-  }
-  
-  .loan-history-table td {
-    vertical-align: middle;
-  }
-  
-  .loan-history-table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed; /* 고정 레이아웃 */
-  }
-  
-  .loan-history-table th,
-  .loan-history-table td {
-    padding: 10px;
-    text-align: left;
-    border: 1px solid #ddd;
-    overflow: hidden; /* 넘치는 내용 숨기기 */
-    text-overflow: ellipsis; /* 말줄임표 처리 */
-    white-space: nowrap; /* 줄바꿈 방지 */
-  }
-  
-  .loan-history-table .loan-balance {
-    max-width: 150px; /* 열 최대 너비 제한 */
-  }
+  font-family: 'Arial', sans-serif;
+  margin: 20px;
+}
+
+/* 헤더 섹션 */
+.loan-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.loan-header h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #c41e3a;
+}
+
+.loan-header nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  gap: 20px;
+}
+
+.loan-header nav li {
+  font-size: 16px;
+  color: #000;
+  cursor: pointer;
+}
+
+/* 대출 관련 안내 */
+.loan-info-section {
+  margin-bottom: 40px;
+}
+
+.loan-info-section h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.loan-info-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.loanpage-card {
+  background-color: #c41e3a;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  flex: 1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.loanpage-card-1 {
+  background-color: #c41e3a;
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  flex: 1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 대출 설명 섹션 */
+.loan-descriptions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.loan-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.all-loan-title,
+.part-loan-title {
+  flex: 1;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.all-loan-title {
+  color: #c41e3a; /* 전체 대출은 빨간색 */
+}
+
+.part-loan-title {
+  color: #7d7d7d; /* 추가 대출은 회색 */
+}
+
+.loan-description {
+  flex: 1;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 50%; /* 설명 박스가 페이지의 절반 이하로 설정 */
+  text-align: left; /* 텍스트 왼쪽 정렬 */
+}
+
+.loan-description-title {
+  font-weight: bold;
+  color: #c41e3a;
+  margin-bottom: 10px;
+}
+
+.loan-description-title-2 {
+  font-weight: bold;
+  color: #7d7d7d;
+  margin-bottom: 10px;
+}
+
+.loan-description p {
+  margin: 5px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* 대출 신청 버튼 */
+.loan-application {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.laon-apply-button {
+  background-color: #c41e3a;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.laon-apply-button:disabled {
+  background-color: #ddd;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.loan-info-text {
+  font-size: 14px;
+  color: #c41e3a;
+  margin-top: 10px;
+}
+
+/* 대출 거래 내역 */
+.loan-history-section {
+  margin-top: 40px;
+}
+
+.loan-history-section h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.loan-history-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.loan-history-table th,
+.loan-history-table td {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.loan-history-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.loan-history-table td {
+  color: #333;
+}
+
+.loan-history-table .loan-balance {
+  font-weight: bold;
+  color: #c41e3a;
+}

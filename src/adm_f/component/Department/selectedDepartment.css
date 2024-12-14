@@ -1,45 +1,68 @@
 /* 프로그램별 노쇼 상세 테이블 선 */
 .adm_table-container {
-    max-width: 85%; /* 원하는 너비로 설정 */
-    margin: 0 auto; /* 가운데 정렬 */
-    overflow-x: auto; /* 내용이 넘칠 경우 스크롤 활성화 */
-  }
-  
-  .adm_table-container thead {
-    border-top: 3px solid black;
-    border-bottom: 3px solid #CF1212;
-  
-  }
-  
-  /* 테이블 제목: 프로그램별 노쇼 상세 */
-  .adm_header_name{
-    color: #1F3550;
-    text-align: center; 
-  }
-  
-  .adm_detail_btn {
-    background-color: #CF1212; /* 버튼 배경색: 빨간색 */
-    color: white; /* 텍스트 색상: 흰색 */
-    border: none; /* 테두리 제거 */
-    border-radius: 25px; /* 버튼 모서리를 둥글게 */
-    padding: 10px 20px; /* 버튼 내부 여백 */
-    font-size: 16px; /* 텍스트 크기 */
-    font-weight: bold; /* 텍스트 굵기 */
-    cursor: pointer; /* 마우스 커서: 손 모양 */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
-    text-align: center; /* 텍스트 가운데 정렬 */
-  }
-  
-  .adm_detail_btn:hover {
-    background-color: #A00; /* 호버 시 더 어두운 빨간색 */
-    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3); /* 그림자 강화 */
-  }
-  
-  .adm_detail_btn:active {
-    background-color: #900; /* 클릭 시 더 어두운 색 */
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* 그림자 축소 */
-    transform: translateY(2px); /* 클릭 시 약간 아래로 이동 */
-  }
-  
-  
-  
+  max-width: 85%; /* 원하는 너비로 설정 */
+  margin: 0 auto; /* 가운데 정렬 */
+  overflow-x: auto; /* 내용이 넘칠 경우 스크롤 활성화 */
+}
+
+.adm_table-container thead {
+  border-top: 3px solid black;
+  border-bottom: 3px solid #CF1212;
+
+}
+
+/* 테이블 제목: 프로그램별 노쇼 상세 */
+.adm_header_name{
+  color: #1F3550;
+  text-align: center; 
+}
+
+.adm_detail_btn {
+  background-color: #CF1212; /* 버튼 배경색: 빨간색 */
+  color: white; /* 텍스트 색상: 흰색 */
+  border: none; /* 테두리 제거 */
+  border-radius: 25px; /* 버튼 모서리를 둥글게 */
+  padding: 10px 20px; /* 버튼 내부 여백 */
+  font-size: 16px; /* 텍스트 크기 */
+  font-weight: bold; /* 텍스트 굵기 */
+  cursor: pointer; /* 마우스 커서: 손 모양 */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+  text-align: center; /* 텍스트 가운데 정렬 */
+}
+
+.adm_detail_btn:hover {
+  background-color: #A00; /* 호버 시 더 어두운 빨간색 */
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3); /* 그림자 강화 */
+}
+
+.adm_detail_btn:active {
+  background-color: #900; /* 클릭 시 더 어두운 색 */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* 그림자 축소 */
+  transform: translateY(2px); /* 클릭 시 약간 아래로 이동 */
+}
+.adm_pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.adm_pagination_btn {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.adm_pagination_btn.adm_active {
+  background-color: #dc2626;
+  color: white;
+  border-color: #dc2626;
+}
+
+.adm_pagination_btn:hover {
+  background-color: #f3f4f6;
+}
+
+

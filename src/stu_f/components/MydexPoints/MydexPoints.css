@@ -1,110 +1,108 @@
-.point-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f9f9f9;
-    padding: 40px;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .mydex-points {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 900px; /* 가로 크기 조정 */
-    padding: 30px;
-  }
-  
-  .points-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 60px; /* 텍스트와 프로그레스바 간 간격 조정 */
-    position: relative;
-  }
-  
-  /* 공통 박스 스타일 */
-  .totall-point-box,
-  .current-point-box,
-  .laon-point-box,
-  .warning {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 120px;
-    height: 120px;
-    border-radius: 10px;
-    margin: 0 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
-  }
-  
-  .totall-point-box {
-    background-color: #fef3e9;
-    color: #ff6a00;
-  }
-  
-  .current-point-box {
-    background-color: #f3f9ff;
-    color: #007bff;
-  }
-  
-  .laon-point-box {
-    background-color: #f9f9e9;
-    color: #f0ad4e;
-  }
-  
-  .warning {
-    background-color: #fdecec;
-    color: #d9534f;
-  }
-  
-  /* 값 스타일 */
-  .totall-point-value,
-  .current-point-value,
-  .laon-point-value,
-  .warning-value {
-    font-size: 32px;
-    font-weight: bold;
-  }
-  
-  .icon {
-    font-size: 32px;
-    margin-bottom: 4px;
-  }
-  
-  /* 텍스트 스타일 */
-  .totall-point-text,
-  .current-point-text,
-  .laon-point-text,
-  .warning-text {
-    font-size: 14px;
-    color: #666666;
-    text-align: center;
-    position: absolute;
-    top: 110%; /* 박스 바로 아래에 텍스트 배치 */
-    width: 100%; /* 텍스트 중앙 정렬 */
-  }
-  
-  /* 프로그레스바 스타일 */
-  .progress-bar {
-    height: 10px;
-    background-color: #e0e0e0;
-    border-radius: 5px;
-    overflow: hidden;
-    margin: 50px 0 0 0; /* 프로그레스바를 아래로 더 내림 */
-    position: relative;
-  }
-  
-  .progress {
-    height: 100%;
-    background-color: #ff6a00;
-  }
-  
-  .pnote {
-    font-size: 14px;
-    color: #666666;
-    text-align: right; /* 텍스트를 오른쪽 정렬 */
-    margin-top: 10px;
-  }
-  
+.mydex-points-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; /* 상하 간격 */
+}
+
+/* 박스들을 가로로 정렬 */
+.points-row {
+  display: flex;
+  justify-content: space-between;
+  max-width: 850px; /* 고정된 최대 너비 설정 */
+  align-items: center; /* 세로 중앙 정렬 */
+  gap: 100px; /* 박스 간 간격 증가 */
+  width: 100%;
+}
+
+/* 개별 박스 스타일 */
+.points-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 110px;
+  height: 110px;
+  border-radius: 12px;
+  padding: 10px;
+  position: relative;
+}
+
+/* 각 박스 색상 */
+.total-mydex {
+  background-color: #ffa726; /* 주황색 */
+}
+
+
+.current-mydex {
+  background-color: #ef5350; /* 빨간색 */
+}
+
+.loan-mydex {
+  background-color: #ffd54f; /* 노란색 */
+}
+
+.warning {
+  background-color: #d32f2f; /* 경고 빨간색 */
+}
+
+/* 박스 안의 이미지 및 값 */
+.points-box img {
+  width: 50%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.value {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+/* 박스 하단 텍스트 */
+.points-label {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+}
+
+/* 프로그래스 바 */
+.progress-bar-section {
+  width: 100%;
+  text-align: center;
+  max-width: 900px; /* 최대 너비를 1200px로 고정 */
+}
+
+.progress-bar {
+  position: relative;
+  height: 12px;
+  background: #ddd;
+  border-radius: 6px;
+  width: 100%;
+  margin: 10px auto;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #ef5350;
+  border-radius: 6px;
+  transition: width 0.3s ease-in-out;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.remaining-info {
+  margin-top: 10px;
+  font-size: 14px; 
+  color: #555;
+}

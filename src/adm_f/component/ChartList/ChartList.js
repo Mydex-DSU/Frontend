@@ -41,14 +41,25 @@ const ChartContainer = ({ children, className }) => (
 );
 
 const ChartList = () => {
-  const [chartData, setChartData] = useState([]);
+  const [pieChartData, setPieChartData] = useState([]);
+  const [barChartData, setBarChartData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedProgramType, setSelectedProgramType] = useState();
+  const [programTypes, setProgramTypes] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://100.94.142.127:3000/programs/noshowgraph');
-        setChartData(response.data.normalizedProgramTypes);
+        const pieResponse = await axios.get('http://100.94.142.127:3000/programs/noshowgraph');
+        console.log(pieResponse.data)
+        setPieChartData(pieResponse.data.normalizedProgramTypes);
+        setProgramTypes(pieResponse.data.normalizedProgramTypes.map(item => ({
+          id: item.programtype_id,
+          name: item.program_name
+        })));
+
+        await fetchBarChartData(1);
+
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -59,16 +70,42 @@ const ChartList = () => {
     fetchData();
   }, []);
 
+  const fetchBarChartData = async (programTypeId) => {
+    try {
+      console.log('Sending programtype_id:', programTypeId); // 로그 추가
+      const barResponse = await axios.post('http://100.94.142.127:3000/programs/noshowstickgraph', {
+        programtype_id: programTypeId
+      });
+      setBarChartData(barResponse.data.program_name);
+    } catch (error) {
+      console.error("Error fetching bar chart data:", error);
+    }
+  };
+  
+
+  const handleProgramTypeChange = (event) => {
+    console.log('Selected value:', event.target.value);
+    const selectedId = event.target.value
+    console.log("Here : " + selectedId)
+    const newProgramTypeId = parseInt(event.target.value, 10);
+    console.log('Selected value2:',newProgramTypeId);
+    setSelectedProgramType(newProgramTypeId);
+    fetchBarChartData(newProgramTypeId);
+  };
+  console.log(programTypes); // programTypes 배열 로그
+
+  
+
   if (loading) {
     return <div className="adm_loading">Loading...</div>;
   }
 
-  const pieChartData = {
-    series: chartData.map(item => item.노쇼_비율),
+  const pieChartOptions = {
+    series: pieChartData.map(item => item.노쇼_비율),
     options: {
       chart: { type: "pie" },
       colors: ChartStyles.pieColors,
-      labels: chartData.map(item => item.program_name),
+      labels: pieChartData.map(item => item.program_name),
       legend: { position: "right" },
       responsive: [{
         breakpoint: 480,
@@ -79,10 +116,10 @@ const ChartList = () => {
     }
   };
 
-  const barChartData = {
+  const barChartOptions = {
     series: [{
       name: "노쇼 인원",
-      data: chartData.map(item => parseInt(item.노쇼_인원))
+      data: barChartData.map(item => item.selected_count)
     }],
     options: {
       chart: { type: "bar" },
@@ -100,7 +137,7 @@ const ChartList = () => {
         }
       },
       xaxis: {
-        categories: chartData.map(item => item.program_name),
+        categories: barChartData.map(item => item.noshowreasoncategories_name),
         labels: { 
           rotate: -45,
           style: {
@@ -113,8 +150,8 @@ const ChartList = () => {
           text: '노쇼 인원'
         },
         min: 0,
-        max: 12,
-        tickAmount: 5,
+        max: Math.max(...barChartData.map(item => item.selected_count)) + 1,
+        tickAmount: 4,
         labels: {
           formatter: function(val) {
             return val.toFixed(0);
@@ -125,8 +162,7 @@ const ChartList = () => {
         },
         axisBorder: {
           show: true
-        },
-        tickValues: [0, 2, 4, 8, 12]
+        }
       }
     }
   };
@@ -138,17 +174,30 @@ const ChartList = () => {
       </h2>
       <ChartContainer className="adm_pie_chart_container">
         <Chart
-          options={pieChartData.options}
-          series={pieChartData.series}
+          options={pieChartOptions.options}
+          series={pieChartOptions.series}
           type="pie"
           width="700"
         />
       </ChartContainer>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', marginRight: '100px', marginBottom: '20px' }}>
+        <select
+          value={selectedProgramType}
+          onChange={handleProgramTypeChange}
+          style={ChartStyles.selectStyle}
+        >
+          {programTypes.map(type => (
+            <option key={type.id} value={type.id}>
+              {type.name}
+            </option>
+          ))}
+        </select>
+      </div>
       <ChartContainer className="adm_bar_chart_container">
         <div style={{ width: "1200px" }}>
           <Chart
-            options={barChartData.options}
-            series={barChartData.series}
+            options={barChartOptions.options}
+            series={barChartOptions.series}
             type="bar"
             height="400"
           />

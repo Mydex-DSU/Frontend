@@ -42,6 +42,16 @@ function NavBar() {
                 비교과프로그램 목록
               </Link>
             </li>
+            <li>
+              <Link to="/stu/programapplication" className ="submenu-link">
+                비교과프로그램 신청 목록
+              </Link>
+            </li>
+            <li>
+              <Link to ="/stu/programmyinfopage" className="submenu-link">
+                비교과프로그램 참여 목록
+              </Link>
+            </li>
           </ul>
         )}
       </div>
@@ -57,8 +67,8 @@ function NavBar() {
       </Link>
 
       {/* MYDEX 온도 포인트 */}
-      <Link to="/temperature" className="nav-link">
-        MYDEX 온도포인트
+      <Link to="/stu/mydexpointapplication" className="nav-link">
+        MYDEX 온도포인트 장학금
       </Link>
     </div>
   );
