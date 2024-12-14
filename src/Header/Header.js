@@ -35,7 +35,7 @@ function Header() {
 
   return (
     <header className="first-header">
-      <div className="first-header-title">MYDEX</div>
+      <div className="first-header-title">DSU</div>
       <div className="all-auth-section">
         {isStudentLoggedIn && (
           <button

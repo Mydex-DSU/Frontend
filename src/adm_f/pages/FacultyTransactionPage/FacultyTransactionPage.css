@@ -1,0 +1,103 @@
+
+.faculty-budget-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .faculty-select-wrapper {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .faculty-department-select{
+    width: 200px;
+    height: 35px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+  }
+  
+  
+  
+  .faculty-budget-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; /* 아래 여백 추가 */
+  }
+  
+  .faculty-budget-amounts {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .faculty-period-select {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .faculty-period-select select {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    justify-content: center; /* 중앙 정렬 */
+  }
+  
+  
+  .faculty-table-container {
+    position: relative;
+    margin-top: 10px; /* 위쪽 여백 추가 */
+  }
+
+    .faculty-table-container thead{
+        border-top: 3px solid black;
+        border-bottom: 3px solid #dc3545;
+    }
+    .faculty-table-container thead th {
+        padding: 12px;
+    }
+
+  
+  
+  .positive {
+    color: red;
+  }
+  
+  .negative {
+    color: blue;
+  }
+  
+  .faculty-search-wrapper {
+    margin-top: 20px;
+  }
+  
+  .faculty-point-notice {
+    color: #dc3545;
+    margin-bottom: 10px;
+  }
+
+  
+  .faculty-department-search-btn-119 {
+    margin-top: 10px;
+    padding: 5px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+  }
+
+  .faculty-department-select-search{
+    margin-top: 10px;
+    height: 30px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+
+
+  

@@ -37,10 +37,6 @@
   background-color: #ffa726; /* 주황색 */
 }
 
-.total-mydex img{
-  width: 80%; /* 크기를 적당히 줄임 */
-  height: auto; /* 비율 유지 */
-}
 
 .current-mydex {
   background-color: #ef5350; /* 빨간색 */

@@ -13,19 +13,19 @@ const Program = () => {
 
     const fetchApplicationList = async () => {
         try {
-            const userString = sessionStorage.getItem('user');
-            const user = JSON.parse(userString);
+            const userString = sessionStorage.getItem('admin');
+            const admin = JSON.parse(userString);
 
-            if (!user || !user.adm_id) {
-                console.error('사용자 정보가 없습니다.');
-                return;
-            }
+            // if (!admin || !admin.adm_id) {
+            //     console.error('사용자 정보가 없습니다.');
+            //     return;
+            // }
 
             const response = await axios.get(`http://100.94.142.127:3000/programs/fin`, {
-                params: { adm_id: user.adm_id },
+                params: { adm_id: admin.adm_id },
             });
             console.log('API 응답:', response.data);
-            console.log(sessionStorage.getItem('user'));
+            console.log(sessionStorage.getItem('admin'));
             setPro(response.data.programs);
         } catch (error) {
             console.error('프로그램 목록을 가져오는 데 실패했습니다:', error);
@@ -33,9 +33,9 @@ const Program = () => {
     };
 
     return (
-        <div className="program-container">
-            <h2 className="program-title">비교과 프로그램 관리</h2>
-            <table className="program-table">
+        <div className="adm_program-container">
+            <h2 className="adm_program-title">비교과 프로그램 관리</h2>
+            <table className="adm_program-table1">
                 <thead>
                     <tr>
                         <th>프로그램 이름</th>
@@ -45,21 +45,24 @@ const Program = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {pro.map((program, index) => (
-                        <tr key={index}>
-                            <td>{program.program_name}</td>
-                            <td>{`${new Date(program.program_survey_start_time).toLocaleDateString()} - ${new Date(program.program_survey_end_time).toLocaleDateString()}`}</td>
-                            <td>{`${new Date(program.program_operation_start_time).toLocaleDateString()} - ${new Date(program.program_operation_end_time).toLocaleDateString()}`}</td>
-                            <td>
-                                <button>{program.program_status}</button>
-                            </td>
-                        </tr>
-                    ))}
+                {pro.slice(0, 3).map((program, index) => (
+                    <tr key={index}>
+                        <td>{program.program_name}</td>
+                        <td>{`${new Date(program.program_survey_start_time).toLocaleDateString()} - ${new Date(program.program_survey_end_time).toLocaleDateString()}`}</td>
+                        <td>{`${new Date(program.program_operation_start_time).toLocaleDateString()} - ${new Date(program.program_operation_end_time).toLocaleDateString()}`}</td>
+                        <td>
+                            <button className={`adm_status-${program.program_status}`}>
+                                {program.program_status}
+                            </button>
+                        </td>
+                    </tr>
+                ))}
+
                 </tbody>
             </table>
 
-            <div className="program-links">
-                <Link to="/adm/completeprogram" className="more-link">프로그램 완료 목록 보러 가기 ＞</Link>
+            <div className="adm_program-links">
+                <Link to="/adm/completeprogram" className="adm_more-link">프로그램 완료 목록 보러 가기 ＞</Link>
             </div>
 
             <CardList/>

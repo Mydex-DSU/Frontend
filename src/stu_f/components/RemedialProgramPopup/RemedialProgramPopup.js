@@ -68,10 +68,13 @@ function RemedialProgramPopup({ onClose }) {
         }
       );
 
+
       if (response.data) {
         alert(response.data.message);
         console.log("Uploaded PDF URL:", response.data.pdf_url);
-        onClose(); // 팝업 닫기
+        onClose();
+         // 팝업 닫기
+        
       }
     } catch (error) {
       console.error("Error submitting remedial program application:", error);
@@ -79,7 +82,6 @@ function RemedialProgramPopup({ onClose }) {
     }
   };
 
-  console.log(formData.stu_id)
 
   return (
     <div className="remedial-program-popup">

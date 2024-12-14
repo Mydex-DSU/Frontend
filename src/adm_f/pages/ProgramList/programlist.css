@@ -1,49 +1,52 @@
-.program-list-container {
-    padding: 20px;
+.adm_program-list-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.adm_program-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.adm_program-list .card {
+  width: 100%;
+}
+
+/* h2 {
+  margin-bottom: 20px;
+}
+ */
+
+
+
+@media (max-width: 1200px) {
+  .adm_program-list {
+    grid-template-columns: repeat(3, 1fr);
   }
-  
-  .program-list {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .adm_program-list {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .program-list .card {
-    width: 100%;
+}
+
+@media (max-width: 600px) {
+  .adm_program-list {
+    grid-template-columns: 1fr;
   }
-  
-  h2 {
-    margin-bottom: 20px;
-  }
-  
-  button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  @media (max-width: 1200px) {
-    .program-list {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  
-  @media (max-width: 900px) {
-    .program-list {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .program-list {
-      grid-template-columns: 1fr;
-    }
-  }
+}
+.adm_register-button1 {
+  display: block;
+  margin: 0 0 20px auto;
+  padding: 10px 20px;
+  background-color: red;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+

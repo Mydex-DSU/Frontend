@@ -24,7 +24,7 @@ function DepartReTempPoint({ departReTemp, WarningPoint }) {
           <h2>{departReTemp.faculty_mydex_points}</h2>
         </div>
         <div className="go-to-scholarship-application">
-          <a href="#scholarship">장학금 신청하러가기</a>
+          <a href="/stu/mydexpointapplication">장학금 신청하러가기</a>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './evaluationdetail.css';
 
@@ -9,18 +9,19 @@ const EvaluationDetail = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [pointsInput, setPointsInput] = useState('');
-    const { programId, studentId } = useParams();
+    const location = useLocation();
+    const { programId, studentId } = location.state || {};
     const navigate = useNavigate();
 
     useEffect(() => {
         const fetchStudentDetail = async () => {
             try {
-                const userString = sessionStorage.getItem('user');
+                const userString = sessionStorage.getItem('admin');
                 const user = JSON.parse(userString);
 
-                if (!user || !user.adm_id) {
-                    throw new Error('관리자 정보가 없습니다.');
-                }
+                // if (!user || !user.adm_id) {
+                //     throw new Error('관리자 정보가 없습니다.');
+                // }
 
                 const response = await axios.post('http://100.94.142.127:3000/programs/fin/detail', {
                     program_id: parseInt(programId),
@@ -42,7 +43,12 @@ const EvaluationDetail = () => {
             }
         };
 
-        fetchStudentDetail();
+        if (programId && studentId) {
+            fetchStudentDetail();
+        } else {
+            setError('프로그램 ID 또는 학생 ID가 없습니다.');
+            setLoading(false);
+        }
     }, [programId, studentId]);
 
     const handleConfirm = async () => {
@@ -52,7 +58,7 @@ const EvaluationDetail = () => {
                 return;
             }
 
-            const userString = sessionStorage.getItem('user');
+            const userString = sessionStorage.getItem('admin');
             const user = JSON.parse(userString);
 
             await axios.post('http://100.94.142.127:3000/programs/fin/evaluation', {
@@ -61,7 +67,7 @@ const EvaluationDetail = () => {
                 stu_give_mydex_points: parseInt(pointsInput)
             });
 
-            navigate(`/adm/completedetail/${programId}`);
+            navigate('/adm/completedetail', { state: { programId } });
         } catch (error) {
             alert('평가 저장에 실패했습니다.');
         }
@@ -72,28 +78,26 @@ const EvaluationDetail = () => {
     if (!student) return <div className="no-data">학생 정보가 없습니다.</div>;
 
     return (
-        <div className="evaluation-container">
-            <h1 className="evaluation-title">학생 평가하기 상세</h1>
+        <div className="adm_evaluation-container">
+            <h1 className="adm_evaluation-title">학생 평가하기 상세</h1>
             
-            <div className="notification-box">
-                <div className="icon-text">
-                    <span className="bell-icon">🔔</span>
-                    <div className="notification-text">
-                    <div className="notification-text">
-                            <p>이 비교과 프로그램의 종류는 {program.programtype_name}입니다.</p>
-                            <p>학생의 출석률({student.attendance_rate || '0'}%)로 비교과 참여여부를 판단하세요.</p>
-                            <p>이 비교과프로그램에서 학생에게 부여할 포인트는 {program.program_mydex_points}점입니다.</p>
-                            <p>그러므로 출석률 {program.attendance_criteria || '50'}%가 노쇼 기준 입니다.</p>
-                        </div>
+            <div className="adm_notification-box">
+                <div className="adm_icon-text">
+                    <span className="adm_bell-icon">🔔</span>
+                    <div className="adm_notification-text">
+                        <p>이 비교과 프로그램의 종류는 {program.programtype_name}입니다.</p>
+                        <p>학생의 출석률({student.attendance_rate || '0'}%)로 비교과 참여여부를 판단하세요.</p>
+                        <p>이 비교과프로그램에서 학생에게 부여할 포인트는 {program.program_mydex_points}점입니다.</p>
+                        <p>그러므로 출석률 {program.attendance_criteria || '50'}%가 노쇼 기준 입니다.</p>
                     </div>
                 </div>
             </div>
 
-            <div className="points-info">
+            <div className="adm_points-info">
                 <p>학생에게 부여할 수 있는 포인트는 -{program.program_mydex_points},~{program.program_mydex_points}점 입니다.</p>
             </div>
 
-            <div className="student-info">
+            <div className="adm_student-info">
                 <table>
                     <thead>
                         <tr>
@@ -112,13 +116,13 @@ const EvaluationDetail = () => {
                             <td>{student.attendance_rate || '-'}%</td>
                             <td>{student.award_status || '-'}</td>
                             <td>{student.report_submission_status || '-'}</td>
-                            <td>{student.participation_status ? '1' : '-'}</td>
+                            <td>{student.participation_status ? '참여완료' : '미완료'}</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <div className="points-input">
+            <div className="adm_points-input">
                 <h3>학생이 받을 Mydex 온도 포인트 부여</h3>
                 <input 
                     type="text" 
@@ -129,7 +133,7 @@ const EvaluationDetail = () => {
                 />
             </div>
 
-            <div className="modal-content">
+            <div className="adm_modal-content">
                 <button 
                     className="confirm-button"
                     onClick={handleConfirm}

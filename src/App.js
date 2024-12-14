@@ -15,6 +15,8 @@ import ReliefProgramPage from "./stu_f/pages/ReliefProgramPage/ReliefProgramPage
 import LoanApplicationPage from "./stu_f/pages/LoanApplicationPage/LoanApplicationPage";
 import AdmNavBar from "./adm_f/component/admNav/admNav.js";
 import StudentNavBar from "./stu_f/components/NavBar/NavBar";
+import ProgramMyInfoPage from "./stu_f/pages/ProgramMyInfo/ProgramMyInfoPage";
+import MydexPointApplicationPage from "./stu_f/pages/MydexPointApplication/MydexPointApplicationPage.js"
 
 // 관리자 관련
 import AdmMainPage from "./adm_f/pages/admMainPage.js";
@@ -31,6 +33,7 @@ import ProMainPage from "./pro_f/pages/MainPage/proMainPage.js";
 import ProRecommendPage from "./pro_f/pages/RecommendPage/proRecommend.js";
 import ProRegPage from "./pro_f/pages/RegPage/proRegPage.js";
 import RecommendDetail from "./stu_f/pages/RecommendDetailPage/RecommendDetailPage.js";
+import ProgramApplications from "./stu_f/pages/ProgramApplication/ProgramApplicationPage.js";
 
 function AppContent() {
   const location = useLocation();
@@ -52,7 +55,9 @@ function AppContent() {
         <Route path="/stu/programdetailpage" element={<ProgramDetailPage />} />
         <Route path="/stu/loanapplicationpage" element={<LoanApplicationPage />} />
         <Route path="/stu/reliefprogrampage" element={<ReliefProgramPage />} />
-
+        <Route path="/stu/programapplication" element={<ProgramApplications/>}/>
+        <Route path="/stu/programmyinfopage" element={<ProgramMyInfoPage/>} />
+        <Route path="/stu/mydexpointapplication" element={<MydexPointApplicationPage/>} />
         {/* 관리자 라우트 */}
         <Route path="/adm/admmainpage" element={<AdmMainPage />} />
         <Route path="/adm/completedetail" element={<CompleteDetail />} />

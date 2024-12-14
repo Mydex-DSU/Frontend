@@ -39,7 +39,7 @@ function MydexPoints({ userData }) {
             <img src="/warning.png" alt="경고" />
             <div className="value">경고 {userData.stu_current_warning_count}</div>
           </div>
-          <div className="points-label">.</div>
+          <div className="points-label">. </div>
         </div>
       </div>
 
