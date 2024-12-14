@@ -175,14 +175,23 @@
   text-align: left;
 }
 
-.button-row {
+.pro-RegPagepoppup-portfolio-section{
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ }
+
+.pro-RegPagepoppup-button-row {
   display: flex;
   justify-content: flex-end; /* 오른쪽 정렬 */
   gap: 10px;
 }
 
-.add-btn,
-.delete-btn {
+.pro-RegPagepoppup-add-btn,
+.pro-RegPagepoppup-delete-btn {
   background-color: #00274d;
   color: white;
   padding: 10px 20px;
@@ -204,8 +213,8 @@
     margin-top: 20px;
   }
   
-  .cancel-btn,
-  .submit-btn {
+  .pro-RegPagepoppup-cancel-btn,
+  .pro-RegPagepoppup-submit-btn {
     padding: 10px 20px;
     font-size: 1rem;
     border: none;
@@ -213,21 +222,135 @@
     cursor: pointer;
   }
   
-  .cancel-btn {
+  .pro-RegPagepoppup-cancel-btn {
     background-color: #b0b0b0;
     color: white;
   }
   
-  .submit-btn {
+  .pro-RegPagepoppup-submit-btn {
     background-color: #d32f2f;
     color: white;
   }
   
-  .cancel-btn:hover {
+  .pro-RegPagepoppup-cancel-btn:hover {
     background-color: #8e8e8e;
   }
   
-  .submit-btn:hover {
+  .pro-RegPagepoppup-submit-btn:hover {
     background-color: #b71c1c;
   }
   
+
+
+
+
+
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5); /* 반투명 배경 */
+    width: 100px;
+   
+   
+    border-radius: 8px;
+    padding: 20px; /* 여백 */
+    width: 300px; /* 폭을 줄임 */
+   
+    height: auto; /* 내용에 따라 높이 조절 */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25); /* 그림자 */
+  }
+  
+  
+  .pro-RegPagepoppup h4 {
+    font-size: 18px; /* 제목 크기 조정 */
+    margin-bottom: 15px;
+    text-align: center; /* 가운데 정렬 */
+  }
+  
+  .pro-RegPagepoppup input[type="file"] {
+    margin-bottom: 15px;
+    display: block;
+    width: 100%; /* 입력창 너비 */
+  }
+  
+  
+  /* pro-RegPagepoppup */
+  .pro-RegPagepoppup-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .pro-RegPagepoppup-content{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+
+  .pro-RegPagepoppup-popup-title{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+
+  .pro-RegPagepoppup-buttons {
+    display: flex;
+    justify-content: flex-end; /* 버튼들을 오른쪽 정렬 */
+    gap: 20px; /* 버튼 간의 간격을 5px로 설정 */
+  }
+  
+
+  .pro-RegPagepoppup-cancel-button-popuop
+  .pro-RegPagepoppup-confirm-button{
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+
+  .pro-RegPagepoppup-confirm-button{
+    background-color: #d32f2f;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  
+  .pro-RegPagepoppup-confirm-button:hover {
+    background-color: #b71c1c;
+  }
+
+  .pro-RegPagepoppup-cancel-button-popuop{
+    background-color: #8e8e8e;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .pro-RegPagepoppup-cancel-button-popuop:hover{
+    background-color: #8e8e8e;
+  }

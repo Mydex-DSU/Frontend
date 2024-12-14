@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './MydexPointApplicationPage.css';
+import MydexPoints from "../../components/MydexPoints/MydexPoints";
 
 const MyDexPoints = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -8,6 +9,7 @@ const MyDexPoints = () => {
   const [pointsData, setPointsData] = useState([]); // 백엔드에서 받은 데이터를 저장
   const [applicationPeriod, setApplicationPeriod] = useState({ start: '', end: '' , mydex_scholarship_application_period_id : null }); // 신청 기간 저장
   const [newApplication, setNewApplication] = useState({ points: '' }); // 팝업에서 입력한 데이터를 저장
+  const [userData, setUserData] = useState([]);
 
   const pointsPerPage = 5;
   const userId = sessionStorage.getItem("stu_id");
@@ -66,6 +68,20 @@ const MyDexPoints = () => {
       }
     };
 
+    const fetchUserData= async() => {
+      try{
+        const response = await axios.post('http://100.94.142.127:3000/profile',
+        {
+          stu_id:userId,
+        });
+
+        setUserData(response.data.student_profile);
+
+      }catch{
+        console.error('프로필 api 오류');
+      }
+    };
+    fetchUserData();
     fetchPointsData();
     fetchApplicationPeriod();
   }, []);
@@ -94,22 +110,30 @@ const MyDexPoints = () => {
   };
 
   const handleAddApplication = async () => {
-    if (!newApplication.points) {
-      alert('신청 포인트를 입력해주세요.');
+    const requestedPoints = parseInt(newApplication.points, 10);
+
+    if (isNaN(requestedPoints) || requestedPoints <= 0) {
+      alert('유효한 포인트를 입력해주세요.');
+      return;
+    }
+
+    if (requestedPoints > 50) {
+      alert('최대 신청 가능 장학금 포인트는 50점 입니다.');
+      return;
+    }
+
+    if (userData.stu_current_mydex_points - requestedPoints < 10) {
+      alert('기본 지급된 10점은 장학금 신청이 불가능 합니다. 10점을 제외한 나머지 포인트만 신청 가능하니 참고해 주시길 바랍니다.');
       return;
     }
 
     try {
-      const payload = {
-
-      };
-      const userId = sessionStorage.getItem("stu_id");
       const response = await axios.post(
         'http://100.94.142.127:3000/mydexscholarshipapplication/application',
         {
           stu_id : userId,
           mydex_scholarship_application_period_id: applicationPeriod.mydex_scholarship_application_period_id, // Example period ID
-          requested_scholarship_points: parseInt(newApplication.points, 10),
+          requested_scholarship_points: requestedPoints,
         }
       );
 
@@ -129,6 +153,13 @@ const MyDexPoints = () => {
 
   return (
     <div className="pro4mydex-container">
+      <div>
+      {userData ? (
+          <MydexPoints userData={userData} />
+        ) : (
+          <p>사용자 데이터를 로드할 수 없습니다.</p>
+        )}
+      </div>
       <h1 className="pro4main-title">Mydex 온도 포인트 장학금</h1>
 
       <section className="pro4scholarship-section">

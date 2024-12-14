@@ -7,7 +7,7 @@ function RemedialProgramPopup({ onClose }) {
   const { userData } = useContext(UserDataContext); // useContext에서 userData 가져오기
   const [formData, setFormData] = useState({
     stu_id: sessionStorage.getItem("stu_id") || "", // 학번은 session에서 가져오기
-    student_name: "",
+    student_name: userData.stu_name,
     remedialprogram_name: "",
   });
   const [file, setFile] = useState(null);
@@ -81,11 +81,11 @@ function RemedialProgramPopup({ onClose }) {
       setMessage("신청 중 문제가 발생했습니다. 다시 시도해주세요.");
     }
   };
-
+ 
 
   return (
-    <div className="remedial-program-popup">
-      <div className="popup-content">
+    <div className="rmd-program-popup">
+      <div className="rmd-popup-content">
         <h2>구제 프로그램 신청</h2>
         <table>
           <tbody>
@@ -100,10 +100,11 @@ function RemedialProgramPopup({ onClose }) {
               <td>
                 <input
                   type="text"
-                  name="student_name"
+                  name="rmd-student_name"
                   value={formData.student_name}
                   onChange={handleInputChange}
                 />
+              
               </td>
             </tr>
             <tr>
@@ -131,12 +132,12 @@ function RemedialProgramPopup({ onClose }) {
             </tr>
           </tbody>
         </table>
-        {message && <p className="error-message">{message}</p>}
-        <div className="popup-buttons">
-          <button className="cancel-button" onClick={onClose}>
+        {message && <p className="rmd-error-message">{message}</p>}
+        <div className="rmd-popup-buttons">
+          <button className="rmd-cancel-button" onClick={onClose}>
             취소
           </button>
-          <button className="submit-button" onClick={handleSubmit}>
+          <button className="rmd-submit-button" onClick={handleSubmit}>
             신청
           </button>
         </div>
