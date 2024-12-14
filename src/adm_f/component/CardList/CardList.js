@@ -45,15 +45,18 @@ const CardList = () => {
     const maxIndex = Math.ceil(programs.length / 4) - 1;
     setCurrentIndex(current => current === 0 ? maxIndex : current - 1);
   };
-
+  
   return (
-    <div>
-      <h2 className="adm_section-title1">비교과 프로그램 목록</h2>
+    <div className="adm_program-section">
+      <h2 className="adm_section-title">비교과 프로그램 목록</h2>
       <div className="adm_slider-wrapper">
         <button className="adm_slider-button adm_prev" onClick={prevSlide}>&lt;</button>
         <div className="adm_slider-container">
-          <div className="adm_program-grid">
-            {programs.slice(currentIndex * 4, (currentIndex * 4) + 4).map((program) => (
+          <div className="adm_program-grid" 
+            style={{
+              transform: `translateX(-${currentIndex * 100}%)`,
+            }}>
+            {programs.map((program) => (
               <div className="adm_card-item" key={program.program_id}>
                 <Card
                   title={program.program_name}
@@ -77,5 +80,7 @@ const CardList = () => {
     </div>
   );
 };
+    
+    
 
 export default CardList;
