@@ -23,8 +23,18 @@
   border-top: 2px solid black;
   border-bottom: 2px solid red;
 }
-
-
+.adm_logout-button{
+  background-color: red;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  cursor: pointer;
+  float: right;
+}
+.adm_logout-button:hover {
+  background-color: #e72c4e;
+}
 
 /* .adm_table-title {
   text-align: center;

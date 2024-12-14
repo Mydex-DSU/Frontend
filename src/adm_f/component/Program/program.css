@@ -17,25 +17,25 @@
     font-size: 16px;
 }
 
-.adm_program-table {
+.adm_program-table1 {
     width: 80%;
     margin: 0 auto;
     border-collapse: collapse;
 }
 
-.adm_program-table th,
-.adm_program-table td {
+.adm_program-table1 th,
+.adm_program-table1 td {
     padding: 15px;
     text-align: center;
     border-bottom: 1px solid #E5E7EB;
 }
 
-.adm_program-table th {
+.adm_program-table1 th {
     color: #374151;
     font-weight: normal;
 }
 
-.adm_program-table button {
+.adm_program-table1 button {
     padding: 6px 12px;
     border-radius: 20px;
     border: none;
@@ -71,13 +71,13 @@
 }
 
 
-.adm_program-table tr:last-child td {
+/* .adm_program-table tr:last-child td {
     border-bottom: none;
-}
+} */
 .adm_program-links {
     display: flex;
     justify-content: flex-end;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 10px;
 }
 

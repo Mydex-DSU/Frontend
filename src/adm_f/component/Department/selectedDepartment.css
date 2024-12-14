@@ -40,6 +40,30 @@
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* 그림자 축소 */
     transform: translateY(2px); /* 클릭 시 약간 아래로 이동 */
   }
+  .adm_pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  
+  .adm_pagination_btn {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .adm_pagination_btn.adm_active {
+    background-color: #dc2626;
+    color: white;
+    border-color: #dc2626;
+  }
+  
+  .adm_pagination_btn:hover {
+    background-color: #f3f4f6;
+  }
   
   
   

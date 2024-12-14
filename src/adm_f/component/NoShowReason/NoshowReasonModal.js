@@ -2,8 +2,8 @@
 import React from 'react';
 import './noshowreasonmodal.css';
 
-const NoShowReasonModal = ({ isOpen, onClose, noShowReason }) => {
-    if (!isOpen) return null;
+const NoShowReasonModal = ({ isOpen, onClose, student }) => {
+    if (!isOpen || !student) return null;
 
     return (
         <div className="adm_modal-overlay">
@@ -14,8 +14,8 @@ const NoShowReasonModal = ({ isOpen, onClose, noShowReason }) => {
                 </div>
                 <div className="adm_modal-body">
                     <div className="adm_reason-section">
-                        <h3>노쇼 이유</h3>
-                        <p>{noShowReason || '응답 내용이 없습니다.'}</p>
+                        <h3>노쇼 사유</h3>
+                        <p>{student.noshowreasoncategories_name || '응답 내용이 없습니다.'}</p>
                     </div>
                 </div>
                 <div className="adm_modal-footer">

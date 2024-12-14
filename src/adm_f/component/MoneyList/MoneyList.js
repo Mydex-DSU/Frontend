@@ -32,7 +32,11 @@ const MoneyList = ({ budgetUpdated }) => {
   return (
     <div className="adm_department-table-container">
       <h2 className="adm_table-title">학부별 남은 예산 금액</h2>
-      <button className="adm_logout-button" onClick={goFacultyTranscation}>학부별 예산 거래 내역 보러 가기</button>
+      <div className="adm_button-container1">
+        <button className="adm_logout-button" onClick={goFacultyTranscation}>
+          학부별 예산 거래 내역 보러 가기
+        </button>
+      </div>
       <table className="adm_department-table">
         <thead>
         <tr>

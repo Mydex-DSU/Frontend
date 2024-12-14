@@ -32,6 +32,7 @@
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  margin-bottom: 30px;
 }
 
 .adm_register-button:hover {

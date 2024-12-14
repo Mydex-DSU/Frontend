@@ -19,9 +19,9 @@ const EvaluationDetail = () => {
                 const userString = sessionStorage.getItem('admin');
                 const user = JSON.parse(userString);
 
-                if (!user || !user.adm_id) {
-                    throw new Error('관리자 정보가 없습니다.');
-                }
+                // if (!user || !user.adm_id) {
+                //     throw new Error('관리자 정보가 없습니다.');
+                // }
 
                 const response = await axios.post('http://100.94.142.127:3000/programs/fin/detail', {
                     program_id: parseInt(programId),
@@ -116,7 +116,7 @@ const EvaluationDetail = () => {
                             <td>{student.attendance_rate || '-'}%</td>
                             <td>{student.award_status || '-'}</td>
                             <td>{student.report_submission_status || '-'}</td>
-                            <td>{student.participation_status ? '1' : '-'}</td>
+                            <td>{student.participation_status ? '참여완료' : '미완료'}</td>
                         </tr>
                     </tbody>
                 </table>

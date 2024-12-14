@@ -1,25 +1,25 @@
 /* Header.css */
 .first-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #e0e0e0;
-  }
-  
-  .first-header-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .all-auth-section {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 10px;
-  }
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.first-header-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+}
+
+.all-auth-section {
+  position: absolute;
+  right: 20px;
+}
+
   
   .auth-button {
     padding: 8px 16px;

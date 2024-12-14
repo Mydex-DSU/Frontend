@@ -70,7 +70,7 @@ const CardList = () => {
         </div>
         <button className="adm_slider-button adm_next" onClick={nextSlide}>&gt;</button>
       </div>
-      <div className="adm_program-links">
+      <div className="adm_program-links-card">
         <Link to="/adm/programlist">프로그램 목록 보러 가기 ＞</Link>
         <Link to="/adm/programregistration">프로그램 등록하러 가기 ＞</Link>
       </div>

@@ -15,6 +15,18 @@ const CompleteDetail = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState(null);
 
+  const programTypeNames = {
+    1: "특강",
+    2: "견학",
+    3: "캠프및",
+    4: "클리닉참여",
+    5: "학습공동체활동"
+  };
+
+  const getProgramTypeName = (typeId) => {
+    return programTypeNames[typeId] || "알 수 없음";
+  };
+
   useEffect(() => {
     if (programId) {
       fetchProgramDetail(programId);
@@ -111,7 +123,7 @@ const CompleteDetail = () => {
           </div>
           <div className="adm_info-section">
             <h2>프로그램 종류</h2>
-            <p>{program.program_status}</p>
+            <p>{getProgramTypeName(program.programtype_id)}</p>
           </div>
         </div>
       </div>
