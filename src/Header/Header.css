@@ -1,67 +1,66 @@
 /* Header.css */
-.first-header {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #e0e0e0;
-  }
-  
-  .first-header-title {
-    font-size: 30px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .all-auth-section {
-    position:absolute;
-    right: 20px;
-  }
-  
-  .auth-button {
-    padding: 8px 16px;
-    font-size: 14px;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .auth-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .student-auth-button,
-  .prof-auth-button,
-  .admin-auth-button {
-    font-weight: bold;
-  }
-  
-  .student-auth-button {
-    background-color: #4caf50; /* Green */
-  }
-  
-  .student-auth-button:hover {
-    background-color: #388e3c;
-  }
-  
-  .prof-auth-button {
-    background-color: #f57c00; /* Orange */
-  }
-  
-  .prof-auth-button:hover {
-    background-color: #ef6c00;
-  }
-  
-  .admin-auth-button {
-    background-color: #d32f2f; /* Red */
-  }
-  
-  .admin-auth-button:hover {
-    background-color: #c62828;
-  }
-  
+.sw-first-header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.sw-first-header-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+}
+
+.sw-all-auth-section {
+  position: absolute;
+  right: 30px;
+  display: flex;
+  gap: 20px; /* 버튼 간 간격 */
+}
+
+.f1-auth-button {
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #fff; /* 텍스트 흰색 */
+  border: none; /* 테두리 제거 */
+  border-radius: 20px; /* 둥근 모서리 */
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 버튼 그림자 */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.f1-auth-button:hover {
+  transform: scale(1.05); /* 호버 시 크기 증가 */
+}
+
+/* 학생 버튼 - 노란색 */
+.f1-student-auth-button {
+  background-color: #FFD54F; /* 밝은 노란색 */
+}
+
+.f1-student-auth-button:hover {
+  background-color: #FFCA28; /* 더 진한 노란색 */
+}
+
+/* 교수 버튼 - 주황색 */
+.f1-prof-auth-button {
+  background-color: #FFB74D; /* 밝은 주황색 */
+}
+
+.f1-prof-auth-button:hover {
+  background-color: #FFA726; /* 더 진한 주황색 */
+}
+
+/* 관리자 버튼 - 빨간색 */
+.f1-admin-auth-button {
+  background-color: #E57373; /* 밝은 빨간색 */
+}
+
+.f1-admin-auth-button:hover {
+  background-color: #EF5350; /* 더 진한 빨간색 */
+}

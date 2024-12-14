@@ -138,6 +138,7 @@ function ProgramDetailPage() {
           <p><strong>담당자 번호:</strong> {programDetail.adm_phone || "정보 없음"}</p>
           <p><strong>신청 기간:</strong> {`${formatDate(programDetail.program_application_start_time)} ~ ${formatDate(programDetail.program_application_end_time)}`}</p>
           <p><strong>운영 일시:</strong> {`${formatDate(programDetail.program_operation_start_time)} ~ ${formatDate(programDetail.program_operation_end_time)}`}</p>
+          <p><strong>설문조사 기간: </strong>{`${formatDate(programDetail.program_survey_start_time)} ~ ${formatDate(programDetail.program_survey_end_time)}`}</p>
           <p><strong>MyDex 온도 포인트:</strong> {programDetail.program_mydex_points || "정보 없음"}점</p>
           <p><strong>프로그램 수용 인원:</strong> {programDetail.program_max_participants || "정보 없음"}명</p>
           <p><strong>프로그램 신청 인원:</strong> {programDetail.program_application_student || 0}명</p>

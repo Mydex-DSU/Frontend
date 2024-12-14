@@ -132,9 +132,7 @@ function ProMainPage() {
 
   return (
     <div className="student-management-container pro1">
-        {/* <button className="auth-button pro1" onClick={handleLogout}>
-        로그아웃
-        </button> */}
+       
         <div className="proMainheader pro1">
             <h2>★ 지도학생 관리</h2>
         </div>

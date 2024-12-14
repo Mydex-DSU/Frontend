@@ -3,7 +3,7 @@ import'./admNav.css';
 
 const Nav = () => {
     return(
-    <div className="adm-mydex-header">MYDEX</div>
+    <div className="adm-mydex-header" >MYDEX</div>
     )
 }
 

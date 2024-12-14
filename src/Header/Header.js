@@ -34,12 +34,12 @@ function Header() {
   };
 
   return (
-    <header className="first-header">
-      <div className="first-header-title">DSU</div>
-      <div className="all-auth-section">
+    <header className="sw-first-header">
+      <div className="sw-first-header-title">DSU</div>
+      <div className="sw-all-auth-section">
         {isStudentLoggedIn && (
           <button
-            className="student-auth-button"
+            className="f1-student-auth-button"
             onClick={() => {
               logout("student");
               navigate("/"); // 로그아웃 후 메인 페이지로 이동
@@ -50,7 +50,7 @@ function Header() {
         )}
         {isProfessorLoggedIn && (
           <button
-            className="prof-auth-button"
+            className="f1-prof-auth-button"
             onClick={() => {
               logout("professor");
               navigate("/"); // 로그아웃 후 메인 페이지로 이동
@@ -61,7 +61,7 @@ function Header() {
         )}
         {isAdminLoggedIn && (
           <button
-            className="admin-auth-button"
+            className="f1-admin-auth-button"
             onClick={() => {
               logout("admin");
               navigate("/"); // 로그아웃 후 메인 페이지로 이동
@@ -72,7 +72,7 @@ function Header() {
         )}
         {!isStudentLoggedIn && (
           <button
-            className="student-auth-button"
+            className="f1-student-auth-button"
             onClick={() => openLoginPopup("student")}
           >
             학생 로그인
@@ -80,7 +80,7 @@ function Header() {
         )}
         {!isProfessorLoggedIn && (
           <button
-            className="prof-auth-button"
+            className="f1-prof-auth-button"
             onClick={() => openLoginPopup("professor")}
           >
             교수 로그인
@@ -88,7 +88,7 @@ function Header() {
         )}
         {!isAdminLoggedIn && (
           <button
-            className="admin-auth-button"
+            className="f1-admin-auth-button"
             onClick={() => openLoginPopup("admin")}
           >
             관리자 로그인
