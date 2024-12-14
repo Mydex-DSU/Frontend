@@ -10,7 +10,7 @@ function ReliefProgram({ userData }) {
   }
 
   const handleNavigate = () => {
-    navigate("/relief-programs"); // 구제 프로그램 페이지로 이동
+    navigate("/stu/reliefprogrampage"); // 구제 프로그램 페이지로 이동
   };
 
   return (
