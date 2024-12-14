@@ -45,22 +45,12 @@
 }
 
 /* 상태별 색상 정의 */
-.adm_status-운영중 {
-    background-color: #69db7c; /* 초록색 */
+.adm_status-평가중 {
+    background-color: #9ce6a8; /* 초록색 */
     color: white;
 }
 
 .adm_status-설문조사 {
-    background-color: #ffa94d; /* 주황색 */
-    color: white;
-}
-
-.adm_status-모집중 {
-    background-color: #4dabf7; /* 파란색 */
-    color: white;
-}
-
-.adm_status-모집완료 {
     background-color: #748ffc; /* 진파랑색 */
     color: white;
 }
@@ -71,9 +61,6 @@
 }
 
 
-/* .adm_program-table tr:last-child td {
-    border-bottom: none;
-} */
 .adm_program-links {
     display: flex;
     justify-content: flex-end;

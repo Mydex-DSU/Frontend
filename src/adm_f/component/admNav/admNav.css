@@ -2,10 +2,14 @@
     width: 90%;
     margin: 0 auto;
     background-color: #DC143C;
-    color: white;
     padding: 15px 20px;
     font-size: 25px;
     font-weight: bold;
     border-radius: 15px;
     margin-top: 55px;
+}
+
+.adm-mydex-header a {
+    color: white;
+    text-decoration: none;
 }
