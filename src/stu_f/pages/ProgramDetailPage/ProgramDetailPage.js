@@ -12,6 +12,7 @@ function ProgramDetailPage() {
   const [programDetail, setProgramDetail] = useState({});
   const [showPopup, setShowPopup] = useState(false);
   const [eligibilityMessage, setEligibilityMessage] = useState("");
+  const [additionalMessage, setAdditionalMessage] = useState(""); // 추가 메시지
   const [isEligible, setIsEligible] = useState(false); // 신청 가능 여부
   const [participatedProgramIds, setParticipatedProgramIds] = useState([]); // 신청/참여 프로그램 ID 목록
 
@@ -66,12 +67,13 @@ function ProgramDetailPage() {
     const isUnderCapacity =
       programDetail.program_application_student < programDetail.program_max_participants;
     const hasEnoughPoints =
-      userData.stu_current_mydex_points >= programDetail.program_mydex_points;
+      userData.stu_total_mydex_points >= programDetail.program_mydex_points;
 
     const isAlreadyParticipating = participatedProgramIds.includes(programId);
 
-    // 경고 횟수 처리
+    // 경고 횟수 및 대출 포인트 조건 추가
     let warningMessage = "";
+    let loanMessage = "";
     let warningEligible = true; // 기본적으로 신청 가능
 
     if (userData.stu_current_warning_count === 1) {
@@ -81,6 +83,10 @@ function ProgramDetailPage() {
     } else if (userData.stu_current_warning_count >= 3) {
       warningMessage = "경고 횟수가 초과되어 신청할 수 없습니다.";
       warningEligible = false; // 신청 불가능
+    }
+
+    if (userData.stu_current_loan_points > 0) {
+      loanMessage = "대출포인트가 존재합니다. 현재 신청하는 프로그램을 노쇼할 경우 경고 1회가 증가합니다.";
     }
 
     // 최종 신청 가능 여부 계산
@@ -105,11 +111,21 @@ function ProgramDetailPage() {
     } else {
       setEligibilityMessage(warningMessage || "프로그램을 신청하시겠습니까?");
     }
+
+    // 추가 메시지 설정
+    if (loanMessage || userData.stu_current_warning_count > 0) {
+      setAdditionalMessage(
+        `${loanMessage} ${
+          loanMessage && warningMessage ? "그리고 " : ""
+        }${warningMessage}`
+      );
+    }
   };
 
   const handleApply = () => {
     setShowPopup(true);
   };
+
   const formatDate = (dateString) => {
     if (!dateString) return "정보 없음";
     const date = new Date(dateString);
@@ -132,6 +148,7 @@ function ProgramDetailPage() {
           />
         </div>
         <div className="detail-info">
+          {/* 상세 정보 출력 */}
           <p><strong>프로그램 이름:</strong> {programDetail.program_name || "정보 없음"}</p>
           <p><strong>프로그램 설명:</strong> {programDetail.program_description || "정보 없음"}</p>
           <p><strong>담당자 이름:</strong> {programDetail.adm_name || "정보 없음"}</p>
@@ -159,6 +176,7 @@ function ProgramDetailPage() {
           programDetail={programDetail}
           isEligible={isEligible} // 신청 가능 여부 전달
           eligibilityMessage={eligibilityMessage}
+          additionalMessage={additionalMessage} // 추가 메시지 전달
           onCancel={() => setShowPopup(false)}
         />
       )}

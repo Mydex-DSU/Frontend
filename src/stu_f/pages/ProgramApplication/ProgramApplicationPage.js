@@ -76,7 +76,7 @@ const ProgramApplications = () => {
         }
       );
 
-      if (response.data.success) {
+      if (response.data) {
         // 신청 취소가 성공한 경우, UI에서 해당 프로그램 제거
         setPrograms((prevPrograms) =>
           prevPrograms.filter((program) => program.program_id !== programId)
@@ -89,7 +89,7 @@ const ProgramApplications = () => {
       alert('신청 취소 요청 중 오류가 발생했습니다.');
     }
   };
-
+ 
   const closePopup = () => {
     setIsPopupOpen(false);
     setPopupData(null);
@@ -145,20 +145,23 @@ const ProgramApplications = () => {
             currentPrograms.map((program) => (
               <tr key={program.program_id}>
                 <td>{program.program_name || '이름 없음'}</td>
-                <td>{program.ondo_points || '-'}</td>
+                <td>{program.program_mydex_points || '-'}</td>
                 <td>
-                  {program.application_date
-                    ? new Date(program.application_date).toLocaleString('ko-KR')
+                  {program.program_registration_date
+                    ? new Date(program.program_registration_date).toLocaleString('ko-KR')
                     : '-'}
                 </td>
                 <td>
-                  <button
-                    className="pro2cancel-button"
-                    onClick={() => cancelProgramApplication(program.program_id)}
-                  >
-                    취소
-                  </button>
+                    {program.program_status !== '운영중' && (
+                      <button
+                        className="pro2cancel-button"
+                        onClick={() => cancelProgramApplication(program.program_id)}
+                      >
+                        취소
+                      </button>
+                    )}
                 </td>
+                  
                 <td>
                   <button
                     className="pro2details-button"
@@ -227,7 +230,7 @@ const ProgramApplications = () => {
                   <strong>담당자 번호:</strong> {popupData.adm_phone}
                 </p>
                 <p>
-                  <strong>프로그램 종류:</strong> {popupData.programtype_id}
+                  <strong>프로그램 종류:</strong> {popupData.programtype_name}
                 </p>
               </div>
             </div>

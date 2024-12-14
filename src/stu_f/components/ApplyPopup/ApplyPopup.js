@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./ApplyPopup.css";
 
-const ApplyPopup = ({ programId, isEligible, eligibilityMessage, onCancel }) => {
+const ApplyPopup = ({
+  programId,
+  isEligible,
+  eligibilityMessage,
+  additionalMessage, // 추가 메시지
+  onCancel,
+}) => {
   const stuId = sessionStorage.getItem("stu_id");
 
   const handleConfirm = async () => {
@@ -33,6 +39,7 @@ const ApplyPopup = ({ programId, isEligible, eligibilityMessage, onCancel }) => 
         </div>
         <div className="popup-message">
           <p>{eligibilityMessage || "로그인 상태가 아닙니다"}</p>
+          {additionalMessage && <p className="additional-message">{additionalMessage}</p>}
         </div>
         <div className="popup-buttons">
           <button

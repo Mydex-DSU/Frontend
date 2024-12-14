@@ -1,20 +1,18 @@
 .warning-alert {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #d32f2f;
-    color: white;
-    padding: 10px 20px;
-    font-size: 14px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-  }
-  
-  .warning-icon {
-    margin-right: 8px;
-    font-size: 18px;
-  }
-  
-  .warning-message {
-    font-weight: bold;
-  }
+  background-color: #d32f2f; /* 강렬한 빨간색 배경 */
+  color: white; /* 텍스트를 흰색으로 설정 */
+  padding: 10px 20px; /* 상하좌우 여백 */
+  border-radius: 8px; /* 둥근 모서리 */
+  font-size: 16px; /* 텍스트 크기 */
+  font-weight: bold; /* 텍스트 굵게 */
+  display: flex; /* 아이콘과 텍스트를 정렬하기 위해 flex 사용 */
+  align-items: center; /* 아이콘과 텍스트를 세로 중앙 정렬 */
+  justify-content: center; /* 텍스트와 아이콘을 가로 중앙 정렬 */
+  margin: 20px 0; /* 위아래 간격 */
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.warning-alert .icon {
+  font-size: 24px; /* 아이콘 크기 */
+  margin-right: 10px; /* 아이콘과 텍스트 사이 간격 */
+}
