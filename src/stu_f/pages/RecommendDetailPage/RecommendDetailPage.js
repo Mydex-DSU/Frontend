@@ -62,7 +62,7 @@ const RecommendDetail = () => {
                 ))}
               </div>          
               <h2 >포트폴리오</h2>
-              <p><a href={graduate.portfolio_link || '#'} target="_blank" rel="noopener noreferrer">{graduate.portfolio_link ? '포트폴리오 보기' : '링크 없음'}</a></p>    
+              <p><a href={graduate.portfolio_documents || '#'} target="_blank" rel="noopener noreferrer">{graduate.portfolio_documents  ? '포트폴리오 보기' : '링크 없음'}</a></p>    
 
             </div>
 
