@@ -31,7 +31,7 @@
 .adm_program-table th {
   background-color: #f8f9fa;
   font-weight: bold;
-  color: #333;
+  color: #f03b3b;
 }
 
 .adm_program-table tr:nth-child(odd) td:first-child {

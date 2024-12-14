@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './moneylist.css';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const MoneyList = ({ budgetUpdated }) => {
   
   const [departments, setDepartments] = useState([]);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   useEffect(() => {
     const fetchDepartments = async () => {
       try {
@@ -21,21 +22,22 @@ const MoneyList = ({ budgetUpdated }) => {
   }, [budgetUpdated]);  // budgetUpdated가 변경될 때마다 데이터를 다시 불러옵니다.
 
 
-  const goFacultyTranscation = async () => {
-    try {
-      navigate('/adm/facultytransaction');
-    } catch (error) {
-      console.error('로그아웃 중 오류 발생:', error);
-    }
-  };
+  // const goFacultyTranscation = async () => {
+  //   try {
+  //     navigate('/adm/facultytransaction');
+  //   } catch (error) {
+  //     console.error('로그아웃 중 오류 발생:', error);
+  //   }
+  // };
 
   return (
     <div className="adm_department-table-container">
       <h2 className="adm_table-title">학부별 남은 예산 금액</h2>
       <div className="adm_button-container1">
-        <button className="adm_logout-button" onClick={goFacultyTranscation}>
+      <Link to="/adm/facultytransaction" className="adm_link-text">학부별 예산 거래 내역 보러 가기 ＞</Link>
+        {/* <button className="adm_logout-button" onClick={goFacultyTranscation}>
           학부별 예산 거래 내역 보러 가기
-        </button>
+        </button> */}
       </div>
       <table className="adm_department-table">
         <thead>

@@ -20,7 +20,7 @@ const CompleteDetail = () => {
   const programTypeNames = {
     1: "특강",
     2: "견학",
-    3: "캠프및",
+    3: "캠프및워크숍",
     4: "클리닉참여",
     5: "학습공동체활동"
   };
@@ -28,6 +28,7 @@ const CompleteDetail = () => {
   const getProgramTypeName = (typeId) => {
     return programTypeNames[typeId] || "알 수 없음";
   };
+  
 
   useEffect(() => {
     if (programId) {
@@ -53,6 +54,7 @@ const CompleteDetail = () => {
     } finally {
       setLoading(false);
     }
+    
   };
 
   const handleViewResponse = (student) => {
@@ -127,8 +129,12 @@ const CompleteDetail = () => {
             <p>{program.program_mydex_points}점</p>
           </div>
           <div className="adm_info-section">
-            <h2>프로그램 신청 인원</h2>
+            <h2>프로그램 수용 인원</h2>
             <p>{program.program_max_participants}명</p>
+          </div>
+          <div className="adm_info-section">
+            <h2>프로그램 신청 인원</h2>
+            <p>{studentInfo ? studentInfo.length : 0}명</p>
           </div>
           <div className="adm_info-section">
             <h2>프로그램 종류</h2>
@@ -160,7 +166,7 @@ const CompleteDetail = () => {
                   <td>{student.department_name}</td>
                   <td>{student.stu_name}</td>
                   <td>{student.stu_phone || '-'}</td>
-                  <td>{student.stu_give_mydex_points || '-'}</td>
+                  <td>{student.response_status_change_mydex_points || '-'}</td>
                   <td>
                     {student.survey_response_status === 1 ? (
                       <span className="adm_status-badge">응답완료</span>

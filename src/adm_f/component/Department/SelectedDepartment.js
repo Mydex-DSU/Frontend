@@ -17,15 +17,12 @@ const SelectedDepartment = () => {
       setError(null);
       try {
         const response = await axios.get('http://100.94.142.127:3000/programs/noshowgraph/list');
-        console.log('Server response:', response.data);
-
         if (response.data && response.data.programlist) {
           setProgramsData(response.data.programlist);
         } else {
           setError('데이터 형식이 올바르지 않습니다.');
         }
       } catch (error) {
-        console.error('Error fetching data:', error);
         setError('데이터를 불러오는 중 오류가 발생했습니다.');
       } finally {
         setIsLoading(false);
