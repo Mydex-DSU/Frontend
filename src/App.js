@@ -18,6 +18,7 @@ import StudentNavBar from "./stu_f/components/NavBar/NavBar";
 import ProgramMyInfoPage from "./stu_f/pages/ProgramMyInfo/ProgramMyInfoPage";
 import MydexPointApplicationPage from "./stu_f/pages/MydexPointApplication/MydexPointApplicationPage.js"
 
+
 // 관리자 관련
 import AdmMainPage from "./adm_f/pages/admMainPage.js";
 import CompleteDetail from "./adm_f/pages/CompleteDetail/CompleteDetail.js";
