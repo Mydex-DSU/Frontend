@@ -5,19 +5,14 @@
     font-family: Arial, sans-serif;
 }
 
-.adm_detail-title {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-}
-
 .adm_notification-banner {
-    background-color: #f8d7da;
-    border: 1px solid #f5c6cb;
-    color: #721c24;
+    background-color: #141414;
+    border: 1px solid #171616;
+    color: #f1e7e8;
     padding: 10px;
     margin-bottom: 20px;
     border-radius: 5px;
+    text-align: center;
 }
 
 .adm_bell-icon {
@@ -52,34 +47,6 @@
 .adm_info-section p {
     margin: 0;
     color: #666;
-}
-
-.adm_student-list {
-    margin-top: 30px;
-}
-
-.adm_student-list h2 {
-    margin-bottom: 15px;
-    font-size: 20px;
-    font-weight: bold;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #000;
-}
-
-
-.adm_back-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.adm_back-button:hover {
-    background-color: #0056b3;
 }
 
 .adm_loading, .adm_error, .adm_no-data {
@@ -117,11 +84,7 @@
     font-size: 14px;
 }
 
-.adm_evaluate-button {
-    background-color: #e9ecef;
-    color: #000;
-}
-
+.adm_evaluate-button, 
 .adm_view-button {
     background-color: #e9ecef;
     color: #000;
@@ -132,23 +95,77 @@
     color: white;
 }
 
-.adm_pagination {
+.adm_thread-complete {
+    border-top: 3px solid black;
+    border-bottom: 3px solid red;
+}
+
+.adm_thread-complete th {
+    border-bottom: none;
+    padding: 10px;
+}
+
+.adm_back-button-detail {
+    padding: 8px 20px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* 페이지네이션 관련 CSS */
+.adm_pagination-detail {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    gap: 8px;
+    gap: 10px;
 }
 
-.adm_page-button {
+.adm_page-arrow-detail {
+    background-color: #ffffff;
+    border: 1px solid #e2e2e2;
+    color: #333333;
     padding: 8px 12px;
-    border: 1px solid #ddd;
-    background: white;
     cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
-.adm_page-button.active {
-    background-color: #1a4f8b;
-    color: white;
-    border-color: #1a4f8b;
+.adm_page-arrow-detail:hover {
+    background-color: #f5f5f5;
+}
+
+.adm_page-arrow-detail:disabled {
+    background-color: #f9f9f9;
+    color: #cccccc;
+    cursor: not-allowed;
+    border-color: #e2e2e2;
+}
+
+.adm_page-button-detail {
+    background-color: #ffffff;
+    border: 1px solid #e2e2e2;
+    color: #333333;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    min-width: 32px;
+    transition: all 0.3s ease;
+}
+
+.adm_page-button-detail:hover {
+    background-color: #f5f5f5;
+}
+
+.adm_page-button-detail.adm_active {
+    background-color: #f5f5f5;
 }
