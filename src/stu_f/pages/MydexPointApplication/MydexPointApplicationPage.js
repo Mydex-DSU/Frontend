@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './MydexPointApplicationPage.css';
+import MydexPoints from "../../components/MydexPoints/MydexPoints";
 
 const MyDexPoints = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -152,6 +153,13 @@ const MyDexPoints = () => {
 
   return (
     <div className="pro4mydex-container">
+      <div>
+      {userData ? (
+          <MydexPoints userData={userData} />
+        ) : (
+          <p>사용자 데이터를 로드할 수 없습니다.</p>
+        )}
+      </div>
       <h1 className="pro4main-title">Mydex 온도 포인트 장학금</h1>
 
       <section className="pro4scholarship-section">

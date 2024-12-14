@@ -1,22 +1,29 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 
 function NavBar() {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // 드롭다운 열림 상태
+  const [activeDropdown, setActiveDropdown] = useState(""); // 어떤 드롭다운이 열려 있는지
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
-
-  const closeDropdown = (e) => {
-    // 드롭다운 영역 외부 클릭 시 닫기
-    if (!e.target.closest(".menu-item")) {
-      setIsDropdownOpen(false);
+  const toggleDropdown = (menuName) => {
+    if (activeDropdown === menuName) {
+      setIsDropdownOpen(false); // 이미 열린 메뉴를 다시 클릭하면 닫기
+      setActiveDropdown("");
+    } else {
+      setIsDropdownOpen(true); // 드롭다운 열기
+      setActiveDropdown(menuName);
     }
   };
 
-  React.useEffect(() => {
+  const closeDropdown = (e) => {
+    if (!e.target.closest(".menu-item")) {
+      setIsDropdownOpen(false);
+      setActiveDropdown("");
+    }
+  };
+
+  useEffect(() => {
     // 전역 클릭 이벤트 리스너 추가
     document.addEventListener("click", closeDropdown);
     return () => {
@@ -32,10 +39,13 @@ function NavBar() {
 
       {/* 비교과 프로그램 드롭다운 */}
       <div className="menu-item">
-        <span className="nav-link" onClick={toggleDropdown}>
+        <span
+          className="nav-link"
+          onClick={() => toggleDropdown("programs")}
+        >
           비교과프로그램
         </span>
-        {isDropdownOpen && (
+        {isDropdownOpen && activeDropdown === "programs" && (
           <ul className="submenu">
             <li>
               <Link to="/stu/programlistpage" className="submenu-link">
@@ -43,12 +53,12 @@ function NavBar() {
               </Link>
             </li>
             <li>
-              <Link to="/stu/programapplication" className ="submenu-link">
+              <Link to="/stu/programapplication" className="submenu-link">
                 비교과프로그램 신청 목록
               </Link>
             </li>
             <li>
-              <Link to ="/stu/programmyinfopage" className="submenu-link">
+              <Link to="/stu/programmyinfopage" className="submenu-link">
                 비교과프로그램 참여 목록
               </Link>
             </li>
@@ -61,15 +71,29 @@ function NavBar() {
         구제 프로그램
       </Link>
 
-      {/* 졸업생 포트폴리오 */}
-      <Link to="/portfolio" className="nav-link">
-        졸업생 포트폴리오
-      </Link>
-
-      {/* MYDEX 온도 포인트 */}
-      <Link to="/stu/mydexpointapplication" className="nav-link">
-        MYDEX 온도포인트 장학금
-      </Link>
+      {/* MYDEX 온도 포인트 드롭다운 */}
+      <div className="menu-item">
+        <span
+          className="nav-link"
+          onClick={() => toggleDropdown("mydex")}
+        >
+          MYDEX 온도포인트
+        </span>
+        {isDropdownOpen && activeDropdown === "mydex" && (
+          <ul className="submenu">
+            <li>
+              <Link to="/stu/loanapplicationpage" className="submenu-link">
+                포인트 대출
+              </Link>
+            </li>
+            <li>
+              <Link to="/stu/mydexpointapplication" className="submenu-link">
+                MYDEX 온도 포인트 장학금
+              </Link>
+            </li>
+          </ul>
+        )}
+      </div>
     </div>
   );
 }

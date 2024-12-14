@@ -13,14 +13,14 @@ function LoanTemperaturePoint({ userData, onLoanClick }) {
     return null; // 5점 이상일 경우 컴포넌트 표시 안 함
   }
 
-  const isWarningExceeded = userData.stu_current_warning_count >= 3; // 경고 3회 이상 여부 확인
+  const isWarningExceeded = userData.stu_current_warning_count >= 2; // 경고 2회 이상 여부 확인
 
   return (
     <div className="loan-temperature-point">
       {isWarningExceeded && (
         <div className="loan-warning-overlay">
           <img src="/Lock.png" alt="Lock Icon" className="lock-icon" />
-          <div className="loan-warning-message">현재 경고 3회로 해당 컨텐츠 이용이 불가합니다!</div>
+          <div className="loan-warning-message">현재 경고 2회 이상으로 해당 컨텐츠 이용이 불가합니다!</div>
           <div className="loan-instruction">구제프로그램을 이용해주세요.</div>
          
         </div>
