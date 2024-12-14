@@ -1,103 +1,125 @@
+.adm_faculty_budget_container_money {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-.faculty-budget-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .faculty-select-wrapper {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .faculty-department-select{
-    width: 200px;
-    height: 35px;
-    padding: 0 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: white;
-  }
-  
-  
-  
-  .faculty-budget-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px; /* 아래 여백 추가 */
-  }
-  
-  .faculty-budget-amounts {
-    display: flex;
-    gap: 20px;
-  }
-  
-  .faculty-period-select {
-    display: flex;
-    gap: 5px;
-  }
-  
-  .faculty-period-select select {
-    padding: 5px 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    justify-content: center; /* 중앙 정렬 */
-  }
-  
-  
-  .faculty-table-container {
-    position: relative;
-    margin-top: 10px; /* 위쪽 여백 추가 */
-  }
+.adm_faculty_select_wrapper_money {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
 
-    .faculty-table-container thead{
-        border-top: 3px solid black;
-        border-bottom: 3px solid #dc3545;
-    }
-    .faculty-table-container thead th {
-        padding: 12px;
-    }
+.adm_faculty_department_select_money {
+  width: 200px;
+  height: 35px;
+  padding: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+}
 
-  
-  
-  .positive {
-    color: red;
-  }
-  
-  .negative {
-    color: blue;
-  }
-  
-  .faculty-search-wrapper {
-    margin-top: 20px;
-  }
-  
-  .faculty-point-notice {
-    color: #dc3545;
-    margin-bottom: 10px;
-  }
+.adm_faculty_budget_info_money {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
 
-  
-  .faculty-department-search-btn-119 {
-    margin-top: 10px;
-    padding: 5px 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: white;
-    cursor: pointer;
-  }
+.adm_faculty_budget_amounts_money {
+  display: flex;
+  gap: 20px;
+}
 
-  .faculty-department-select-search{
-    margin-top: 10px;
-    height: 30px;
-    padding: 0 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 14px;
-  }
-  
+.adm_faculty_period_select_money {
+  display: flex;
+  gap: 5px;
+}
 
+.adm_faculty_period_select_money select {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  justify-content: center;
+}
 
-  
+.adm_faculty_table_container_money {
+  position: relative;
+  margin-top: 10px;
+}
+
+.adm_faculty_table_container_money thead {
+  border-top: 3px solid black;
+  border-bottom: 3px solid #dc3545;
+}
+
+.adm_faculty_table_container_money thead th {
+  padding: 12px;
+}
+
+.adm_positive_money {
+  color: red;
+}
+
+.adm_negative_money {
+  color: blue;
+}
+
+.adm_faculty_search_wrapper_money {
+  margin-top: 20px;
+}
+
+.adm_faculty_point_notice_money {
+  color: #dc3545;
+  margin-bottom: 10px;
+}
+
+.adm_faculty_department_search_btn_119_money {
+  margin-top: 10px;
+  padding: 5px 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.adm_faculty_department_select_search_money {
+  margin-top: 10px;
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* 페이지네이션 스타일 추가 */
+.adm_pagination_money {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.adm_pagination_button_money {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  background-color: white;
+  cursor: pointer;
+}
+
+.adm_pagination_button_money.adm_active_money {
+   background-color: #bfdaf0; 
+}
+
+.adm_pagination_arrow_money {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  background-color: white;
+  cursor: pointer;
+}
+
+.adm_pagination_arrow_money:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -14,6 +14,8 @@ const CompleteDetail = () => {
   const [error, setError] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [studentsPerPage] = useState(4);
 
   const programTypeNames = {
     1: "특강",
@@ -67,10 +69,6 @@ const CompleteDetail = () => {
     });
   };
 
-  if (loading) return <div className="adm_loading">로딩 중...</div>;
-  if (error) return <div className="adm_error">{error}</div>;
-  if (!program) return <div className="adm_no-data">프로그램 정보가 없습니다.</div>;
-
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
@@ -80,6 +78,17 @@ const CompleteDetail = () => {
     const date = new Date(dateString);
     return `${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`;
   };
+
+  // Pagination logic
+  const indexOfLastStudent = currentPage * studentsPerPage;
+  const indexOfFirstStudent = indexOfLastStudent - studentsPerPage;
+  const currentStudents = studentInfo ? studentInfo.slice(indexOfFirstStudent, indexOfLastStudent) : [];
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  if (loading) return <div className="adm_loading">로딩 중...</div>;
+  if (error) return <div className="adm_error">{error}</div>;
+  if (!program) return <div className="adm_no-data">프로그램 정보가 없습니다.</div>;
 
   return (
     <div className="adm_program-detail-container">
@@ -128,10 +137,10 @@ const CompleteDetail = () => {
         </div>
       </div>
       <div className="adm_student-list-section">
-        <h2 className="adm_section-title">참여 학생 목록</h2>
+        <h2 className="adm_section-title-complete">참여 학생 목록</h2>
         <div className="adm_student-table-container">
           <table className="adm_student-table">
-            <thead>
+            <thead className='adm_thread-complete'>
               <tr>
                 <th>학번</th>
                 <th>학과</th>
@@ -140,12 +149,12 @@ const CompleteDetail = () => {
                 <th>최종 부여 포인트</th>
                 <th>설문조사 응답 여부</th>
                 <th>노쇼 이유 응답 여부</th>
-                <th>답변 내용</th>
+                <th>노쇼 이유 답변</th>
                 <th>평가하기</th>
               </tr>
             </thead>
             <tbody>
-              {studentInfo && studentInfo.map((student) => (
+              {currentStudents.map((student) => (
                 <tr key={student.stu_id}>
                   <td>{student.stu_id}</td>
                   <td>{student.department_name}</td>
@@ -163,8 +172,7 @@ const CompleteDetail = () => {
                     ) : null}
                   </td>
                   <td>
-                    {(student.survey_response_status === 1 || 
-                    student.no_show_reason_response_status === 1) && (
+                    {student.no_show_reason_response_status === 1 && (
                       <button 
                         className="adm_view-button"
                         onClick={() => handleViewResponse(student)}
@@ -193,8 +201,38 @@ const CompleteDetail = () => {
             </tbody>
           </table>
         </div>
+        <div className="adm_pagination-detail">
+          <button 
+            onClick={() => paginate(currentPage - 1)}
+            disabled={currentPage === 1}
+            className="adm_page-arrow-detail"
+          >
+            &lt;
+          </button>
+          
+          {studentInfo && (
+            [...Array(Math.ceil(studentInfo.length / studentsPerPage))].map((_, index) => (
+              <button
+                key={index}
+                onClick={() => paginate(index + 1)}
+                className={`adm_page-button-detail ${currentPage === index + 1 ? 'adm_active' : ''}`}
+              >
+                {index + 1}
+              </button>
+            ))
+          )}
+          
+          <button 
+            onClick={() => paginate(currentPage + 1)}
+            disabled={studentInfo && currentPage === Math.ceil(studentInfo.length / studentsPerPage)}
+            className="adm_page-arrow-detail"
+          >
+            &gt;
+          </button>
+        </div>
+
       </div>
-      <button onClick={() => navigate('/adm/completeprogram')} className="back-button">뒤로가기</button>
+      <button onClick={() => navigate('/adm/completeprogram')} className="adm_back-button-detail">목록으로</button>
       <NoShowReasonModal 
         isOpen={isModalOpen}
         onClose={() => {

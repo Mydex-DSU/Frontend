@@ -4,9 +4,11 @@ import './AuditPopup.css';
 
 const AuditPopup = ({ onClose, application }) => {
   return (
-    <div className="adm_popup">
-      <div className="adm_popup-content">
-        <h2>심사내용</h2>
+    <div className="adm_popup-noshow">
+      <div className="adm_popup-content-noshow">
+        <div className="adm_popup-header">
+          <h2>심사내용</h2>
+        </div>
         {application.processing_result === 1 ? (
           <>
             <h3>지급된 Mydex 온도 포인트</h3>
@@ -17,15 +19,13 @@ const AuditPopup = ({ onClose, application }) => {
           <>
             <h3>거절 사유</h3>
             <p>{application.rejection_reason}</p>
-            <p>처리 결과: 거절</p>
-            <p>온도포인트: {application.granted_mydex_points}</p>
-            <p>처리 날짜: {new Date(application.processing_datetime).toLocaleString()}</p>
-            <button onClick={onClose}>닫기</button>
+            <button onClick={onClose}>확인</button>
           </>
         )}
       </div>
     </div>
   );
 };
+
 
 export default AuditPopup;
