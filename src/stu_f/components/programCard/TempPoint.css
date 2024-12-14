@@ -1,25 +1,32 @@
 .temp-point {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-    position: absolute;
-    top: 15px; /* 카드 안쪽으로 조정 */
-    right: 15px; /* 카드 안쪽으로 조정 */
-    font-size: 12px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 10; /* 배지를 이미지 위로 표시 */
-  }
-  
-  .temp-icon {
-    color: red;
-    margin-right: 3px;
-  }
-  
-  .temp-points {
-    font-weight: bold;
-    color: #333;
-  }
-  
+  display: flex;
+  justify-content: center; /* 아이템 가운데 정렬 */
+  align-items: center; /* 아이템 수직 정렬 */
+  background-color: #ff6b6b; /* 배경색 */
+  padding: 0; /* 내부 여백 제거 */
+  border-radius: 12px; /* 완전한 원형 */
+  position: absolute;
+  top: 7px; /* 카드 안쪽으로 조금 더 위치 */
+  right: 7px; /* 카드 안쪽으로 조금 더 위치 */
+  width: 40px; /* 고정된 너비 */
+  height: 40px; /* 고정된 높이 */
+  font-size: 14px; /* 글자 크기 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+  z-index: 10; /* 카드 위로 배치 */
+}
+
+.temp-point img {
+  position: absolute;
+  width: 100%; /* 이미지가 박스 내부를 꽉 채움 */
+  height: 100%;
+  object-fit: contain; /* 이미지 비율 유지 */
+  z-index: 1; /* 이미지가 가장 뒤에 위치 */
+}
+
+.temp-point span {
+  position: relative;
+  z-index: 2; /* 텍스트가 이미지 위에 표시 */
+  font-weight: bold;
+  color: white; /* 텍스트 색상 */
+  font-size: 14px; /* 포인트 숫자 크기 */
+}

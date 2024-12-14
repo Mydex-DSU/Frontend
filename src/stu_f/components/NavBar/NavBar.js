@@ -58,7 +58,7 @@ function NavBar() {
 
       {/* MYDEX 온도 포인트 */}
       <Link to="/temperature" className="nav-link">
-        MYDEX 온도포인트
+        MYDEX 온도포인트 장학금
       </Link>
     </div>
   );

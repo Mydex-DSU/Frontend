@@ -33,6 +33,7 @@ function LoginPopup({ onClose, onLoginSuccess, initialUserType }) {
 
       const response = await axios.post(apiUrl, requestData);
       console.log("로그인 응답 데이터:", response.data);
+      
 
       // 로그인 성공 처리
       if (response.data) {
@@ -99,8 +100,11 @@ function LoginPopup({ onClose, onLoginSuccess, initialUserType }) {
           }
           value={userId}
           onChange={(e) => setUserId(e.target.value)}
+
+          
         />
         <button onClick={handleLogin}>로그인</button>
+        <button onClick={onClose}>취소</button>
         {error && <p className="error" style={{ color: "red" }}>{error}</p>}
         {successMessage && <p className="success" style={{ color: "green" }}>{successMessage}</p>}
       </div>

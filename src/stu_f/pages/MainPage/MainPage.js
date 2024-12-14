@@ -46,7 +46,8 @@ function MainPage() {
   const fetchNoShowHistory = async (stuId) => {
     try {
       const response = await axios.post("http://100.94.142.127:3000/profile/noshowhistory", { stu_id: stuId });
-      setNoShowHistory(response.data.studentnoshowhistory || []);
+      setNoShowHistory(response.data.student_noshow_history || []);
+      console.log('noshow',response.data);
     } catch (error) {
       console.error("노쇼 데이터를 가져오는 데 실패했습니다:", error);
     }
@@ -95,7 +96,7 @@ function MainPage() {
           <NoshowList noShowHistory={noShowHistory} />
           <GraduateCardHeader />
           <GraduateCardSlider />
-          <DepartReTempPoint departReTemp={departReTemp} />
+          <DepartReTempPoint departReTemp={departReTemp} WarningPoint ={userData.stu_current_warning_count}  />
         </>
       )}
     </div>
