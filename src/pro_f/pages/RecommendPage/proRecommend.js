@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'; // useNavigate 훅 추가
 import axios from 'axios';
 
 import './proRecommend.css';
-import ProHeaderAndButtons from '../../component/proHeaderAndButtons';
+
 
 function ProRecommendPage() {
   const navigate = useNavigate(); // useNavigate 훅 초기화
@@ -67,6 +67,7 @@ function ProRecommendPage() {
 
   const handleCancel = () => {
     console.log('취소 버튼 클릭됨');
+    navigate('/pro/promainpage');
   };
 
   const renderInputField = (label, id, placeholder = '', type = 'text', extraClass = '') => (
@@ -99,7 +100,6 @@ function ProRecommendPage() {
 
   return (
     <div className="recommend-container pro1">
-      <ProHeaderAndButtons onCancel={handleCancel} onSubmit={handleSubmit} />
       <h2 className="recommend-list-title-pro1">우수 졸업생 추천 목록</h2>
       <div className="proheader-pro1">우수 졸업생 정보</div>
   
@@ -128,6 +128,15 @@ function ProRecommendPage() {
             { value: 'N', label: 'N' },
           ])}
         </form>
+        {/* 버튼 추가 */}
+    <div className="button-container-pro1">
+      <button className="submit-button-pro1" onClick={handleSubmit}>
+        등록하기
+      </button>
+      <button className="cancel-button-pro1" onClick={handleCancel}>
+        취소
+      </button>
+      </div>
       </div>
   
   );

@@ -1,8 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import LoginPopup from "../stu_f/components/LoginPopup/LoginPopup";
 import { useNavigate } from "react-router-dom";
-import "./Header.css"
+import "./Header.css";
 
 function Header() {
   const {
@@ -12,9 +12,18 @@ function Header() {
     isProfessorLoggedIn,
     isAdminLoggedIn,
   } = useContext(AuthContext);
+
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [popupUserType, setPopupUserType] = useState("student"); // 기본 사용자 유형은 학생
+  const [popupUserType, setPopupUserType] = useState("student");
+  const [userId, setUserId] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedUserId = sessionStorage.getItem("stu_id");
+    if (storedUserId) {
+      setUserId(storedUserId);
+    }
+  }, []);
 
   const openLoginPopup = (type) => {
     setPopupUserType(type);
@@ -22,8 +31,8 @@ function Header() {
   };
 
   const handleLoginSuccess = (type, id) => {
-    login(type, id); // AuthContext에서 상태 업데이트
-    setIsPopupOpen(false); // 팝업 닫기
+    login(type, id);
+    setIsPopupOpen(false);
     if (type === "student") {
       navigate("/");
     } else if (type === "professor") {
@@ -35,64 +44,85 @@ function Header() {
 
   return (
     <header className="sw-first-header">
+      <div className="sw-user-info">
+        {isStudentLoggedIn && userId && (
+          <a className="sw-user-id" href="/">{`ID: ${userId}`}</a>
+        )}
+      </div>
       <div className="sw-first-header-title">DSU</div>
       <div className="sw-all-auth-section">
-        {isStudentLoggedIn && (
-          <button
-            className="f1-student-auth-button"
-            onClick={() => {
-              logout("student");
-              navigate("/"); // 로그아웃 후 메인 페이지로 이동
-            }}
-          >
-            학생 로그아웃
-          </button>
-        )}
-        {isProfessorLoggedIn && (
-          <button
-            className="f1-prof-auth-button"
-            onClick={() => {
-              logout("professor");
-              navigate("/"); // 로그아웃 후 메인 페이지로 이동
-            }}
-          >
-            교수 로그아웃
-          </button>
-        )}
-        {isAdminLoggedIn && (
-          <button
-            className="f1-admin-auth-button"
-            onClick={() => {
-              logout("admin");
-              navigate("/"); // 로그아웃 후 메인 페이지로 이동
-            }}
-          >
-            관리자 로그아웃
-          </button>
-        )}
-        {!isStudentLoggedIn && (
+        {/* 학생 로그인/로그아웃 버튼 */}
+        {!isStudentLoggedIn ? (
           <button
             className="f1-student-auth-button"
             onClick={() => openLoginPopup("student")}
           >
             학생 로그인
           </button>
+        ) : (
+          <button
+            className="f1-student-auth-button"
+            onClick={() => {
+              logout("student");
+              navigate("/");
+            }}
+          >
+            학생 로그아웃
+          </button>
         )}
-        {!isProfessorLoggedIn && (
+
+        {/* 교수 로그인/로그아웃 버튼 */}
+        {!isProfessorLoggedIn ? (
           <button
             className="f1-prof-auth-button"
             onClick={() => openLoginPopup("professor")}
           >
             교수 로그인
           </button>
+        ) : (
+          <button
+            className="f1-prof-auth-button"
+            onClick={() => {
+              logout("professor");
+              navigate("/");
+            }}
+          >
+            교수 로그아웃
+          </button>
         )}
-        {!isAdminLoggedIn && (
+
+        {/* 관리자 로그인/로그아웃 버튼 */}
+        {!isAdminLoggedIn ? (
           <button
             className="f1-admin-auth-button"
             onClick={() => openLoginPopup("admin")}
           >
             관리자 로그인
           </button>
+        ) : (
+          <button
+            className="f1-admin-auth-button"
+            onClick={() => {
+              logout("admin");
+              navigate("/");
+            }}
+          >
+            관리자 로그아웃
+          </button>
+        )}
+      </div>
+
+      {/* 관리자/교수 페이지 링크 */}
+      <div className="sw-admin-prof-links">
+        {isAdminLoggedIn && (
+          <a href="/adm/admmainpage" className="sw-admin-link">
+            관리자 페이지
+          </a>
+        )}
+        {isProfessorLoggedIn && (
+          <a href="/pro/promainpage" className="sw-prof-link">
+            교수 메인페이지
+          </a>
         )}
       </div>
 

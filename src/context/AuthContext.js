@@ -13,10 +13,12 @@ export function AuthContextProvider({ children }) {
     const studentLoggedIn = sessionStorage.getItem("stu_id");
     const professorLoggedIn = sessionStorage.getItem("pro_id");
     const adminLoggedIn = sessionStorage.getItem("adm_id");
+    const adminLoggedInA = sessionStorage.getItem("admin");
 
     if (studentLoggedIn) setIsStudentLoggedIn(true);
     if (professorLoggedIn) setIsProfessorLoggedIn(true);
     if (adminLoggedIn) setIsAdminLoggedIn(true);
+    if(adminLoggedInA) setIsAdminLoggedIn(true);
   }, []);
 
   const triggerRender = () => {
@@ -32,6 +34,7 @@ export function AuthContextProvider({ children }) {
       sessionStorage.setItem("pro_id", id);
     } else if (type === "admin") {
       setIsAdminLoggedIn(true);
+      sessionStorage.setItem("adm_id", id);
       sessionStorage.setItem("admin", id);
     }
     triggerRender();
@@ -46,6 +49,7 @@ export function AuthContextProvider({ children }) {
       sessionStorage.removeItem("pro_id");
     } else if (type === "admin") {
       setIsAdminLoggedIn(false);
+      sessionStorage.removeItem("adm_id");
       sessionStorage.removeItem("admin");
     }
     triggerRender();

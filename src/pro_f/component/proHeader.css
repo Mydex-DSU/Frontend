@@ -1,62 +1,49 @@
-/* 헤더 전체 컨테이너 */
+/* 컨테이너 스타일 */
 .header-container-pro1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #d32f2f;
-    color: white;
-    position: fixed; /* 상단 고정 */
-    font-weight: bold; /* 텍스트 강조 */
-    border-radius: 5px; /* 모서리를 둥글게 */
-    width: 100%; /* 헤더를 화면 전체 너비로 */
-    padding: 10px 20px; /* 여백 설정 */
-    z-index: 10; /* 헤더가 다른 콘텐츠 위에 오도록 설정 */
-    max-width: 80%; /* 메시지 최대 너비 */
-    margin: 0 auto 20px; /* 아래쪽 간격 20px 추가 */
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-  
-  /* 왼쪽에 MYDEX 텍스트 */
-  .header-left-pro1 .mydex-pro1 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-  }
-  
-  /* 메뉴 항목 (지도학생 관리, 우수 졸업생 관리) */
-  .header-center-pro1 {
-    display: flex;
-    gap: 300px; /* 간격을 적절히 설정하여 메뉴가 너무 멀어지지 않도록 */
-    flex-grow: 1; /* 메뉴 항목이 화면을 균등하게 채우도록 */
-    justify-content: center; /* 중앙 정렬 */
-  }
-  
-  .header-item-pro1 {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 600;
-  }
-  
-  .header-item-pro1:hover,
-  .header-item-pro1.active {
-    color: #fff;
-    border-bottom: 2px solid white;
-    padding-bottom: 5px;
-  }
-  
-  /* 오른쪽에 로그아웃 버튼 */
-  .header-right-pro1 .logout-button-pro1 {
-    background-color: transparent;
-    color: white;
-    border: none;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  .logout-button-pro1:hover {
-    text-decoration: underline;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #c62828; /* 네비게이션 바 배경색 */
+  font-size: 16px;
+  position: relative;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* 로고 스타일 */
+.header-left-pro1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.header-left-pro1 a {
+  text-decoration: none;
+  color: white;
+}
+
+.header-left-pro1 a:hover {
+  color: #ffccbc;
+}
+
+/* 오른쪽 버튼 컨테이너 스타일 */
+.header-right-pro1 {
+  display: flex;
+  gap: 10px; /* 버튼 간의 간격 */
+}
+
+/* 버튼 스타일 */
+.header-btn-pro1 {
+  padding: 8px 16px;
+  background-color: #c62828; 
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.header-btn-pro1:hover {
+  background-color: #841f1f; /* 호버 시 더 어두운 초록색 */
+}
