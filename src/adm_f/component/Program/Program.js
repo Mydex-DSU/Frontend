@@ -34,7 +34,7 @@ const Program = () => {
 
     return (
         <div className="adm_program-container">
-            <h2 className="adm_program-title">비교과 프로그램 관리</h2>
+            <h2 className="adm_program-title">비교과 프로그램 완료 목록</h2>
             <table className="adm_program-table1">
                 <thead>
                     <tr>

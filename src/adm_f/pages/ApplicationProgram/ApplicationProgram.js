@@ -11,6 +11,14 @@ const ApplicationProgram = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  const program_type_mapping = {
+    1: '특강',
+    2: '견학',
+    3: '캠프 및 워크숍',
+    4: '클리닉참여',
+    5: '학습공동체활동'
+  };
+
   useEffect(() => {
     const fetchProgramDetails = async () => {
       try {
@@ -23,7 +31,10 @@ const ApplicationProgram = () => {
           program_id: programId
         });
 
+        const programdetail = response.data.programdetail.length
+        console.log(programdetail)
         const program = response.data.program[0];
+        console.log(response.data)
         setProgramData({
           title: program.program_name,
           image: program.program_poster_image,
@@ -35,8 +46,9 @@ const ApplicationProgram = () => {
             운영일시: `${new Date(program.program_operation_start_time).toLocaleDateString()} ~ ${new Date(program.program_operation_end_time).toLocaleDateString()}`,
             설문조사기간: `${new Date(program.program_survey_start_time).toLocaleDateString()} ~ ${new Date(program.program_survey_end_time).toLocaleDateString()}`,
             "Mydex 온도 포인트": `${program.program_mydex_points}점`,
-            "프로그램 신청 인원": program.program_max_participants,
-            "프로그램 종류": program.programtype_id === 2 ? "특강" : "기타"
+            "프로그램 수용 인원": program.program_max_participants,
+            "프로그램 신청 인원" : programdetail,
+            "프로그램 종류": program_type_mapping[program.programtype_id] || "기타",
           }
         });
 

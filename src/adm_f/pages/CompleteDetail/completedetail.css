@@ -26,8 +26,9 @@
 }
 
 .adm_program-image img {
-    max-width: 300px;
-    height: auto;
+    max-width: 400px;
+    max-height: 600px; /* 원하는 최대 높이 값 */
+    object-fit: contain;
 }
 
 .adm_program-info {

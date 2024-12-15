@@ -144,7 +144,7 @@ const ProgramRegistration = () => {
     <>
     <div className="adm_registration-wrapper">
       <div className="adm_program-info-section">
-        <h3 className="adm_section-title">비교과 프로그램 기본 정보</h3>
+        <h3 className="adm_section-title-re">비교과 프로그램 기본 정보</h3>
         <form onSubmit={handleSubmit}>
           <div className="adm_image-upload-container">
             <div className="adm_image-upload-box">
@@ -296,6 +296,7 @@ const ProgramRegistration = () => {
                 name="programtype_name" 
                 value={formData.programtype_name} 
                 onChange={handleInputChange}>
+                <option value="-">-</option>
                 <option value="특강">특강</option>
                 <option value="견학">견학</option>
                 <option value="캠프및워크숍">캠프및워크숍</option>
@@ -311,21 +312,21 @@ const ProgramRegistration = () => {
                 value={formData.department_name} 
                 onChange={handleInputChange} 
               />
-               <div className="adm_button-group">
+               {/* <div className="adm_button-group">
               <button type="button" className="cancel-btn" onClick={handleClick}>
                 취소
               </button>
               <button type="submit" className="submit-btn">
                 등록
               </button>
-            </div>
+            </div> */}
             </div>
           </div>
         </form>
       </div>
       <div className="adm_mydex-points-section">
         <div className="adm_points-table">
-          <h3 className="adm_section-title">Mydex 온도 포인트 기준</h3>
+          <h3 className="adm_section-title-reg">Mydex 온도 포인트 기준</h3>
           <div className="adm_point-row">
             <span>특강</span>
             <span>2시간당 1점</span>
@@ -339,29 +340,34 @@ const ProgramRegistration = () => {
             <span>5점</span>
           </div>
           <div className="adm_point-row">
-            <span>설문 참여</span>
-            <span>외부 기간 건당 2점<br />교내 건당 1점</span>
-          </div>
-          <div className="adm_point-row">
             <span>클리닉 참여</span>
             <span>회당 1점</span>
           </div>
           <div className="adm_point-row">
-            <span>학술공모제 활동</span>
+            <span>학습공동체 활동</span>
             <span>1점</span>
           </div>
-          <div className="adm_input-group">
-              <label>Mydex 온도 포인트</label>
+        </div>
+        <div className="adm_input-group">
+          <h3 className="adm_section-title-input">Mydex 온도 포인트 기준 설정란</h3>
               <input 
                 type="text" 
                 name="program_mydex_points" 
                 placeholder="설정할 포인트를 입력하세요." 
-                value={formData.program_mydex_points} 
-                onChange={handleInputChange} 
-              />
+                value={formData.program_mydex_points}
+                className="adm_input-field-pr" 
+                onChange={handleInputChange} />
+                <form onSubmit={handleSubmit}>
+            <div className="adm_button-group-pr">
+              <button type="button" className="adm_cancel-btn-pr" onClick={handleClick}>
+                취소
+              </button>
+              <button type="submit" className="adm_submit-btn-pr">
+                등록
+              </button>
             </div>
-           
-        </div>
+                </form>
+            </div> 
       </div>
     </div>
   </>

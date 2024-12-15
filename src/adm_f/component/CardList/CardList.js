@@ -48,7 +48,7 @@ const CardList = () => {
 
   return (
     <div>
-      <h2 className="adm_section-title1">비교과 프로그램 목록</h2>
+      <h2 className="adm_section-title1">비교과 프로그램 운영 목록</h2>
       <div className="adm_slider-wrapper">
         <button className="adm_slider-button adm_prev" onClick={prevSlide}>&lt;</button>
         <div className="adm_slider-container">
@@ -71,7 +71,7 @@ const CardList = () => {
         <button className="adm_slider-button adm_next" onClick={nextSlide}>&gt;</button>
       </div>
       <div className="adm_program-links-card">
-        <Link to="/adm/programlist">프로그램 목록 보러 가기 ＞</Link>
+        <Link to="/adm/programlist">프로그램 운영 목록 보러 가기 ＞</Link>
         <Link to="/adm/programregistration">프로그램 등록하러 가기 ＞</Link>
       </div>
     </div>

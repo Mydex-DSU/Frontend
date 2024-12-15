@@ -23,7 +23,7 @@
   border-top: 2px solid black;
   border-bottom: 2px solid red;
 }
-.adm_logout-button{
+/* .adm_logout-button{
   background-color: red;
   border-radius: 10px;
   border: none;
@@ -34,7 +34,16 @@
 }
 .adm_logout-button:hover {
   background-color: #e72c4e;
+} */
+
+.adm_link-text {
+  color: #080808;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: right;
+  display: block; /* block 레벨로 변경하여 text-align이 적용되도록 함 */ 
 }
+
 
 /* .adm_table-title {
   text-align: center;

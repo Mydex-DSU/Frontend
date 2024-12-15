@@ -58,6 +58,7 @@
 
 .adm_time-input {
   flex: 1;
+  min-width: 100px;  /* 시간 입력 필드의 최소 너비 설정 */
 }
 
 .adm_modal-buttons {

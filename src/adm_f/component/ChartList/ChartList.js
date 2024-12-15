@@ -180,7 +180,7 @@ const ChartList = () => {
           width="700"
         />
       </ChartContainer>
-      <div style={{ display: 'flex', justifyContent: 'flex-end', marginRight: '300px', marginBottom: '20px' }}>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', marginRight: '200px', marginBottom: '20px' }}>
         <select
           value={selectedProgramType}
           onChange={handleProgramTypeChange}

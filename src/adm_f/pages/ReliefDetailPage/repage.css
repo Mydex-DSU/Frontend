@@ -31,7 +31,7 @@
 .adm_program-table th {
   background-color: #f8f9fa;
   font-weight: bold;
-  color: #333;
+  color: #f03b3b;
 }
 
 .adm_program-table tr:nth-child(odd) td:first-child {
@@ -98,9 +98,9 @@
 }
 
 .adm_page-button.adm_active {
-  background-color: #dc3545;
+  background-color: red;
   color: white;
-  border-color: #dc3545;
+  /* border-color: #dc3545; */
 }
 
 /* .adm_page-button:hover {
