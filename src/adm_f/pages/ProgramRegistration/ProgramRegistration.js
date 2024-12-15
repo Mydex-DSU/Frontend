@@ -340,15 +340,11 @@ const ProgramRegistration = () => {
             <span>5점</span>
           </div>
           <div className="adm_point-row">
-            <span>설문 참여</span>
-            <span>외부 기간 건당 2점<br />교내 건당 1점</span>
-          </div>
-          <div className="adm_point-row">
             <span>클리닉 참여</span>
             <span>회당 1점</span>
           </div>
           <div className="adm_point-row">
-            <span>학술공모제 활동</span>
+            <span>학습공동체 활동</span>
             <span>1점</span>
           </div>
         </div>
@@ -362,11 +358,11 @@ const ProgramRegistration = () => {
                 className="adm_input-field-pr" 
                 onChange={handleInputChange} />
                 <form onSubmit={handleSubmit}>
-            <div className="adm_button-group">
-              <button type="button" className="cancel-btn" onClick={handleClick}>
+            <div className="adm_button-group-pr">
+              <button type="button" className="adm_cancel-btn-pr" onClick={handleClick}>
                 취소
               </button>
-              <button type="submit" className="submit-btn">
+              <button type="submit" className="adm_submit-btn-pr">
                 등록
               </button>
             </div>

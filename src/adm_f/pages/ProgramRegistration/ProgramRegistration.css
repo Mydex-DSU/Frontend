@@ -90,7 +90,7 @@
   margin-bottom: 15px;
 }
 
-.adm_button-group {
+.adm_button-group-pr {
   display: flex;
   justify-content: flex-end; 
   gap: 10px;
@@ -98,8 +98,8 @@
   margin-left: auto;
 }
 
-.adm_cancel-btn,
-.adm_submit-btn {
+.adm_cancel-btn-pr,
+.adm_submit-btn-pr {
   padding: 8px 25px;
   border: none;
   border-radius: 4px;
@@ -107,11 +107,11 @@
   font-size: 14px;
 }
 
-.adm_cancel-btn {
+.adm_cancel-btn-pr {
   background-color: #f0f0f0;
 }
 
-.adm_submit-btn {
+.adm_submit-btn-pr {
   background-color: #dc1e35;
   color: white;
 }

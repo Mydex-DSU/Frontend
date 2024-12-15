@@ -166,7 +166,7 @@ const CompleteDetail = () => {
                   <td>{student.department_name}</td>
                   <td>{student.stu_name}</td>
                   <td>{student.stu_phone || '-'}</td>
-                  <td>{student.response_status_change_mydex_points || '-'}</td>
+                  <td>{student.response_status_change_mydex_points || '0'}</td>
                   <td>
                     {student.survey_response_status === 1 ? (
                       <span className="adm_status-badge">응답완료</span>

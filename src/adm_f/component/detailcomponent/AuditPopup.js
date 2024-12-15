@@ -6,7 +6,7 @@ const AuditPopup = ({ onClose, application }) => {
   return (
     <div className="adm_popup-noshow">
       <div className="adm_popup-content-noshow">
-        <div className="adm_popup-header">
+        <div className="adm_popup-header-au">
           <h2>심사내용</h2>
         </div>
         {application.processing_result === 1 ? (

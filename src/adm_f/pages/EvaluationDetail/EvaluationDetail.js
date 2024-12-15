@@ -21,11 +21,13 @@ const EvaluationDetail = () => {
                 });
 
                 if (response.data.programs && response.data.programs.length > 0) {
+                    console.log(response.data.programs[0])
                     setProgram(response.data.programs[0]);
                     const studentData = response.data.program_student.find(
                         s => s.stu_id === parseInt(studentId)
                     );
                     if (studentData) {
+                        console.log(studentData)
                         setStudent(studentData);
                         setPointsInput(studentData.stu_give_mydex_points?.toString() || '');
                     }
@@ -64,31 +66,32 @@ const EvaluationDetail = () => {
             alert('평가 저장에 실패했습니다.');
         }
     };
-
     const getProgramTypeInfo = () => {
         if (!program || !student) return null;
-
-        switch (program.programtype_id) {
-            case 1: // 출석률 기반 프로그램
-            let pointsDescription = "";
-            const maxPoints = program.program_mydex_points;
-            const attendanceRate = student.attendance_rate || 0;
-        
-            // 출석률에 따른 실제 포인트 계산 로직 추가
-            const calculateAttendancePoints = (rate, max) => {
-                if (rate < 10) return -max;
-                if (rate < 20) return -max + 1;
-                if (rate < 30) return -max + 2;
-                if (rate < 40) return -max + 3;
-                if (rate < 50) return -max + 4;
-                if (rate < 60) return 1;
-                if (rate < 70) return 2;
-                if (rate < 80) return 3;
-                if (rate < 90) return 4;
-                return max;
-            };
-        
-            const actualPoints = calculateAttendancePoints(attendanceRate, maxPoints);
+    
+        switch (program.programtype_name) {
+            case '특강': // 출석률 기반 프로그램
+                let pointsDescription = "";
+                const maxPoints = program.program_mydex_points;
+                const attendanceRate = student.attendance_rate || 0;
+            
+                // 출석률에 따른 실제 포인트 계산 로직
+                const calculateAttendancePoints = (rate, max) => {
+                    if (rate < 10) return -max;
+                    if (rate < 20) return -max + 1;
+                    if (rate < 30) return -max + 2;
+                    if (rate < 40) return -max + 3;
+                    if (rate < 50) return -max + 4;
+                    if (rate < 60) return 1;
+                    if (rate < 70) return 2;
+                    if (rate < 80) return 3;
+                    if (rate < 90) return 4;
+                    return max;
+                };
+            
+                const actualPoints = calculateAttendancePoints(attendanceRate, maxPoints);
+                
+                // 포인트 설명 로직 (이전과 동일)
                 switch (maxPoints) {
                     case 1:
                         pointsDescription = `출석률이 50% 미만인 경우 -1점\n출석률이 50% 이상인 경우 1점`;
@@ -117,7 +120,7 @@ const EvaluationDetail = () => {
                         <pre style={{ whiteSpace: 'pre-wrap' }}>{pointsDescription}</pre>
                     </>
                 );
-            case 2: // 보고서 제출 기반 프로그램
+            case '학습공동체활동': // 보고서 제출 기반 프로그램
                 const reportPoints = student.report_submission_status === 1 ? program.program_mydex_points : -program.program_mydex_points;
                 return (
                     <>
@@ -126,7 +129,9 @@ const EvaluationDetail = () => {
                         <p>학생에게 부여할 Mydex 온도 포인트는: {reportPoints}점 입니다.</p>
                     </>
                 );
-            case 3: // 참여 여부 기반 프로그램
+            case '캠프및워크숍':
+            case '클리닉참여':
+            case '견학': // 참여 여부 기반 프로그램
                 const participationPoints = student.participation_status === 1 ? program.program_mydex_points : -program.program_mydex_points;
                 return (
                     <>
@@ -159,23 +164,24 @@ const EvaluationDetail = () => {
             </div>
 
             <div className="adm_student-info">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>학생 학번</th>
-                            <th>학생 이름</th>
-                            <th>출석률</th>
-                            <th>보고서 제출 여부</th>
-                            <th>참여여부</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+            <table class="adm_table">
+                            <thead>
+                                <tr>
+                                <th class="adm_student_id">학생 학번</th>
+                                <th class="adm_student_name">학생 이름</th>
+                                <th class="adm_attendance_rate">출석률</th>
+                                <th class="adm_report_submission">보고서 제출 여부</th>
+                                <th class="adm_participation">참여여부</th>
+                                </tr>
+                            </thead>
+                            <tbody>
                         <tr>
                             <td>{student.stu_id}</td>
                             <td>{student.stu_name}</td>
-                            <td>{student.attendance_rate || '-'}%</td>
-                            <td>{student.report_submission_status ? '제출' : '미제출'}</td>
-                            <td>{student.participation_status ? '참여완료' : '미완료'}</td>
+                            <td>{student.attendance_rate !== null ? `${student.attendance_rate}%` : ''}</td>
+                            <td>{student.report_submission_status !== null ? (student.report_submission_status ? '제출' : '미제출') : ''}</td>
+                            <td>{student.participation_status !== null ? (student.participation_status ? '참여완료' : '미완료') : ''}</td>
+
                         </tr>
                     </tbody>
                 </table>
@@ -195,8 +201,7 @@ const EvaluationDetail = () => {
             <div className="adm_modal-content">
                 <button 
                     className="confirm-button"
-                    onClick={handleConfirm}
-                >
+                    onClick={handleConfirm}>
                     확인
                 </button>
             </div>

@@ -54,13 +54,13 @@ const SelectedDepartment = () => {
           {error && <p>{error}</p>}
           {!isLoading && !error && programsData.length > 0 && (
             <>
-              <table className="adm_table">
+              <table className="adm_table1">
                 <thead className="adm_thead">
                   <tr className="adm_tr">
                     <th className="adm_th">프로그램 이름</th>
                     <th className="adm_th">수용 인원</th>
                     <th className="adm_th">참여 인원</th>
-                    <th className="adm_th">노쇼 인원</th>
+                    <th className="adm_th">노쇼 설문조사 인원</th>
                     <th className="adm_th">노쇼비율</th>
                     <th className="adm_th">상세보기</th>
                   </tr>
@@ -70,12 +70,13 @@ const SelectedDepartment = () => {
                     <tr key={program.program_id} className="adm_tr">
                       <td className="adm_td">{program.program_name}</td>
                       <td className="adm_td">{program.program_max_participants}</td>
-                      <td className="adm_td">{program.total_program_links}명</td>
-                      <td className="adm_td">{program.no_show_student}</td>
+                      <td className="adm_td">{program.total_program_count}명</td>
+                      <td className="adm_td">{program.no_show_count}</td>
                       <td className="adm_td">
-                        {program.total_program_links > 0
+                        {program.no_show_rate}
+                        {/* {program.no_show_rate > 0
                           ? `${(Number(program.no_show_student) / program.total_program_links * 100).toFixed(2)}%`
-                          : '0%'}
+                          : '0%'} */}
                       </td>
                       <td className="adm_td">
                         <button 

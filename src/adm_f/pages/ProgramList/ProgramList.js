@@ -86,6 +86,7 @@ const ProgramList = () => {
                         <option value="대기중">대기중</option>
                         <option value="모집중">모집중</option>
                         <option value="모집완료">모집완료</option>
+                        {/* <opt */}
                     </select>
                 </div>
             </div>

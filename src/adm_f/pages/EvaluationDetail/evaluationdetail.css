@@ -64,7 +64,7 @@
 }
 
 .adm_points-input-field {
-    width: 100%;
+    width: 25%;
     padding: 10px;
     border: 1px solid #dee2e6;
     border-radius: 4px;
@@ -95,3 +95,18 @@
 .adm_error {
     color: #dc3545;
 }
+
+.adm_table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .adm_table th {
+    border-top: 2px solid black;
+    border-bottom: 2px solid red;
+    padding: 8px;
+    text-align: left;
+  }
+  .adm_table td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+  }
