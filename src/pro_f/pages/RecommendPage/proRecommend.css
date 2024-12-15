@@ -95,3 +95,42 @@
   flex: 1;
   max-width: 150px; /* 입력 필드와 셀렉트박스 크기 제한 */
 }
+.button-container-pro1 {
+  display: flex;
+  justify-content: center; /* 버튼 중앙 정렬 */
+  gap: 20px; /* 버튼 간격 */
+  margin-top: 20px; /* 위쪽 여백 */
+  padding-bottom: 20px; /* 하단 여백 */
+}
+
+/* 등록하기 버튼 스타일 */
+.submit-button-pro1 {
+  background-color: #d32f2f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button-pro1:hover {
+  background-color: #950019;
+}
+
+/* 취소 버튼 스타일 */
+.cancel-button-pro1 {
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cancel-button-pro1:hover {
+  background-color: #5a6268;
+}

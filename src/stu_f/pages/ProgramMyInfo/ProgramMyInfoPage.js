@@ -231,6 +231,10 @@ const MyDexInfo = () => {
 
         if (response.data && response.data.participationProgramList) {
           setData(response.data.participationProgramList);
+          //마지막 페이지를 초기 페이지로 설정하는 방식으로 보여주자.
+          setCurrentPage(
+            Math.ceil(response.data.participationProgramList.length / itemsPerPage)
+          );
         } else {
           setError('데이터가 없습니다.');
         }
@@ -343,7 +347,7 @@ const MyDexInfo = () => {
             <th>참여상태</th>
             <th>최종 부여받은 온도 포인트</th>
             <th>설문조사</th>
-            <th>노쇼조사</th>
+            
             <th>운영상태</th>
             <th>상세 정보</th>
           </tr>
@@ -357,7 +361,7 @@ const MyDexInfo = () => {
                 <td>{item.attendance_rate !== null ? `${item.attendance_rate}%` : '-'}</td>
                 <td>{item.participation_status !== null ? (item.participation_status ? 'Y' : 'N') : '-'}</td>
                 <td>{item.report_submission_status !== null ? (item.report_submission_status ? '완료' : '미완료') : '-'}</td>
-                <td>{item.awardStatus || '-'}</td>
+                
                 <td>{item.stu_program_status || '-'}</td>
                 <td>
                   {item.response_status_change_mydex_points !== null

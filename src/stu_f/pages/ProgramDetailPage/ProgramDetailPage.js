@@ -16,6 +16,7 @@ function ProgramDetailPage() {
   const [isEligible, setIsEligible] = useState(false); // 신청 가능 여부
   const [participatedProgramIds, setParticipatedProgramIds] = useState([]); // 신청/참여 프로그램 ID 목록
 
+
   useEffect(() => {
     if (programId) {
       fetchProgramDetail(programId);
@@ -150,7 +151,23 @@ function ProgramDetailPage() {
         <div className="detail-info">
           {/* 상세 정보 출력 */}
           <p><strong>프로그램 이름:</strong> {programDetail.program_name || "정보 없음"}</p>
-          <p><strong>프로그램 설명:</strong> {programDetail.program_description || "정보 없음"}</p>
+          <p><strong>프로그램 내용:</strong> {programDetail.program_description || "정보 없음"}</p>
+          <p><strong>프로그램 종류:</strong> {(() => {
+            switch (programDetail.programtype_id) {
+              case 1:
+                return "특강";
+              case 2:
+                return "견학";
+              case 3:
+                return "캠프 및 워크숍";
+              case 4:
+                return "클리닉 참여";
+              case 5:
+                return "학습 공동체 활동";
+              default:
+                return "정보 없음";
+            }
+          })()}</p>
           <p><strong>담당자 이름:</strong> {programDetail.adm_name || "정보 없음"}</p>
           <p><strong>담당자 번호:</strong> {programDetail.adm_phone || "정보 없음"}</p>
           <p><strong>신청 기간:</strong> {`${formatDate(programDetail.program_application_start_time)} ~ ${formatDate(programDetail.program_application_end_time)}`}</p>

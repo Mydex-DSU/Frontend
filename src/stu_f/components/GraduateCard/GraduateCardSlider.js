@@ -7,9 +7,15 @@ import { useNavigate } from 'react-router-dom';
 // 개별 카드 컴포넌트
 const GraduateCard = ({ graduate, globalIndex, recommendationNumber }) => {
   const navigate = useNavigate();
+  const userId  = graduate.stu_id
+  const fetchView = async() => await axios.post('http://100.94.142.127:3000/bestinfo/view',{
+    stu_id: userId
+  })
 
   const handleClick = () => {
-    navigate('/pro/prorecommenddetailpage', { state: { graduate } });
+    navigate('/stu/prorecommenddetailpage', { state: { graduate } });
+    fetchView();
+    
   };
 
   return (
