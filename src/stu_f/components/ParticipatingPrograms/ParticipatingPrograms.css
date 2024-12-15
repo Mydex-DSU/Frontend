@@ -1,55 +1,64 @@
 .participating-programs {
-  padding: 20px 0; /* 좌우 padding 제거로 카드들이 왼쪽에 가까워짐 */
-    background-color: #f9f9f9;
-    max-width: 1200px;
-    margin: 0 auto; /* 가로 가운데 정렬 */
-    position: relative;
-    text-align: left; /* 내용물 왼쪽 정렬 */
-  }
-  
-  .programs-header {
-    font-size: 18px;
-    font-weight: bold;
-    color: #1e88e5;
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .programs-header span {
-    margin-right: 10px;
-  }
-  
-  .programs-container {
-    display: flex;
-    justify-content: space-between; /* 아이템 간 간격 균일화 */
-    gap: 20px; /* 카드 사이 간격 */
-    flex-wrap: wrap;
-  } 
-  
-  .participating-programs .slick-slide {
-    flex: 0 0 auto; /* 슬라이드가 필요 이상으로 늘어나지 않도록 설정 */
-    width: calc(25% - 10px); /* 기본적으로 4개의 카드를 나열할 크기 */
-    max-width: calc(25% - 10px); /* 카드 최대 크기 설정 */
-    margin-right: 10px; /* 카드 간의 간격 */
+  padding: 20px 0;
+  background-color: #f9f9f9;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center; /* 카드 중앙 정렬 */
 }
 
-.participating-programs .slick-slide.slick-active {
-    width: calc(50% - 10px); /* 두 개의 카드만 있을 때 적절히 크기 조정 */
+.programs-header {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1e88e5;
+  margin-bottom: 20px;
 }
 
-.participating-programs .slick-list {
-    overflow: hidden; /* 슬라이더 바깥 내용 가리기 */
+.program-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.participating-programs .slick-track {
-    display: flex;
-    justify-content: flex-start; /* 슬라이드가 왼쪽에서 시작되도록 설정 */
-    gap: 10px; /* 카드 간 간격 */
-}
 .program-card-row {
   display: flex;
-  flex-wrap: wrap; /* 카드가 행을 넘어가면 새 줄로 이동 */
-  gap: 10px; /* 카드 간 간격 */
-  justify-content: flex-start; /* 왼쪽 정렬 */
+  gap: 20px; /* 카드 간 간격 */
+  justify-content: center; /* 카드 가운데 정렬 */
+  flex-wrap: nowrap; /* 한 행에 카드 표시 */
+  max-width: 100%; /* 부모 크기 제한 */
+  overflow: hidden; /* 넘치는 카드 숨김 */
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #1e88e5;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 10; /* 버튼이 카드 위에 위치 */
+}
+
+.carousel-button:hover {
+  background-color: #1565c0;
+}
+
+.prev-button {
+  left: -30px; /* 왼쪽 버튼 위치 */
+}
+
+.next-button {
+  right: -30px; /* 오른쪽 버튼 위치 */
+}
+
+.no-programs {
+  text-align: center;
+  font-size: 16px;
+  color: #666;
 }

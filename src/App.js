@@ -37,6 +37,7 @@ import ProRecommendPage from "./pro_f/pages/RecommendPage/proRecommend.js";
 import ProRegPage from "./pro_f/pages/RegPage/proRegPage.js";
 import RecommendDetail from "./stu_f/pages/RecommendDetailPage/RecommendDetailPage.js";
 import ProgramApplications from "./stu_f/pages/ProgramApplication/ProgramApplicationPage.js";
+import ProHeader from "./pro_f/component/proHeader.js"
 
 function AppContent() {
   const location = useLocation();
@@ -45,12 +46,14 @@ function AppContent() {
   // 특정 경로마다 네비바가 다르게 처리
   const isAdminPage = location.pathname.startsWith("/adm");
   const isStudentPage = location.pathname === "/" || location.pathname.startsWith("/stu");
+  const isProfessorPage = location.pathname.startsWith("/pro")
 
   return (
     <div key={renderKey}>
       <Header /> {/* 항상 상단에 표시되는 헤더 */}
       {isAdminPage && <AdmNavBar />}
       {isStudentPage && <StudentNavBar />}
+      {isProfessorPage && <ProHeader/>}
       <Routes>
         {/* 학생 라우트 */}
         <Route path="/" element={<MainPage />} />
@@ -61,6 +64,7 @@ function AppContent() {
         <Route path="/stu/programapplication" element={<ProgramApplications/>}/>
         <Route path="/stu/programmyinfopage" element={<ProgramMyInfoPage/>} />
         <Route path="/stu/mydexpointapplication" element={<MydexPointApplicationPage/>} />
+        <Route path="/stu/prorecommenddetailpage" element={<RecommendDetail />} />
         {/* 관리자 라우트 */}
         <Route path="/adm/admmainpage" element={<AdmMainPage />} />
         <Route path="/adm/completedetail" element={<CompleteDetail />} />
@@ -77,7 +81,8 @@ function AppContent() {
         <Route path="/pro/promainpage" element={<ProMainPage />} />
         <Route path="/pro/prorecommendpage" element={<ProRecommendPage />} />
         <Route path="/pro/proregpage" element={<ProRegPage />} />
-        <Route path="/pro/prorecommenddetailpage" element={<RecommendDetail />} />
+        
+        
       </Routes>
     </div>
   );
