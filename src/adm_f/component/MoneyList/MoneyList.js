@@ -35,6 +35,7 @@ const MoneyList = ({ budgetUpdated }) => {
       <h2 className="adm_table-title">학부별 남은 예산 금액</h2>
       <div className="adm_button-container1">
       <Link to="/adm/facultytransaction" className="adm_link-text">학부별 예산 거래 내역 보러 가기 ＞</Link>
+      <Link to="/adm/graduateincentives" className='adm_link-text1'>우수졸업생 인센티브 내역 ＞</Link>
         {/* <button className="adm_logout-button" onClick={goFacultyTranscation}>
           학부별 예산 거래 내역 보러 가기
         </button> */}
