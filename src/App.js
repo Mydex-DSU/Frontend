@@ -19,6 +19,7 @@ import ProgramMyInfoPage from "./stu_f/pages/ProgramMyInfo/ProgramMyInfoPage";
 import MydexPointApplicationPage from "./stu_f/pages/MydexPointApplication/MydexPointApplicationPage.js"
 
 
+
 // 관리자 관련
 import AdmMainPage from "./adm_f/pages/admMainPage.js";
 import CompleteDetail from "./adm_f/pages/CompleteDetail/CompleteDetail.js";
@@ -38,6 +39,7 @@ import ProRegPage from "./pro_f/pages/RegPage/proRegPage.js";
 import RecommendDetail from "./stu_f/pages/RecommendDetailPage/RecommendDetailPage.js";
 import ProgramApplications from "./stu_f/pages/ProgramApplication/ProgramApplicationPage.js";
 import ProHeader from "./pro_f/component/proHeader.js"
+import MydexPointTable from "./stu_f/pages/MydexPointTable/MydexPointTable.js";
 
 function AppContent() {
   const location = useLocation();
@@ -65,6 +67,7 @@ function AppContent() {
         <Route path="/stu/programmyinfopage" element={<ProgramMyInfoPage/>} />
         <Route path="/stu/mydexpointapplication" element={<MydexPointApplicationPage/>} />
         <Route path="/stu/prorecommenddetailpage" element={<RecommendDetail />} />
+        <Route path="/stu/mydexpointtable"element={<MydexPointTable/>}/>
         {/* 관리자 라우트 */}
         <Route path="/adm/admmainpage" element={<AdmMainPage />} />
         <Route path="/adm/completedetail" element={<CompleteDetail />} />
