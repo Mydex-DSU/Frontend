@@ -1,0 +1,102 @@
+/* Header.css */
+.sw-first-header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.sw-first-header-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+}
+
+.sw-all-auth-section {
+  position: absolute;
+  right: 30px;
+  display: flex;
+  gap: 20px; /* 버튼 간 간격 */
+}
+
+.f1-auth-button {
+  padding: 12px 20px;
+  font-size: 16px;
+  color: #fff; /* 텍스트 흰색 */
+  border: none; /* 테두리 제거 */
+  border-radius: 20px; /* 둥근 모서리 */
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* 버튼 그림자 */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.f1-auth-button:hover {
+  transform: scale(1.05); /* 호버 시 크기 증가 */
+}
+
+/* 학생 버튼 - 노란색 */
+.f1-student-auth-button {
+  background-color: #FFD54F; /* 밝은 노란색 */
+}
+
+.f1-student-auth-button:hover {
+  background-color: #FFCA28; /* 더 진한 노란색 */
+}
+
+/* 교수 버튼 - 주황색 */
+.f1-prof-auth-button {
+  background-color: #FFB74D; /* 밝은 주황색 */
+}
+
+.f1-prof-auth-button:hover {
+  background-color: #FFA726; /* 더 진한 주황색 */
+}
+
+/* 관리자 버튼 - 빨간색 */
+.f1-admin-auth-button {
+  background-color: #E57373; /* 밝은 빨간색 */
+}
+
+.f1-admin-auth-button:hover {
+  background-color: #EF5350; /* 더 진한 빨간색 */
+}
+
+.sw-user-info {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sw-user-id {
+  font-size: 14px;
+  color: #555;
+}
+
+/* 관리자/교수 링크 스타일 */
+.sw-admin-prof-links {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: row; /* 가로 정렬 */
+  gap: 20px; /* 링크 사이 간격 */
+}
+
+.sw-admin-link,
+.sw-prof-link {
+  color: #555;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sw-admin-link:hover,
+.sw-prof-link:hover {
+  text-decoration: underline;
+  color: #c62828;
+}

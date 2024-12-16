@@ -1,0 +1,80 @@
+/* NoShowReasonModal.css */
+.adm_modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.adm_modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 90%;
+}
+
+.adm_modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #000;
+}
+
+.adm_modal-header h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.adm_close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+.adm_modal-body {
+    margin-bottom: 20px;
+}
+
+.adm_reason-section h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.adm_reason-section p {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    margin: 0;
+    min-height: 100px;
+}
+
+.adm_modal-footer {
+    text-align: center;
+}
+
+.adm_confirm-button {
+    padding: 8px 24px;
+    background-color: #1a4f8b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.adm_confirm-button:hover {
+    background-color: #153d6a;
+}

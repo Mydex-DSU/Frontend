@@ -1,0 +1,80 @@
+/* program.css */
+/* .adm_program-container {
+    width: 83%;
+    margin: 0 auto;
+    padding: 20px;
+} */
+
+.adm_program-title {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #1F2937;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.adm_program-table1 {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.adm_program-table1 th,
+.adm_program-table1 td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #E5E7EB;
+}
+
+.adm_program-table1 th {
+    color: #374151;
+    font-weight: normal;
+}
+
+.adm_program-table1 button {
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: white;
+}
+
+/* 상태별 색상 정의 */
+.adm_status-평가중 {
+    background-color: #9ce6a8; /* 초록색 */
+    color: white;
+}
+
+.adm_status-설문조사 {
+    background-color: #748ffc; /* 진파랑색 */
+    color: white;
+}
+
+.adm_status-종료 {
+    background-color: #868e96; /* 회색 */
+    color: white;
+}
+
+
+.adm_program-links {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.more-link {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+}
+
+.more-link:hover {
+    color: #c41e3a;
+}

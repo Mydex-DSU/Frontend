@@ -1,0 +1,234 @@
+.pro3mydex-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: left;
+    max-width: 1500px;
+    margin: 0 auto;
+    align-items: center;
+  }
+  .pro3header-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  .pro3notice-content {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 1px 1px 1px 1px #555555;
+  }
+  .pro3notice-item {
+    margin-bottom: 15px;
+  }
+  .pro3notice-title {
+    font-weight: bold;
+    color: #d32f2f;
+    margin-bottom: 5px;
+  }
+  .pro3search-container {
+    margin-bottom: 20px;
+    text-align: right;
+    
+  }
+  .pro3search-input {
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 200px;
+  }
+  .pro3search-input:focus {
+    outline: none;
+    border-color: #d32f2f;
+  }
+  .pro3survey-button {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .pro3noshow-button {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .pro3noshow-button:hover {
+    background-color: #5d5b5b;
+  }
+  .pro3survey-button:hover {
+    background-color: #5d5b5b;
+  }
+  .pro3prodetails-button {
+    background-color: #757575;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  .pro3prodetails-button:hover {
+    background-color: rgb(189, 189, 189);
+  }
+  .pro3popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .pro3popup-content {
+    background: white;
+    width: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  .pro3popup-content h2 {
+    background-color: #b00020;
+    color: white;
+    padding: 15px 0;
+    margin: 0;
+    font-size: 24px;
+  }
+  .pro3survey-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+  }
+  .pro3survey-table th,
+  .pro3survey-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  .pro3survey-table th {
+    background-color: #f7f7f7;
+    font-weight: bold;
+  }
+  .pro3feedback-section {
+    margin: 20px;
+    text-align: left;
+  }
+  .pro3feedback-section label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .pro3feedback-section textarea {
+    width: 100%;
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    resize: none;
+  }
+  .pro3popup-actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  .pro3submit-button {
+    background-color: #b00020;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .pro3submit-button:hover {
+    background-color: #950019;
+  }
+  .pro3cancel-button {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .pro3cancel-button:hover {
+    background-color: #5a6268;
+  }
+  
+ /* 테이블 스타일 */
+.pro3points-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px; /* 테이블 아래 여백 */
+  font-size: 14px;
+  text-align: center;
+  border-left: none; /* 왼쪽 테두리 제거 */
+  border-right: none; /* 오른쪽 테두리 제거 */
+}
+
+/* 테이블 헤더 스타일 */
+.pro3points-table th {
+  font-weight: bold;
+  border-top:2px solid #000000;
+  border-bottom: 2px solid #d32f2f; /* 헤더 하단에 빨간색 강조선 */
+  padding: 12px 10px;
+  color: #333;
+  background-color: #fff; /* 배경색 제거 */
+  white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
+
+/* 테이블 데이터 셀 스타일 */
+.pro3points-table td {
+  border: 1px solid #ddd;
+  padding: 12px 10px;
+  text-align: center;
+  color: #333;
+  white-space: nowrap;
+  border-left: none; /* 왼쪽 테두리 제거 */
+  border-right: none; /* 오른쪽 테두리 제거 */
+  
+}
+
+/* 테이블 행 hover 효과 */
+.pro3points-table tr:hover {
+  background-color: #f9f9f9; /* 마우스 오버 시 배경색 */
+}
+
+/* 페이지네이션 스타일 */
+.pro3pagination {
+  display: flex;
+  justify-content: center; /* 가운데 정렬 */
+  gap: 10px; /* 버튼 간격 */
+  margin-top: 20px; /* 테이블과의 간격 */
+}
+
+.pro3pagination button {
+  background-color: #d32f2f; /* 버튼 배경색 */
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pro3pagination button:hover {
+  background-color: #b71c1c; /* 호버 시 색상 */
+}
+
+.pro3pagination button.active {
+  background-color: #b00020; /* 활성화된 버튼 색상 */
+  font-weight: bold;
+}

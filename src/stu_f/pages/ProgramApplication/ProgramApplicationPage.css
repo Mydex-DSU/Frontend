@@ -1,0 +1,225 @@
+.pro2program-applications-container {
+    font-family: Arial, sans-serif;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    max-width: 1500px;
+    
+  }
+  
+  .pro2page-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: left;
+  }
+  
+  .pro2applications-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .pro2applications-table th {
+    background-color: #ffffff;
+    color: #333333;
+    border-bottom: 2px solid #d32f2f;
+    border-top: 2px solid #333333;
+    padding: 10px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .pro2applications-table td {
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    padding: 10px;
+    color: #555;
+  }
+  
+  .pro2cancel-button {
+    background-color: #757575;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .pro2cancel-button:hover {
+    background-color: #555;
+  }
+  
+  .pro2details-button {
+    background-color: #d32f2f;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .pro2details-button:hover {
+    background-color: #b71c1c;
+  }
+  
+  /* Pagination Styling */
+  .pro2pagination {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+  }
+  
+  .pro2pagination button {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
+  
+  .pro2pagination button.active {
+    background-color: #d32f2f;
+    color: white;
+  }
+  .pro2search-container {
+    margin-bottom: 20px;
+    text-align: right;
+  }
+  
+  .pro2search-input {
+    padding: 8px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 200px;
+  }
+  
+  .pro2search-input:focus {
+    outline: none;
+    border-color: #d32f2f;
+  }
+  
+  .pro2popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: auto;
+  }
+  
+  .pro2popup-content {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 1200px;
+    max-width: none;
+    height: 950px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+  }
+  
+ .pro2popup-title {
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background-color: #d32f2f; /* 빨간 배경색 */
+  padding: 15px 0;
+  border-radius: 8px 8px 0 0; /* 상단 테두리를 둥글게 */
+}
+  .pro2popup-body {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .pro2popup-left {
+    flex: 1;
+    text-align: center;
+  }
+  .pro2popup-program-title {
+  
+    font-size: 25px; /* 글자 크기를 키움 */
+    font-weight: 1500; /* 글자 굵게 설정 */
+    color: black; /* 글자 색상 */
+    border-radius: 8px; /* 제목 배경 둥근 모서리 */
+   
+
+  }
+  
+  .pro2popup-image-container {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin-top: 60px;
+  }
+  
+  .pro2popup-image {
+    width: 450px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  
+  .pro2popup-right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+  }
+  
+  .pro2popup-right p {
+    font-size: 18px;
+    text-align: left;
+    margin: 10px 30px;
+    color: #333;
+  }
+  
+  .pro2popup-right p strong {
+    font-size: 20px;
+    text-align: left;
+    font-weight: bold;
+    color: #000;
+    display: block;
+    
+   
+  }
+  
+  .pro2popup-right p span {
+    display: inline-block;
+    color: #555;
+  }
+  
+  .pro2close-button {
+    background-color: #d71a2a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    align-self: flex-end;
+    margin-top: 20px;
+  }
+  
+  .pro2close-button:hover {
+    background-color: #b51620;
+  }
+  
+

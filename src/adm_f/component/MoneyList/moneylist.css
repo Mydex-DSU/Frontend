@@ -1,0 +1,86 @@
+/* moneylist.css */
+.adm_department-table-container {
+  padding: 20px;
+  max-width: 80%;
+  margin: 0 auto; 
+  border-radius: 8px;
+}
+.adm_table-title {
+  text-align: center;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  padding: 10px 0; /* 위아래 여백 추가 */
+  margin: 20px 0; /* 주변 요소와의 간격 조정 */
+  margin-bottom: 40px;
+}
+.adm_department-table tr {
+  border-top: 1px solid black;
+  border-bottom: 1px solid red;
+}
+
+/* 테이블의 첫 번째 행(헤더)에는 다른 스타일을 적용할 수 있습니다 */
+.adm_department-table thead tr {
+  border-top: 2px solid black;
+  border-bottom: 2px solid red;
+}
+/* .adm_logout-button{
+  background-color: red;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  cursor: pointer;
+  float: right;
+}
+.adm_logout-button:hover {
+  background-color: #e72c4e;
+} */
+
+.adm_link-text {
+  color: #080808;
+  text-decoration: none;
+  font-size: 14px;
+  text-align: right;
+  display: block; /* block 레벨로 변경하여 text-align이 적용되도록 함 */ 
+}
+
+
+/* .adm_table-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  font-size: 24px;
+  font-weight: bold;
+}
+.adm_department-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 20px;
+} */
+
+/* .adm_department-table th,
+.adm_department-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.adm_department-table th {
+  background-color: #e5edf6;
+  font-weight: bold;
+  color: #333;
+  text-transform: uppercase;
+  font-size: 14px;
+  border-top: 1px solid #e0e0e0;
+} */
+
+/* 
+.adm_department-table tr:hover {
+  background-color: #f5f5f5;
+  transition: background-color 0.3s ease;
+} */
+
+/*  */
+
+/*  */

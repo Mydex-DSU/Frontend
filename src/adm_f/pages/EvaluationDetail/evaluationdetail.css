@@ -1,0 +1,112 @@
+
+.adm_evaluation-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.adm_evaluation-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.adm_notification-box {
+    background-color: #1a4f8b;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.adm_icon-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.adm_notification-text p {
+    margin: 5px 0;
+}
+
+.adm_points-info {
+    background-color: #1a4f8b;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.adm_student-info table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.adm_student-info th,
+.adm_student-info td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.adm_student-info th {
+    background-color: #fff;
+    font-weight: normal;
+}
+
+.adm_points-input {
+    margin-bottom: 20px;
+}
+
+.adm_points-input h3 {
+    margin-bottom: 10px;
+}
+
+.adm_points-input-field {
+    width: 25%;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+
+.adm_confirm-button {
+    padding: 8px 24px;
+    background-color: #1a4f8b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.adm_confirm-button:hover {
+    background-color: #153d6a;
+}
+
+.adm_loading,
+.adm_error,
+.adm_no-data {
+    text-align: center;
+    padding: 20px;
+    font-size: 16px;
+}
+
+.adm_error {
+    color: #dc3545;
+}
+
+.adm_table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  .adm_table th {
+    border-top: 2px solid black;
+    border-bottom: 2px solid red;
+    padding: 8px;
+    text-align: left;
+  }
+  .adm_table td {
+    border-bottom: 1px solid #ddd;
+    padding: 8px;
+  }

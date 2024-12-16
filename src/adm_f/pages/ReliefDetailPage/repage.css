@@ -1,0 +1,126 @@
+.adm_relief-program {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.adm_relief-program h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.adm_relief-program table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.adm_relief-program tr:last-child td {
+  border-bottom: 1px solid #ddd;
+}
+
+.adm_program-table th,
+.adm_program-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.adm_program-table th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+  color: #f03b3b;
+}
+
+.adm_program-table tr:nth-child(odd) td:first-child {
+  background-color: #f1f1f1;
+}
+
+.adm_program-table tr:hover {
+  background-color: #f5f5f5;
+}
+
+.adm_application-list th {
+  font-weight: bold;
+  color: #333;
+}
+.adm_relief-program td div {
+  margin-bottom: 5px;
+}
+
+.adm_relief-program td div:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .adm_relief-program {
+    padding: 10px;
+  }
+  
+  .adm_relief-program th,
+  .adm_relief-program td {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+.adm_re-table {
+  border-collapse: collapse;
+}
+
+.adm_re-table thead {
+  border-top: 2px solid black;
+  border-bottom: 2px solid red;
+}
+
+.adm_re-table th {
+  padding: 10px;
+}
+.adm_pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 5px;
+}
+
+.adm_page-button {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background-color: white;
+  cursor: pointer;
+  min-width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adm_page-button.adm_active {
+  background-color: red;
+  color: white;
+  /* border-color: #dc3545; */
+}
+
+/* .adm_page-button:hover {
+  background-color: #f8f9fa;
+} */
+
+.adm_arrow-button {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  background-color: white;
+  cursor: pointer;
+  min-width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adm_arrow-button:disabled {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+  color: #ccc;
+}

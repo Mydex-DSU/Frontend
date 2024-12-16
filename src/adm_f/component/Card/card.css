@@ -1,0 +1,109 @@
+.adm_program-card {
+    border-radius: 10px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.adm_card-image {
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.adm_like-button {
+    position: absolute;
+    top: -1px;          /* 상단 여백 줄임 */
+    right: 0px;        /* 우측 여백 줄임 */
+    width: 32px;
+    height: 32px;
+    background: #ff6b6b;  /* 배경색 빨간색으로 변경 */
+    border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.adm_like-icon-wrapper {
+    position: relative;
+    color: white;      /* 하트 색상 흰색으로 변경 */
+    font-size: 24px;   /* 하트 크기 조정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.adm_like-count {
+    position: absolute;
+    font-size: 12px;
+    font-weight: 500;
+    color: white;      /* 숫자 색상 흰색으로 변경 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.adm_card-content {
+    padding: 16px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.adm_card-title {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    color: #333;
+    height: 42px;
+    overflow: hidden;
+    /* display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; */
+}
+
+.adm_period-info {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.adm_period-info p {
+    margin: 4px 0;
+    line-height: 1.4;
+}
+
+.adm_status-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #e9ecef;
+    color: #495057;
+    margin-top: auto;
+}
+
+.adm_status-button.운영중 {
+    background-color: #4B9EFF;
+    color: white;
+}
+
+.adm_status-button.대기중 {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+.adm_status-button.설문조사 {
+    background-color: #e9ecef;
+    color: #495057;
+}

@@ -1,0 +1,142 @@
+/* RecommendDetailPage.css */
+.prorecommendation-container {
+  background-color: #f5f7f9;
+  padding: 20px;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.prograduate-detail {
+  border: 1px solid #d1d5da;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pro-graduate-header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  background-color: #002f6c;
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.prograduate-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.proinfo-section, .prospecialization-section{
+  flex: 1 1 calc(33.333% - 20px);
+  border: 1px solid #d1d5da;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: left;
+}
+.proden-info-title{
+  margin-bottom: 10px;
+}
+.proportfolio-section {
+
+  border: 1px solid #d1d5da;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: left;
+}
+
+.info-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0056b3;
+  margin-bottom: 10px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tags .tag {
+  background-color: #0056b3;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+
+
+.prorecommendation-header h2 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #002f6c;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #002f6c;
+  padding-bottom: 10px;
+}
+
+.proprogram-item {
+  background-color: white;
+  border: 1px solid #d1d5da;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.prostu-program-title h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #002f6c;
+  margin-bottom: 10px;
+}
+
+.prostu-program-content {
+  margin-bottom: 20px;
+}
+
+.proprogram-label {
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #022c63;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.prostu-program-content p {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.proprogram-feedback {
+  display: flex;
+  align-items: flex-start;
+  background-color: #f9f9f9;
+  border-left: 4px solid #0056b3;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.profeedback-icon {
+  font-size: 20px;
+  margin-right: 10px;
+  color: #007bff;
+}
+
+.profeedback-text {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}

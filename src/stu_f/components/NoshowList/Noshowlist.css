@@ -1,0 +1,77 @@
+.noshow-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+
+.noshow-header-box {
+  padding: 10px 15px; /* Reduce the vertical padding */
+  background-color: #1F3550;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.noshow-header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.noshow-table-container {
+  margin-top: 20px;
+}
+
+.noshow-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.noshow-table thead th {
+  border-top: 3px solid black; /* 윗쪽 검정 굵은 선 */
+  border-bottom: 3px solid red; /* 아래쪽 빨간 굵은 선 */
+  padding: 10px;
+  color: white; /* 텍스트 흰색 */
+  background-color: #1F3550; /* 테이블 헤더 배경 */
+}
+
+.noshow-table tbody td {
+  padding: 10px;
+  border: 1px solid black; /* 테두리 검정색 */
+  text-align: center;
+  color: black; /* 텍스트 검정색 */
+  background-color: white; /* 셀 배경 흰색 */
+}
+
+.noshow-empty-message {
+  text-align: center;
+  padding: 20px;
+  font-size: 18px;
+  color: black; /* 텍스트 검정색 */
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background-color: #0056b3;
+  font-weight: bold;
+}

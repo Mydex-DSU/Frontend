@@ -1,0 +1,220 @@
+.pro4mydex-container {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+  
+  /* 제목 스타일 */
+  .pro4title, .pro4main-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00274d;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  /* 검색바 스타일 */
+  .pro4search-bar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .pro4dropdown {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* 테이블 스타일 */
+  .pro4points-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .pro4points-table th {
+    background-color: #ffffff;
+    border-bottom: 2px solid #d32f2f;
+    border-top: 2px solid #333333;
+    color: #333333;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .pro4points-table td {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px;
+    text-align: center;
+    color: #555555;
+  }
+  
+  /* 페이지네이션 스타일 */
+  .pro4pagination {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+  }
+  
+  .pro4pagination button {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+  }
+  
+  .pro4pagination button.active {
+    background-color: #d32f2f;
+    color: white;
+  }
+  
+  /* 장학금 섹션 스타일 */
+  .pro4scholarship-section {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pro4scholarship-content p {
+    margin: 5px 0;
+    color: #333;
+    text-align: left;
+  }
+  
+  .pro4scholarship-content .pro4highlight {
+    color: #d32f2f;
+    font-weight: bold;
+  }
+  
+  /* 버튼 스타일 */
+  .pro4apply-button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  
+  .pro4apply-button {
+    background-color: #d32f2f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  .pro4apply-button:hover {
+    background-color: #b71c1c;
+  }
+  
+  /* 팝업 스타일 */
+  .pro4popup-header {
+    background-color: #d32f2f;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .pro4popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .pro4popup {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 700px;
+    max-width: 90%;
+  }
+  
+  /* 팝업 버튼 */
+  .pro4popup-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .pro4cancel-button {
+    background-color: #ccc;
+    color: white;
+  }
+  
+  .pro4cancel-button:hover {
+    background-color: #999;
+  }
+  
+  .pro4confirm-button {
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .pro4confirm-button:hover {
+    background-color: orange;
+  }
+  
+  .pro4popup-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .pro4popup-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    vertical-align: middle;
+  }
+  
+  .pro4popup-table .pro4table-header {
+    background-color: #d32f2f;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+    width: 100px;
+    padding-left: 10px;
+  }
+  
+  .pro4popup-note {
+    font-size: 0.9rem;
+    color: #d32f2f;
+    margin-top: 5px;
+    display: inline-block;
+  }
+  
+  .pro4popup-table input[type="text"] {
+    padding: 5px;
+    width: 80px;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: left;
+  }
+  
