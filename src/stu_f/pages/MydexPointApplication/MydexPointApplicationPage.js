@@ -194,7 +194,9 @@ const MyDexPoints = () => {
       </section>
 
       <div className="pro4apply-button-container">
-        <button className="pro4apply-button" onClick={handleOpenPopup}>신청하기</button>
+        <button className="pro4apply-button" 
+        onClick={handleOpenPopup}
+        disabled = {userData.stu_current_mydex_points < 30}>신청하기</button>
       </div>
 
       {isPopupOpen && (

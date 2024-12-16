@@ -17,7 +17,7 @@ function DepartReTempPoint({ departReTemp, WarningPoint }) {
         </div>
       )}
       <div className="department-title-box">
-        <h2 className="department-title">{departReTemp.department_name}</h2>
+        <h2 className="department-title">{departReTemp.faculty_name}</h2>
       </div>
       <div className="point-container">
         <div className="remain-point-box">
