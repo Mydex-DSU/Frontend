@@ -1,0 +1,69 @@
+.adm_container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .adm_filters {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+  
+  .adm_select-box {
+    padding: 8px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .adm_incentive-table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  .adm_incentive-table th {
+    border-top: 2px solid #ff0000;
+    border-bottom: 2px solid black;
+  }
+  
+  .adm_pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 20px 0;
+  }
+  
+  .adm_page-btn {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+  }
+  
+  .adm_page-btn.active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+  }
+  
+  .adm_search-box {
+    width: 80%;
+    text-align: right;
+  }
+  
+  .adm_search-box input {
+    padding: 5px 10px;
+    margin: 0 5px;
+    /* border: 1px solid #ddd; */
+  }
+  
+  .adm_search-btn {
+    padding: 5px 10px;
+    /* background-color: #f0f0f0; */
+    /* border: 1px solid #ddd; */
+    cursor: pointer;
+  }
+  
