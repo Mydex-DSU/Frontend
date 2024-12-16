@@ -19,14 +19,22 @@ function ProgramListPage() {
       try {
         const response = await axios.get("http://100.94.142.127:3000/profile/program");
         const allPrograms = response.data?.all_program || [];
+  
+        // 날짜가 최근일수록 앞쪽에 오도록 정렬
+        allPrograms.sort((a, b) => {
+          const dateA = new Date(a.program_registration_date);
+          const dateB = new Date(b.program_registration_date);
+          return dateB - dateA; // 최신 등록 날짜가 먼저
+        });
+  
         setPrograms(allPrograms);
-        console.log("프로그램 목록들 데이터 :",response.data?.all_program)
+        console.log("정렬된 프로그램 목록 데이터:", allPrograms);
         setFilteredPrograms(allPrograms); // 초기 필터링 데이터
       } catch (error) {
         console.error("비교과 프로그램 데이터를 가져오지 못했습니다:", error);
       }
     };
-
+  
     fetchProgramData();
   }, []);
 

@@ -17,7 +17,7 @@ function ProRegPage() {
     graduate: { major: '' },//////////////////
   });
 
-  const stu_id = sessionStorage.getItem('stu_id');
+  const stu_id = sessionStorage.getItem('g_stu_id');
   const sessionData = JSON.parse(sessionStorage.getItem('stu_info')); // 세션 데이터
   const [availablePrograms, setAvailablePrograms] = useState([]);
   const [categories, setCategories] = useState([]);

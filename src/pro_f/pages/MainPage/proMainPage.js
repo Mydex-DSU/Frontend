@@ -187,7 +187,7 @@ const StudentTable = ({ students, handleReset }) => (
           <th>이름</th>
           <th>경고 횟수</th>
           <th>노쇼 횟수</th>
-          <th>초기화 횟수</th>
+          <th>초기화 가능 횟수</th>
           <th>초기화</th>
         </tr>
       </thead>

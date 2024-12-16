@@ -343,11 +343,10 @@ const MyDexInfo = () => {
             <th>출석률</th>
             <th>참여여부</th>
             <th>보고서 제출</th>
-            <th>수상 성적</th>
             <th>참여상태</th>
             <th>최종 부여받은 온도 포인트</th>
             <th>설문조사</th>
-            
+            <th>노쇼조사</th>
             <th>운영상태</th>
             <th>상세 정보</th>
           </tr>
@@ -390,9 +389,9 @@ const MyDexInfo = () => {
                     >
                       노쇼조사
                     </button>
-                  ) : item.program_status === '설문조사' && item.no_show_reason_response_status === 1 ? (
+                  ) : item.no_show_reason_response_status === 1 ? (
                     <span>참여 완료</span>
-                  ) : item.program_status === '종료' && item.no_show_reason_response_status === 0 ? (
+                  ) : item.program_status === '종료'  && item.no_show_reason_response_status === 0 ? (
                     <span>미참여</span>
                   ) : ('')}
                 </td>
