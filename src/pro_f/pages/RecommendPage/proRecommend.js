@@ -43,7 +43,7 @@ function ProRecommendPage() {
         pro_name,
       };
       const response = await axios.post('http://100.94.142.127:3000/recommend', dataToSubmit);
-      sessionStorage.setItem('stu_id', formData.studentId);
+      sessionStorage.setItem('g_stu_id', formData.studentId);
       sessionStorage.setItem('stu_info', JSON.stringify(dataToSubmit));
       console.log('here', dataToSubmit);
       console.log('서버 응답 데이터:', response.data);

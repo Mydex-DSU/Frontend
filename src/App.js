@@ -17,6 +17,7 @@ import AdmNavBar from "./adm_f/component/admNav/admNav.js";
 import StudentNavBar from "./stu_f/components/NavBar/NavBar";
 import ProgramMyInfoPage from "./stu_f/pages/ProgramMyInfo/ProgramMyInfoPage";
 import MydexPointApplicationPage from "./stu_f/pages/MydexPointApplication/MydexPointApplicationPage.js"
+import MydexPointTablePage from "./stu_f/pages/MydexPointTablePage/MydexPointTablePage.js";
 
 
 // 관리자 관련
@@ -65,6 +66,7 @@ function AppContent() {
         <Route path="/stu/programmyinfopage" element={<ProgramMyInfoPage/>} />
         <Route path="/stu/mydexpointapplication" element={<MydexPointApplicationPage/>} />
         <Route path="/stu/prorecommenddetailpage" element={<RecommendDetail />} />
+        <Route path ="/stu/mydexpointtablepage" element ={<MydexPointTablePage/>}/>
         {/* 관리자 라우트 */}
         <Route path="/adm/admmainpage" element={<AdmMainPage />} />
         <Route path="/adm/completedetail" element={<CompleteDetail />} />

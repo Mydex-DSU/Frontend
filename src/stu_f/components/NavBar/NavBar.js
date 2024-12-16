@@ -91,6 +91,9 @@ function NavBar() {
                 MYDEX 온도 포인트 장학금
               </Link>
             </li>
+            <li>
+              <Link to="/stu/mydexpointtablepage" className ="submenu-link" >MYDEX 온도 포인트 거래내역</Link>
+            </li>
           </ul>
         )}
       </div>

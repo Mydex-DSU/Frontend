@@ -53,7 +53,11 @@ const RecommendDetail = () => {
               <p><strong>학번:</strong> {graduate.stu_id || '정보 없음'}</p>
               <p><strong>이름:</strong> {graduate.stu_name || '정보 없음'}</p>
               <p><strong>소속:</strong> {graduate.department_name || '정보 없음'}</p>
-              <p><strong>회사:</strong> {graduate.company_name || '정보 없음'}</p>
+              {graduate.graduate_school_admission === 1 && graduate.field_of_study ? (
+                <p><strong>대학원:</strong> {graduate.field_of_study}</p>
+              ) : (
+                graduate.company_name && <p><strong>회사:</strong> {graduate.company_name}</p>
+              )}
               <div className="prospecialization-section">
               <h2 className="den-info-title">전문 분야</h2>
               <div className="tags">

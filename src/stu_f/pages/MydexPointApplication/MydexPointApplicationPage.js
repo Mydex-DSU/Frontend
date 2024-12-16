@@ -116,9 +116,22 @@ const MyDexPoints = () => {
       alert('유효한 포인트를 입력해주세요.');
       return;
     }
+    
+     // 현재 신청 기간 및 학생 ID에 대해 신청된 포인트 총합 계산
+    const totalPointsInCurrentPeriod = pointsData
+    .filter(
+      (point) =>
+        point.mydex_scholarship_application_period_id ===
+          applicationPeriod.mydex_scholarship_application_period_id &&
+        point.stu_id === parseInt(userId, 10)
+    )
+    .reduce((sum, point) => sum + point.requested_scholarship_points, 0);
 
-    if (requestedPoints > 50) {
-      alert('최대 신청 가능 장학금 포인트는 50점 입니다.');
+    const remainingPoints = 50 - totalPointsInCurrentPeriod;
+
+
+    if (requestedPoints > remainingPoints) {
+      alert(`이번 신청 기간에 신청할 수 있는 최대 잔여 포인트는 ${remainingPoints}점입니다.`);
       return;
     }
 
